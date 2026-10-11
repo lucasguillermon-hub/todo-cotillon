@@ -1,0 +1,56 @@
+// Revisa productos.js y genera catalogo.csv (para ver el listado completo en Excel, Google Sheets o GitHub).
+// Uso, desde la carpeta del sitio:  node herramientas/catalogo.js
+const fs = require("fs");
+const path = require("path");
+const vm = require("vm");
+
+const raiz = path.join(__dirname, "..");
+const ctx = {};
+vm.runInNewContext(fs.readFileSync(path.join(raiz, "productos.js"), "utf8") + "\n;this.C = CATEGORIAS; this.P = PRODUCTOS;", ctx);
+const { C: CATEGORIAS, P: PRODUCTOS } = ctx;
+
+const errores = [];
+const visto = new Set();
+const unico = (codigo, donde) => { if (visto.has(codigo)) errores.push(`Código repetido: ${codigo} (${donde})`); visto.add(codigo); };
+
+const cats = {};
+for (const c of CATEGORIAS) {
+  if (!/^[A-Z]{3}$/.test(c.codigo)) errores.push(`Categoría "${c.nombre}": el código debe ser 3 letras mayúsculas (tiene "${c.codigo}")`);
+  if (!c.nombre) errores.push(`Categoría ${c.codigo}: falta el nombre`);
+  unico(c.codigo, "categoría");
+  cats[c.codigo] = c.nombre;
+}
+
+const filas = [];
+for (const p of PRODUCTOS) {
+  const donde = `${p.codigo || "?"} ${p.nombre || ""}`.trim();
+  if (!/^[A-Z]{3}-\d{3}$/.test(p.codigo || "")) errores.push(`${donde}: el código de producto debe ser tipo GLO-001`);
+  else if (!cats[p.codigo.slice(0, 3)]) errores.push(`${donde}: no existe la categoría ${p.codigo.slice(0, 3)}`);
+  unico(p.codigo, "producto");
+  if (!p.nombre) errores.push(`${donde}: falta el nombre`);
+  if (!p.foto) errores.push(`${donde}: falta la foto`);
+  else if (!fs.existsSync(path.join(raiz, p.foto))) errores.push(`${donde}: no existe la foto ${p.foto}`);
+  if (!Array.isArray(p.presentaciones) || !p.presentaciones.length) { errores.push(`${donde}: no tiene presentaciones`); continue; }
+  for (const pr of p.presentaciones) {
+    const d = `${pr.codigo || "?"} (${p.nombre})`;
+    if (!new RegExp(`^${p.codigo}-\\d{2}$`).test(pr.codigo || "")) errores.push(`${d}: el código de presentación debe ser ${p.codigo}-01, -02…`);
+    unico(pr.codigo, "presentación");
+    if (!pr.detalle) errores.push(`${d}: falta el detalle de la presentación`);
+    if (!Number.isInteger(pr.precio) || pr.precio <= 0) errores.push(`${d}: precio inválido (${pr.precio}); va en pesos, sin puntos`);
+    filas.push([cats[p.codigo.slice(0, 3)] || "?", pr.codigo, p.nombre, pr.detalle, pr.precio, p.foto, p.oculto ? "no" : "sí"]);
+  }
+}
+
+const csv = (v) => /[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v);
+const salida = [["Categoría", "Código", "Producto", "Presentación", "Precio", "Foto", "Visible"], ...filas]
+  .map(f => f.map(csv).join(",")).join("\n") + "\n";
+fs.writeFileSync(path.join(raiz, "catalogo.csv"), "﻿" + salida);
+
+const visibles = PRODUCTOS.filter(p => !p.oculto);
+console.log(`${CATEGORIAS.length} categorías · ${PRODUCTOS.length} productos (${visibles.length} visibles) · ${filas.length} presentaciones`);
+console.log("catalogo.csv actualizado");
+if (errores.length) {
+  console.log(`\n${errores.length} error(es):\n- ` + errores.join("\n- "));
+  process.exit(1);
+}
+console.log("Sin errores ✔");
