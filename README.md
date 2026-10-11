@@ -1,7 +1,7 @@
 # Todo Cotillón — sitio web
 
 Página web de **Todo Cotillón**, cotillón en Villa Domínico, Avellaneda
-(Centenario Uruguayo 1543 · WhatsApp 11 3452-2787 · Instagram [@todocotillon2020](https://www.instagram.com/todocotillon2020)).
+(Centenario Uruguayo 1543 · WhatsApp 11 3452-2786 · Instagram [@todocotillon2020](https://www.instagram.com/todocotillon2020)).
 
 Es un sitio estático: `index.html` (página principal), `tienda.html` + `productos.js` (tienda con carrito)
 y las fotos en `img/` (formato `.webp`).
@@ -37,7 +37,7 @@ Buscá (Ctrl+F) estos textos:
 | Categorías de productos | `id="categorias"` |
 | Bebidas | `id="bebidas"` |
 | Dirección, horarios, contacto | `id="ubicacion"` y `<footer` |
-| Número de WhatsApp | `wa.me/5491134522787` (reemplazar en todos lados con Ctrl+H) |
+| Número de WhatsApp | `wa.me/5491134522786` (reemplazar en todos lados con Ctrl+H) |
 | Título y descripción para Google | `<title>` y `meta name="description"` al principio |
 
 ## Tienda y carrito (`tienda.html` + `productos.js`)
@@ -66,7 +66,7 @@ Google Sheets, y GitHub lo muestra como tabla).
 
 **Pedido por WhatsApp:** el carrito no cobra ni guarda nada en un servidor. Cuando el cliente toca
 "Enviar pedido por WhatsApp" se abre WhatsApp con el pedido armado (cantidad, producto, presentación,
-código, subtotal, total, nombre, fecha y comentarios) dirigido al 11 3452-2787. El número está al
+código, subtotal, total, nombre, fecha y comentarios) dirigido al 11 3452-2786. El número está al
 principio del `<script>` de `tienda.html` (`WHATSAPP`).
 
 ## Fotos
