@@ -6,8 +6,9 @@ Página web de **Todo Cotillón**, cotillón en Villa Domínico, Avellaneda
 Es un sitio estático: un solo `index.html` y las fotos en `img/` (formato `.webp`).
 No necesita instalar nada ni compilar.
 
-Publicado en Cloudflare Pages: https://todo-cotillon.pages.dev
-Cada cambio que se sube a la rama `main` de este repo se publica solo en 1–2 minutos.
+Publicado en Cloudflare Workers: https://todo-cotillon.lucasguillermon.workers.dev
+(configuración en `wrangler.jsonc`; para publicar a mano: `npx wrangler deploy`).
+También en Cloudflare Pages: https://todo-cotillon.pages.dev — se actualiza solo con cada cambio en `main`.
 
 ## Cómo editar
 

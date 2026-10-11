@@ -1,0 +1,9 @@
+// Publicación en Cloudflare Workers: sirve index.html e img/ como sitio estático.
+// Para publicar: npx wrangler deploy
+{
+  "name": "todo-cotillon",
+  "compatibility_date": "2026-10-11",
+  "assets": {
+    "directory": "./"
+  }
+}
