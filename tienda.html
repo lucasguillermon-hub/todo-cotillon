@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ofertas.css">
 <style>
 /* Mismos colores que index.html */
 :root{--fucsia:#C2187A;--fucsia-osc:#A3136A;--uva:#3A1438;--rosa:#FCE4F0;--lila:#ECE4F9;--borde:#F3D6E6;--verde:#1F8F4E}
@@ -45,7 +46,9 @@ header{background:#FFFFFF;border-bottom:1px solid var(--borde);position:sticky;t
 .catalogo{padding-top:16px;padding-bottom:120px;display:flex;flex-direction:column;gap:36px}
 .catalogo h2{margin:0 0 14px;font-size:28px;color:var(--fucsia-osc)}
 .grilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
-.producto{border:2px solid var(--borde);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;background:#FFFFFF}
+.producto{border:2px solid var(--borde);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;background:#FFFFFF;position:relative}
+.etiqueta-oferta{position:absolute;top:10px;left:10px;background:var(--fucsia);color:#FFFFFF;font-weight:800;font-size:12px;letter-spacing:.05em;padding:5px 10px;border-radius:999px}
+.producto .precio s,.item s{color:#8A5A86;font-weight:600;font-size:.7em}
 .producto img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:var(--rosa)}
 .producto .cuerpo{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex-grow:1}
 .producto h3{margin:0;font-size:19px;font-weight:600;line-height:1.2}
@@ -140,6 +143,8 @@ footer a{color:#FFFFFF;font-weight:700}
 </div>
 </section>
 
+<section class="of" id="ofertas" hidden></section>
+
 <div class="contenedor filtros">
 <input class="buscador" id="buscador" type="search" placeholder="Buscar: globos, velas, vasos…" aria-label="Buscar productos">
 <div class="chips" id="chips" role="group" aria-label="Categorías"></div>
@@ -164,6 +169,7 @@ footer a{color:#FFFFFF;font-weight:700}
 </footer>
 
 <script src="productos.js"></script>
+<script src="ofertas.js"></script>
 <script>
 // Número del local que recibe los pedidos (código de país + área sin 0 + número sin 15)
 const WHATSAPP = "5491134522786";
@@ -178,9 +184,11 @@ const sinTildes = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 const visibles = PRODUCTOS.filter(p => !p.oculto);
 const nombreCat = Object.fromEntries(CATEGORIAS.map(c => [c.codigo, c.nombre]));
 // porId: código de presentación → datos para el carrito
+// Si la presentación está en oferta hoy, el precio que se cobra es el de oferta
+const ofertas = Ofertas.porCodigo();
 const porId = {};
 for (const p of visibles) for (const pr of p.presentaciones)
-  porId[pr.codigo] = { nombre: p.nombre, foto: p.foto, detalle: pr.detalle, precio: pr.precio };
+  porId[pr.codigo] = { nombre: p.nombre, foto: p.foto, detalle: pr.detalle, precio: ofertas[pr.codigo] ? ofertas[pr.codigo].precio : pr.precio, normal: pr.precio, oferta: !!ofertas[pr.codigo] };
 // Presentación elegida en cada tarjeta (por defecto, la primera)
 const elegida = Object.fromEntries(visibles.map(p => [p.codigo, p.presentaciones[0].codigo]));
 
@@ -214,23 +222,25 @@ function controlCantidad(id) {
 }
 
 function dibujarChips() {
-  $("chips").innerHTML = [{ codigo: "Todos", nombre: "Todos" }, ...CATEGORIAS].map(c =>
+  $("chips").innerHTML = [{ codigo: "Todos", nombre: "Todos" }, ...(Object.keys(ofertas).length ? [{ codigo: "OFERTAS", nombre: "🔥 Ofertas" }] : []), ...CATEGORIAS].map(c =>
     `<button type="button" class="chip" data-cat="${esc(c.codigo)}" aria-pressed="${c.codigo === categoria}">${esc(c.nombre)}</button>`).join("");
 }
 
 function tarjeta(p) {
   const sel = p.presentaciones.find(pr => pr.codigo === elegida[p.codigo]);
+  const enOferta = pr => ofertas[pr.codigo] ? " 🔥" : "";
   const opciones = p.presentaciones.length > 1
     ? `<div class="opciones" role="group" aria-label="Presentación">` + p.presentaciones.map(pr =>
-        `<button type="button" class="opcion" data-elegir="${pr.codigo}" data-prod="${p.codigo}" aria-pressed="${pr.codigo === sel.codigo}">${esc(pr.detalle)}</button>`).join("") + `</div>`
+        `<button type="button" class="opcion" data-elegir="${pr.codigo}" data-prod="${p.codigo}" aria-pressed="${pr.codigo === sel.codigo}">${esc(pr.detalle)}${enOferta(pr)}</button>`).join("") + `</div>`
     : `<span class="pres">${esc(sel.detalle)}</span>`;
   return `
       <article class="producto">
+        ${p.presentaciones.some(pr => ofertas[pr.codigo]) ? `<span class="etiqueta-oferta">OFERTA</span>` : ""}
         <img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy">
         <div class="cuerpo">
           <h3>${esc(p.nombre)}</h3>
           ${opciones}
-          <span class="precio">${plata(sel.precio)}</span>
+          <span class="precio">${ofertas[sel.codigo] ? `<s>${plata(sel.precio)}</s> ${plata(ofertas[sel.codigo].precio)}` : plata(sel.precio)}</span>
           <span class="codigo">Cód. ${sel.codigo}</span>
           <div class="accion">${carrito[sel.codigo] ? controlCantidad(sel.codigo) : `<button type="button" class="btn-agregar" data-mas="${sel.codigo}">Agregar</button>`}</div>
         </div>
@@ -241,6 +251,12 @@ function dibujarCatalogo() {
   const q = sinTildes(busqueda.trim());
   const coincide = p => !q || sinTildes([p.nombre, p.codigo, nombreCat[p.codigo.slice(0, 3)],
     ...p.presentaciones.flatMap(pr => [pr.detalle, pr.codigo])].join(" ")).includes(q);
+  if (categoria === "OFERTAS") {
+    const lista = visibles.filter(p => p.presentaciones.some(pr => ofertas[pr.codigo]) && coincide(p));
+    lista.forEach(p => { const o = p.presentaciones.find(pr => ofertas[pr.codigo]); if (!ofertas[elegida[p.codigo]]) elegida[p.codigo] = o.codigo; });
+    $("catalogo").innerHTML = lista.length ? `<section><h2>🔥 Ofertas</h2><div class="grilla">${lista.map(tarjeta).join("")}</div></section>` : `<p class="vacio-busqueda">No hay ofertas que coincidan.</p>`;
+    return;
+  }
   const cats = categoria === "Todos" ? CATEGORIAS : CATEGORIAS.filter(c => c.codigo === categoria);
   let html = "";
   for (const c of cats) {
@@ -248,7 +264,7 @@ function dibujarCatalogo() {
     if (!lista.length) continue;
     html += `<section><h2>${esc(c.nombre)}</h2><div class="grilla">` + lista.map(tarjeta).join("") + `</div></section>`;
   }
-  $("catalogo").innerHTML = html || `<p class="vacio-busqueda">No encontramos productos con “${esc(busqueda)}”. Probá con otra palabra o <a href="https://wa.me/${WHATSAPP}">preguntanos por WhatsApp</a>.</p>`;
+  $("catalogo").innerHTML = html || `<p class="vacio-busqueda">No encontramos productos con “${esc(busqueda)}”. Probá con otra palabra o <a href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`¡Hola Todo Cotillón! 👋 Estoy buscando "${busqueda.trim()}". ¿Tienen?`)}">preguntanos por WhatsApp</a>.</p>`;
 }
 
 function dibujarCarrito() {
@@ -265,7 +281,7 @@ function dibujarCarrito() {
       <img src="${esc(p.foto)}" alt="">
       <div>
         <div class="nombre">${esc(p.nombre)}</div>
-        <div class="pres">${esc(p.detalle)} · ${plata(p.precio)} c/u</div>
+        <div class="pres">${esc(p.detalle)} · ${p.oferta ? `<s>${plata(p.normal)}</s> ` : ""}${plata(p.precio)} c/u${p.oferta ? " 🔥 oferta" : ""}</div>
         <div class="pres">Cód. ${id}</div>
         <div class="fila">${controlCantidad(id)}<span class="subtotal">${plata(p.precio * carrito[id])}</span></div>
         <button type="button" class="quitar" data-quitar="${id}">Quitar</button>
@@ -297,7 +313,7 @@ function armarMensaje({ nombre, fecha, notas }) {
   const { unidades, total } = resumen();
   const lineas = Object.keys(carrito).map(id => {
     const p = porId[id], n = carrito[id];
-    return `• ${n} × ${p.nombre} — ${p.detalle} [${id}] — ${plata(p.precio * n)}`;
+    return `• ${n} × ${p.nombre} — ${p.detalle} [${id}] — ${plata(p.precio * n)}${p.oferta ? " (oferta)" : ""}`;
   });
   let m = `¡Hola Todo Cotillón! 👋 Quiero hacer este pedido:\n\n🛒 *PEDIDO*\n${lineas.join("\n")}\n\n*Total estimado: ${plata(total)}* (${unidades} ${unidades === 1 ? "unidad" : "unidades"})\n\n👤 *Nombre:* ${nombre.trim()}`;
   if (fecha) {
@@ -338,7 +354,7 @@ function cerrar() {
 document.addEventListener("click", e => {
   const t = e.target.closest("button");
   if (!t) return;
-  if (t.dataset.mas) { leerForm(); cambiar(t.dataset.mas, 1); }
+  if (t.dataset.mas) { leerForm(); cambiar(t.dataset.mas, 1); if (t.classList.contains("of-btn")) { t.textContent = "✓ Agregado"; setTimeout(() => { t.textContent = "Agregar al carrito"; }, 1500); } }
   else if (t.dataset.menos) { leerForm(); cambiar(t.dataset.menos, -1); }
   else if (t.dataset.quitar) { leerForm(); delete carrito[t.dataset.quitar]; guardar(); actualizar(); }
   else if (t.dataset.elegir) { elegida[t.dataset.prod] = t.dataset.elegir; dibujarCatalogo(); }
@@ -361,8 +377,15 @@ document.addEventListener("submit", e => {
   $("listo").innerHTML = `<div class="listo">✅ Se abrió WhatsApp con tu pedido. Solo falta tocar “Enviar”.</div>`;
 });
 
+Ofertas.render($("ofertas"), "tienda");
+
+// Viene de la portada con ?agregar=CÓDIGO: lo suma al carrito y lo muestra
+const pedido = new URLSearchParams(location.search).get("agregar");
+if (pedido && porId[pedido]) { cambiar(pedido, 1); history.replaceState(null, "", location.pathname); }
+
 dibujarChips();
 actualizar();
+if (pedido && porId[pedido]) abrir();
 </script>
 </body>
 </html>

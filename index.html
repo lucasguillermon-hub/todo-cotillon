@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ofertas.css">
 <style>
 html{scroll-behavior:smooth}
 body{margin:0;background:#FFFFFF;overflow-x:hidden}
@@ -34,12 +35,13 @@ img{max-width:100%}
 </a>
 <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px 20px; font-weight: 700; font-size: 16px">
 <a href="tienda.html" style="text-decoration: none; padding: 10px 0; color: #C2187A">🛒 Tienda</a>
+<a href="#ofertas" id="link-ofertas" style="text-decoration: none; padding: 10px 0">Ofertas</a>
 <a href="#combos" style="text-decoration: none; padding: 10px 0">Combos</a>
 <a href="#categorias" style="text-decoration: none; padding: 10px 0">Productos</a>
 <a href="#bebidas" style="text-decoration: none; padding: 10px 0">Bebidas</a>
 <a href="#ubicacion" style="text-decoration: none; padding: 10px 0">Dónde estamos</a>
 </nav>
-<a href="https://wa.me/5491134522786" style="background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 12px 20px; border-radius: 999px; font-size: 16px">Pedí por WhatsApp</a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quiero hacer un pedido." style="background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 12px 20px; border-radius: 999px; font-size: 16px">Pedí por WhatsApp</a>
 </div>
 </header>
 
@@ -50,7 +52,7 @@ img{max-width:100%}
 <h1 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: clamp(40px, 6vw, 64px); line-height: 1.02; font-weight: 700">Todo para tu fiesta, en un solo lugar.</h1>
 <p style="margin: 0; font-size: 19px; line-height: 1.55; max-width: 520px">Cumpleaños, 15, egresados y fechas especiales. Contanos qué festejás y te armamos la lista completa, lista para retirar.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="https://wa.me/5491134522786" style="background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 16px 26px; border-radius: 999px; font-size: 18px">Armá tu pedido por WhatsApp</a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quiero armar el pedido para una fiesta.&#10;🎉 Qué festejamos: &#10;📅 Fecha: &#10;👥 Invitados: &#10;🎨 Temática / colores: " style="background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 16px 26px; border-radius: 999px; font-size: 18px">Armá tu pedido por WhatsApp</a>
 <a href="tienda.html" style="background: #FFFFFF; color: #3A1438; text-decoration: none; font-weight: 800; padding: 16px 26px; border-radius: 999px; font-size: 18px; border: 2px solid #3A1438">Armá tu carrito</a>
 </div>
 <p style="margin: 0; font-size: 15px; font-weight: 700; color: #6B3B66">Centenario Uruguayo 1543, Villa Domínico · Retiro en el local</p>
@@ -65,6 +67,8 @@ img{max-width:100%}
 </div>
 </section>
 
+<section id="ofertas" class="of" hidden></section>
+
 <section id="combos" style="background: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto; padding: 80px 20px; display: flex; flex-direction: column; gap: 36px">
 <div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
@@ -78,7 +82,7 @@ img{max-width:100%}
 <h3 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 24px">Cumple infantil</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.5">Platos, vasos, servilletas, piñata, globos y sorpresitas temáticas para 20 chicos.</p>
 <p style="margin: 6px 0 0; font-size: 26px; font-weight: 800; color: #A3136A">Consultá precio</p>
-<a href="https://wa.me/5491134522786" style="margin-top: auto; text-align: center; background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 14px; border-radius: 14px">Lo quiero</a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Me interesa el combo *Cumple infantil*. ¿Me pasan el precio y qué incluye?&#10;📅 Fecha: &#10;👥 Invitados: " style="margin-top: auto; text-align: center; background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 14px; border-radius: 14px">Lo quiero</a>
 </div>
 </article>
 <article style="border: 2px solid #C2187A; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column">
@@ -88,7 +92,7 @@ img{max-width:100%}
 <h3 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 24px">Fiesta de 15</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.5">Cotillón luminoso, antifaces, collares, vinchas y pistolas de burbujas para 50 invitados.</p>
 <p style="margin: 6px 0 0; font-size: 26px; font-weight: 800; color: #A3136A">Consultá precio</p>
-<a href="https://wa.me/5491134522786" style="margin-top: auto; text-align: center; background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 14px; border-radius: 14px">Lo quiero</a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Me interesa el combo *Fiesta de 15*. ¿Me pasan el precio y qué incluye?&#10;📅 Fecha: &#10;👥 Invitados: " style="margin-top: auto; text-align: center; background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 14px; border-radius: 14px">Lo quiero</a>
 </div>
 </article>
 <article style="border: 2px solid #F3D6E6; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column">
@@ -97,24 +101,35 @@ img{max-width:100%}
 <h3 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 24px">Egresados</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.5">Gorros, banderines, espuma, papel picado y globos con los colores del curso.</p>
 <p style="margin: 6px 0 0; font-size: 26px; font-weight: 800; color: #A3136A">Consultá precio</p>
-<a href="https://wa.me/5491134522786" style="margin-top: auto; text-align: center; background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 14px; border-radius: 14px">Lo quiero</a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Me interesa el combo *Egresados*. ¿Me pasan el precio y qué incluye?&#10;📅 Fecha: &#10;👥 Invitados: " style="margin-top: auto; text-align: center; background: #C2187A; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 14px; border-radius: 14px">Lo quiero</a>
 </div>
 </article>
 </div>
 </div>
 </section>
 
-<section style="background: #3A1438; color: #FFFFFF">
+<script src="temporadas.js"></script>
+<section id="temporada" style="background: #3A1438; color: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto; padding: 56px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 40px">
-<img src="img/halloween-banner.webp" loading="lazy" alt="Kit de Halloween con calabazas iluminadas, sombrero de bruja, murciélagos de papel, maquillaje y caramelos" style="aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-radius: 24px; display: block">
+<img id="t-foto" src="img/halloween-banner.webp" loading="lazy" alt="Kit de Halloween con calabazas iluminadas, sombrero de bruja, murciélagos de papel, maquillaje y caramelos" style="aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-radius: 24px; display: block">
 <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
 <span style="font-weight: 800; color: #E9B8D6; font-size: 14px; letter-spacing: 0.06em">TEMPORADA</span>
-<h2 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 38px; font-weight: 700">Llegó Halloween</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #F4E6F0">Ya llegaron los kits de Halloween: disfraces, maquillaje, calabazas y deco para la noche del 31. Reservá el tuyo antes de que se agote.</p>
-<a href="https://wa.me/5491134522786" style="margin-top: 6px; background: #FFFFFF; color: #3A1438; text-decoration: none; font-weight: 800; padding: 16px 26px; border-radius: 999px; font-size: 18px">Quiero mi kit</a>
+<h2 id="t-titulo" style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 38px; font-weight: 700">Llegó Halloween</h2>
+<p id="t-texto" style="margin: 0; font-size: 18px; line-height: 1.5; color: #F4E6F0">Ya llegaron los kits de Halloween: disfraces, maquillaje, calabazas y deco para la noche del 31. Reservá el tuyo antes de que se agote.</p>
+<a href="https://wa.me/5491134522786" id="t-boton" style="margin-top: 6px; background: #FFFFFF; color: #3A1438; text-decoration: none; font-weight: 800; padding: 16px 26px; border-radius: 999px; font-size: 18px">Quiero mi kit</a>
 </div>
 </div>
 </section>
+<script>
+// Completa el banner de temporada según la fecha (datos en temporadas.js)
+(function () {
+  const t = temporadaDeHoy(), $ = id => document.getElementById(id);
+  $("t-foto").src = t.foto; $("t-foto").alt = t.alt;
+  $("t-titulo").textContent = t.titulo; $("t-texto").textContent = t.texto;
+  $("t-boton").textContent = t.boton; $("t-boton").dataset.wsp = t.wsp;
+  window.TEMPORADA_ACTUAL = t;
+})();
+</script>
 
 <section id="categorias" style="background: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto; padding: 80px 20px; display: flex; flex-direction: column; gap: 32px">
@@ -126,40 +141,40 @@ img{max-width:100%}
 <div style="display: flex; flex-direction: column; gap: 14px">
 <h3 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 24px; color: #A3136A">Fiesta y decoración</h3>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px">
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/sets-globos.webp" loading="lazy" alt="Set de globos metalizados con letras y números en fucsia y lila" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Sets de globos</span><span style="font-size: 15px">Números, letras y combinados</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/globos-decoracion.webp" loading="lazy" alt="Arco de globos rosa, lila y blanco decorando una mesa dulce" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Globos para decoración</span><span style="font-size: 15px">Arcos, guirnaldas y columnas</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/cotillon-carioca.webp" loading="lazy" alt="Cotillón carioca: collar hawaiano, vinchas con plumas, anteojos divertidos y antifaces" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Cotillón carioca</span><span style="font-size: 15px">Luminoso, collares, vinchas y antifaces</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/carnaval.webp" loading="lazy" alt="Decoración de carnaval: máscaras venecianas, plumas, serpentinas y papel picado" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Decoración carnaval</span><span style="font-size: 15px">Carnaval carioca: plumas, máscaras y deco</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/pinatas.webp" loading="lazy" alt="Piñata estrella de colores colgando, con golosinas alrededor" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Piñatas</span><span style="font-size: 15px">Temáticas y personalizadas</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/descartables.webp" loading="lazy" alt="Mesa con platos, vasos, servilletas y camino de mesa descartables en fucsia, lila y turquesa" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Descartables</span><span style="font-size: 15px">Platos, vasos, manteles y servilletas</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Sets de globos*." style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/sets-globos.webp" loading="lazy" alt="Set de globos metalizados con letras y números en fucsia y lila" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Sets de globos</span><span style="font-size: 15px">Números, letras y combinados</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Globos para decoración*." style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/globos-decoracion.webp" loading="lazy" alt="Arco de globos rosa, lila y blanco decorando una mesa dulce" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Globos para decoración</span><span style="font-size: 15px">Arcos, guirnaldas y columnas</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Cotillón carioca*." style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/cotillon-carioca.webp" loading="lazy" alt="Cotillón carioca: collar hawaiano, vinchas con plumas, anteojos divertidos y antifaces" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Cotillón carioca</span><span style="font-size: 15px">Luminoso, collares, vinchas y antifaces</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Decoración carnaval*." style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/carnaval.webp" loading="lazy" alt="Decoración de carnaval: máscaras venecianas, plumas, serpentinas y papel picado" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Decoración carnaval</span><span style="font-size: 15px">Carnaval carioca: plumas, máscaras y deco</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Piñatas*." style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/pinatas.webp" loading="lazy" alt="Piñata estrella de colores colgando, con golosinas alrededor" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Piñatas</span><span style="font-size: 15px">Temáticas y personalizadas</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Descartables*." style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/descartables.webp" loading="lazy" alt="Mesa con platos, vasos, servilletas y camino de mesa descartables en fucsia, lila y turquesa" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Descartables</span><span style="font-size: 15px">Platos, vasos, manteles y servilletas</span></span></a>
 </div>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 14px">
 <h3 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 24px; color: #5B3FA0">Repostería</h3>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px">
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/cajas-torta.webp" loading="lazy" alt="Cajas blancas para torta de distintas medidas apiladas, una con visor" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Cajas para torta</span><span style="font-size: 15px">Varias medidas, con y sin visor</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/crema.webp" loading="lazy" alt="Bowl con crema rosa y manga pastelera junto a una torta decorada" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Crema</span><span style="font-size: 15px">Para rellenar y decorar</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/bizcochuelos.webp" loading="lazy" alt="Bizcochuelo esponjoso cortado al medio y relleno con crema rosa" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Bizcochuelos</span><span style="font-size: 15px">Listos y premezclas</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/velas.webp" loading="lazy" alt="Torta rosa con velas de números, velitas de colores y toppers decorativos" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Velas y adornos</span><span style="font-size: 15px">Velas, toppers y decoración de tortas</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Cajas para torta*." style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/cajas-torta.webp" loading="lazy" alt="Cajas blancas para torta de distintas medidas apiladas, una con visor" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Cajas para torta</span><span style="font-size: 15px">Varias medidas, con y sin visor</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Crema*." style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/crema.webp" loading="lazy" alt="Bowl con crema rosa y manga pastelera junto a una torta decorada" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Crema</span><span style="font-size: 15px">Para rellenar y decorar</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Bizcochuelos*." style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/bizcochuelos.webp" loading="lazy" alt="Bizcochuelo esponjoso cortado al medio y relleno con crema rosa" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Bizcochuelos</span><span style="font-size: 15px">Listos y premezclas</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Velas y adornos*." style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/velas.webp" loading="lazy" alt="Torta rosa con velas de números, velitas de colores y toppers decorativos" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Velas y adornos</span><span style="font-size: 15px">Velas, toppers y decoración de tortas</span></span></a>
 </div>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 14px">
 <h3 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 24px; color: #A3136A">Kiosco, bebidas y papelería</h3>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px">
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/golosinas.webp" loading="lazy" alt="Frascos de vidrio con chupetines, gomitas y caramelos de colores para candy bar" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Golosinas</span><span style="font-size: 15px">Sueltas y para candy bar</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/snacks.webp" loading="lazy" alt="Bowls con papas fritas, palitos y maní sobre una mesa de fiesta" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Snacks</span><span style="font-size: 15px">Papas, palitos y más para picar</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Golosinas*." style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/golosinas.webp" loading="lazy" alt="Frascos de vidrio con chupetines, gomitas y caramelos de colores para candy bar" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Golosinas</span><span style="font-size: 15px">Sueltas y para candy bar</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Snacks*." style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/snacks.webp" loading="lazy" alt="Bowls con papas fritas, palitos y maní sobre una mesa de fiesta" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Snacks</span><span style="font-size: 15px">Papas, palitos y más para picar</span></span></a>
 <a href="#bebidas" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/bebidas.webp" loading="lazy" alt="Botellas de gaseosa, agua y jugo con vasos de colores y hielo" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Bebidas</span><span style="font-size: 15px">Gaseosas, jugos y más para tu evento</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/papeleria.webp" loading="lazy" alt="Rollos de papel de regalo, bolsitas, moños y tarjetas de cumpleaños en rosa y lila" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Papelería</span><span style="font-size: 15px">Papel de regalo, bolsitas y tarjetas</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Papelería*." style="text-decoration: none; color: #3A1438; background: #FCE4F0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/papeleria.webp" loading="lazy" alt="Rollos de papel de regalo, bolsitas, moños y tarjetas de cumpleaños en rosa y lila" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Papelería</span><span style="font-size: 15px">Papel de regalo, bolsitas y tarjetas</span></span></a>
 </div>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 14px">
 <h3 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 24px; color: #5B3FA0">Temporada y disfraces</h3>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px">
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #FFFFFF; background: #3A1438; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/kit-halloween.webp" loading="lazy" alt="Kit de Halloween con calabazas, telarañas, velas y caramelos en fucsia, lila y naranja" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Kits de Halloween</span><span style="font-size: 15px">Todo para la noche del 31</span></span></a>
-<a href="https://wa.me/5491134522786" style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/disfraces.webp" loading="lazy" alt="Perchero con disfraces infantiles de bruja, pirata, princesa y astronauta" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Disfraces</span><span style="font-size: 15px">Para chicos y grandes</span></span></a>
+<a id="c-temporada" href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Kits de Halloween*." style="text-decoration: none; color: #FFFFFF; background: #3A1438; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img id="c-foto" src="img/kit-halloween.webp" loading="lazy" alt="Kit de Halloween con calabazas, telarañas, velas y caramelos en fucsia, lila y naranja" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600" id="c-titulo">Kits de Halloween</span><span style="font-size: 15px" id="c-texto">Todo para la noche del 31</span></span></a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quería consultar por *Disfraces*." style="text-decoration: none; color: #3A1438; background: #ECE4F9; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box"><img src="img/disfraces.webp" loading="lazy" alt="Perchero con disfraces infantiles de bruja, pirata, princesa y astronauta" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block"><span style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 20px"><span style="font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600">Disfraces</span><span style="font-size: 15px">Para chicos y grandes</span></span></a>
 </div>
 </div>
 </div>
@@ -171,7 +186,7 @@ img{max-width:100%}
 <span style="font-weight: 800; font-size: 14px; color: #5B3FA0; letter-spacing: 0.06em">BEBIDAS PARA EVENTOS</span>
 <h2 style="margin: 0; font-family: 'Fredoka', sans-serif; font-size: 34px; font-weight: 700">Sumá las bebidas a tu pedido</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.55">Gaseosas, aguas, jugos y bebidas para brindar. Calculamos cuánto necesitás según la cantidad de invitados y lo retirás junto con el cotillón.</p>
-<a href="https://wa.me/5491134522786" style="align-self: flex-start; background: #3A1438; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 14px 24px; border-radius: 999px; font-size: 17px">Pedir presupuesto</a>
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Quiero presupuesto de bebidas para un evento.&#10;👥 Invitados: &#10;📅 Fecha: " style="align-self: flex-start; background: #3A1438; color: #FFFFFF; text-decoration: none; font-weight: 800; padding: 14px 24px; border-radius: 999px; font-size: 17px">Pedir presupuesto</a>
 </div>
 </div>
 </section>
@@ -235,10 +250,30 @@ img{max-width:100%}
 </div>
 </footer>
 
-<a href="https://wa.me/5491134522786" aria-label="Escribinos por WhatsApp" style="position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; border-radius: 999px; background: #1F8F4E; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(58,20,56,0.25)">
+<a href="https://wa.me/5491134522786" data-wsp="¡Hola Todo Cotillón! 👋 Tengo una consulta:" aria-label="Escribinos por WhatsApp" style="position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; border-radius: 999px; background: #1F8F4E; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(58,20,56,0.25)">
 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"></path></svg>
 </a>
 
 </div>
+
+<script src="productos.js"></script>
+<script src="ofertas.js"></script>
+<script>
+// Tarjeta de temporada en la grilla de categorías
+(function () {
+  const t = window.TEMPORADA_ACTUAL, c = t.tarjeta, $ = id => document.getElementById(id);
+  $("c-foto").src = c.foto || t.foto; $("c-foto").alt = c.titulo + ": " + c.texto;
+  $("c-titulo").textContent = c.titulo; $("c-texto").textContent = c.texto;
+  $("c-temporada").dataset.wsp = "¡Hola Todo Cotillón! 👋 Quería consultar por *" + c.titulo + "*.";
+})();
+
+// Cada botón de WhatsApp abre el chat con su mensaje ya escrito (atributo data-wsp)
+document.querySelectorAll("a[data-wsp]").forEach(a => {
+  a.href = "https://wa.me/5491134522786?text=" + encodeURIComponent(a.dataset.wsp);
+});
+
+Ofertas.render(document.getElementById("ofertas"), "portada");
+if (!Ofertas.activas().length) document.getElementById("link-ofertas").remove();
+</script>
 </body>
 </html>

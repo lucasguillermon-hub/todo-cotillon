@@ -139,3 +139,22 @@ const PRODUCTOS = [
     { codigo: "TEM-002-01", detalle: "Talles 4 a 10 · vestido + sombrero", precio: 21000 },
   ]},
 ];
+
+// OFERTAS
+// Aparecen en el carrusel de la portada y de la tienda, y el precio de oferta se aplica solo en el carrito.
+// - codigo: código de la PRESENTACIÓN en oferta (ej: GLO-001-02).
+// - precio: precio de oferta en pesos (tiene que ser menor al precio normal).
+// - desde / hasta: fechas AAAA-MM-DD, ambas incluidas y opcionales. Fuera de esas fechas la oferta
+//   desaparece sola; no hace falta borrarla enseguida.
+// - texto: frase corta opcional que se muestra en la tarjeta.
+// Las de abajo son DE EJEMPLO.
+
+const OFERTAS = [
+  { codigo: "TEM-001-01", precio: 12900, hasta: "2026-10-31", texto: "Especial Halloween" },
+  { codigo: "GLO-001-02", precio: 5200, hasta: "2026-10-31", texto: "Ideal para arcos y guirnaldas" },
+  { codigo: "COT-002-01", precio: 9900, hasta: "2026-11-15", texto: "Para fiestas de 15" },
+  { codigo: "GOL-002-02", precio: 7900, hasta: "2026-10-25" },
+  { codigo: "REP-002-01", precio: 4700, hasta: "2026-10-20" },
+  { codigo: "BEB-001-02", precio: 3300, hasta: "2026-10-31" },
+  { codigo: "DES-002-02", precio: 2300, hasta: "2026-11-30", texto: "Llevá de colores combinados" },
+];

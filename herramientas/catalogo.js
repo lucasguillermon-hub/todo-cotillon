@@ -6,8 +6,8 @@ const vm = require("vm");
 
 const raiz = path.join(__dirname, "..");
 const ctx = {};
-vm.runInNewContext(fs.readFileSync(path.join(raiz, "productos.js"), "utf8") + "\n;this.C = CATEGORIAS; this.P = PRODUCTOS;", ctx);
-const { C: CATEGORIAS, P: PRODUCTOS } = ctx;
+vm.runInNewContext(fs.readFileSync(path.join(raiz, "productos.js"), "utf8") + "\n;this.C = CATEGORIAS; this.P = PRODUCTOS; this.O = typeof OFERTAS === 'undefined' ? [] : OFERTAS;", ctx);
+const { C: CATEGORIAS, P: PRODUCTOS, O: OFERTAS } = ctx;
 
 const errores = [];
 const visto = new Set();
@@ -41,6 +41,25 @@ for (const p of PRODUCTOS) {
   }
 }
 
+// Ofertas
+const precios = {};
+for (const p of PRODUCTOS) for (const pr of p.presentaciones || []) precios[pr.codigo] = pr.precio;
+const fechaOk = f => !f || (/^\d{4}-\d{2}-\d{2}$/.test(f) && !isNaN(new Date(f)));
+const hoy = new Date().toISOString().slice(0, 10);
+const vistas = new Set();
+let vigentes = 0;
+for (const o of OFERTAS) {
+  const d = `Oferta ${o.codigo || "?"}`;
+  if (!(o.codigo in precios)) { errores.push(`${d}: no existe esa presentación en el catálogo`); continue; }
+  if (vistas.has(o.codigo)) errores.push(`${d}: está cargada dos veces`);
+  vistas.add(o.codigo);
+  if (!Number.isInteger(o.precio) || o.precio <= 0) errores.push(`${d}: precio inválido (${o.precio})`);
+  else if (o.precio >= precios[o.codigo]) errores.push(`${d}: el precio de oferta (${o.precio}) no es menor al normal (${precios[o.codigo]})`);
+  if (!fechaOk(o.desde) || !fechaOk(o.hasta)) errores.push(`${d}: las fechas van como AAAA-MM-DD`);
+  else if (o.desde && o.hasta && o.desde > o.hasta) errores.push(`${d}: "desde" es posterior a "hasta"`);
+  if ((!o.desde || o.desde <= hoy) && (!o.hasta || hoy <= o.hasta)) vigentes++;
+}
+
 const csv = (v) => /[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v);
 const salida = [["Categoría", "Código", "Producto", "Presentación", "Precio", "Foto", "Visible"], ...filas]
   .map(f => f.map(csv).join(",")).join("\n") + "\n";
@@ -48,6 +67,7 @@ fs.writeFileSync(path.join(raiz, "catalogo.csv"), "﻿" + salida);
 
 const visibles = PRODUCTOS.filter(p => !p.oculto);
 console.log(`${CATEGORIAS.length} categorías · ${PRODUCTOS.length} productos (${visibles.length} visibles) · ${filas.length} presentaciones`);
+console.log(`${OFERTAS.length} ofertas cargadas (${vigentes} vigentes hoy)`);
 console.log("catalogo.csv actualizado");
 if (errores.length) {
   console.log(`\n${errores.length} error(es):\n- ` + errores.join("\n- "));

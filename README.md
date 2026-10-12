@@ -33,11 +33,12 @@ Buscá (Ctrl+F) estos textos:
 | Qué querés cambiar | Buscá |
 |---|---|
 | Combos y sus precios | `id="combos"` — cada combo es un `<article>`; el precio es la línea `Consultá precio` |
-| Banner de temporada (Halloween) | `Llegó Halloween` |
+| Banner de temporada | se cambia en **`temporadas.js`** (ver abajo) |
 | Categorías de productos | `id="categorias"` |
 | Bebidas | `id="bebidas"` |
 | Dirección, horarios, contacto | `id="ubicacion"` y `<footer` |
-| Número de WhatsApp | `wa.me/5491134522786` (reemplazar en todos lados con Ctrl+H) |
+| Mensaje que abre cada botón de WhatsApp | atributo `data-wsp="..."` del botón |
+| Número de WhatsApp | `5491134522786` (reemplazar en todos lados con Ctrl+H, también en `tienda.html`) |
 | Título y descripción para Google | `<title>` y `meta name="description"` al principio |
 
 ## Tienda y carrito (`tienda.html` + `productos.js`)
@@ -68,6 +69,44 @@ Google Sheets, y GitHub lo muestra como tabla).
 "Enviar pedido por WhatsApp" se abre WhatsApp con el pedido armado (cantidad, producto, presentación,
 código, subtotal, total, nombre, fecha y comentarios) dirigido al 11 3452-2786. El número está al
 principio del `<script>` de `tienda.html` (`WHATSAPP`).
+
+## Ofertas (carrusel)
+
+Las ofertas se cargan al final de **`productos.js`**, en la lista `OFERTAS`:
+
+```js
+{ codigo: "GLO-001-02", precio: 5200, hasta: "2026-10-31", texto: "Ideal para arcos" },
+```
+
+- `codigo`: la presentación en oferta. `precio`: el precio de oferta (menor al normal).
+- `desde` / `hasta` (opcionales, AAAA-MM-DD): la oferta aparece y desaparece sola en esas fechas.
+- Se muestran en un carrusel que se mueve solo en la portada y en la tienda, con el % de descuento y
+  cuánto falta para que termine. El precio de oferta se aplica solo en el carrito y en el pedido.
+- Si no hay ninguna oferta vigente, la sección se oculta sola.
+
+## Banner de temporada (`temporadas.js`)
+
+El banner oscuro de la portada (y la tarjeta de temporada en "¿Qué estás buscando?") cambia solo
+según la fecha, todos los años:
+
+| Temporada | Fechas |
+|---|---|
+| Fiestas de fin de año | 16/12 al 6/1 |
+| Carnaval | 1/2 al 5/3 |
+| Día del Niño | 20/7 al 21/8 |
+| Primavera y Día del Estudiante | 10/9 al 21/9 |
+| Halloween | 1/10 al 31/10 |
+| Egresados y fin de curso | 1/11 al 15/12 |
+| General ("Armamos tu cumple completo") | el resto del año |
+
+Cada temporada tiene foto, título, texto, botón y el mensaje de WhatsApp que abre ese botón.
+Carnaval y el Día del Niño cambian de fecha cada año: conviene revisarlas en enero.
+
+## Mensajes de WhatsApp ya escritos
+
+Cada botón de WhatsApp de la portada abre el chat con un mensaje ya escrito según dónde se tocó
+(combo, categoría, bebidas, etc.). El texto está en el atributo `data-wsp` de cada botón; para
+cambiarlo se edita ese texto (`&#10;` es un salto de línea).
 
 ## Fotos
 

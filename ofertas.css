@@ -1,0 +1,28 @@
+/* Carrusel de ofertas (index.html y tienda.html) */
+.of{background:#3A1438;color:#FFFFFF}
+.of-in{max-width:1180px;margin:0 auto;padding:52px 20px;display:flex;flex-direction:column;gap:22px}
+.of-cab{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.of-sub{font-weight:800;font-size:14px;color:#E9B8D6;letter-spacing:.06em}
+.of-cab h2{margin:4px 0 0;font-family:'Fredoka',sans-serif;font-size:clamp(32px,4.5vw,42px);font-weight:700;color:#FFFFFF;line-height:1.05}
+.of-fuego{display:inline-block;animation:of-latido 1.4s ease-in-out infinite}
+@keyframes of-latido{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.of-flechas{display:flex;gap:8px}
+.of-flecha{width:46px;height:46px;border-radius:999px;border:2px solid rgba(255,255,255,.55);background:transparent;color:#FFFFFF;font-size:26px;line-height:1;cursor:pointer;font-family:inherit}
+.of-flecha:hover{background:rgba(255,255,255,.14)}
+.of-pista{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 8px;outline:none}
+.of-pista::-webkit-scrollbar{display:none}
+.of-card{flex:0 0 clamp(230px,26%,270px);scroll-snap-align:start;background:#FFFFFF;color:#3A1438;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.of-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.of-pct{position:absolute;top:12px;left:12px;background:#C2187A;color:#FFFFFF;font-weight:800;font-size:17px;padding:6px 12px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.25);animation:of-latido 2s ease-in-out infinite}
+.of-cuerpo{padding:14px 16px 16px;display:flex;flex-direction:column;gap:3px;flex-grow:1}
+.of-nombre{font-family:'Fredoka',sans-serif;font-size:19px;font-weight:600;line-height:1.2}
+.of-det{font-size:14px;color:#6B3B66}
+.of-texto{font-size:13px;font-weight:800;color:#5B3FA0}
+.of-precios{display:flex;align-items:baseline;gap:8px;margin-top:6px}
+.of-antes{text-decoration:line-through;color:#8A5A86;font-size:15px}
+.of-ahora{font-size:25px;font-weight:800;color:#A3136A}
+.of-plazo{font-size:13px;font-weight:800;color:#B4235A;margin-bottom:10px;min-height:1em}
+.of-btn{margin-top:auto;display:block;width:100%;text-align:center;background:#C2187A;color:#FFFFFF;text-decoration:none;font-weight:800;padding:12px;border-radius:14px;border:0;font-size:16px;cursor:pointer;font-family:inherit}
+.of-btn:hover{background:#A3136A;color:#FFFFFF}
+@media (max-width:640px){.of-card{flex-basis:74%}.of-in{padding:40px 16px}.of-flechas{display:none}}
+@media (prefers-reduced-motion:reduce){.of-fuego,.of-pct{animation:none}}
