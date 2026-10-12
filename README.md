@@ -70,6 +70,11 @@ Google Sheets, y GitHub lo muestra como tabla).
 código, subtotal, total, nombre, fecha y comentarios) dirigido al 11 3452-2786. El número está al
 principio del `<script>` de `tienda.html` (`WHATSAPP`).
 
+**Entrega y pago:** en el carrito el cliente elige retiro en el local, envío a domicilio (Avellaneda y alrededores; pide dirección;
+el envío se cobra aparte) o envío por mensajería (pide localidad y CP), y el medio de pago (efectivo,
+transferencia, tarjeta de crédito, débito o QR; sin recargo con tarjetas). Las opciones están en `ENTREGAS` y `PAGOS` al principio
+del `<script>` de `tienda.html`. En la portada se muestran en "Comprar es fácil" (`id="envios-pagos"`).
+
 ## Ofertas (carrusel)
 
 Las ofertas se cargan al final de **`productos.js`**, en la lista `OFERTAS`:

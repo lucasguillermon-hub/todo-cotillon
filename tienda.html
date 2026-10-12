@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tienda | Todo Cotillón · Villa Domínico, Avellaneda</title>
-<meta name="description" content="Armá tu pedido de cotillón, globos, repostería, golosinas y bebidas y mandalo por WhatsApp. Retiro en Centenario Uruguayo 1543, Villa Domínico.">
+<meta name="description" content="Armá tu pedido de cotillón, globos, repostería, golosinas y bebidas y mandalo por WhatsApp. Retiro en Villa Domínico, envío a domicilio o por mensajería.">
 <meta name="theme-color" content="#C2187A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='16' cy='15' r='11' fill='%23C2187A'/%3E%3Ccircle cx='27' cy='19' r='9' fill='%239B7FD4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,6 +99,19 @@ header{background:#FFFFFF;border-bottom:1px solid var(--borde);position:sticky;t
 .form input,.form textarea{font:inherit;font-size:16px;padding:11px 12px;border:2px solid #D8CCF0;border-radius:12px;background:#FFFFFF;color:var(--uva)}
 .form input:focus,.form textarea:focus{outline:none;border-color:#7A5BC0}
 .form textarea{min-height:70px;resize:vertical}
+.grupo{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.grupo legend{font-weight:800;font-size:15px;margin-bottom:8px;padding:0}
+.sin-recargo{font-weight:700;font-size:13px;color:#1F8F4E;margin-left:4px}
+.form .radio{flex-direction:row;align-items:flex-start;gap:10px;background:#FFFFFF;border:2px solid #D8CCF0;border-radius:12px;padding:10px 12px;cursor:pointer;font-weight:600}
+.form .radio:has(input:checked){border-color:#7A5BC0;background:#F6F2FD}
+.form .radio input{margin:2px 0 0;accent-color:#7A5BC0;width:18px;height:18px;flex:none;padding:0}
+.radio span{display:flex;flex-direction:column;gap:2px;font-size:15px}
+.radio small{font-weight:600;color:#6B3B66;font-size:13px;line-height:1.35}
+.pagos{display:flex;flex-wrap:wrap;gap:8px}
+.form .radio.chico{padding:8px 12px;align-items:center}
+.form .radio.chico input{margin:0}
+.extra{display:flex;flex-direction:column;gap:12px;border-left:3px solid #7A5BC0;padding-left:12px}
+.extra[hidden]{display:none}
 .enviar{background:var(--verde);color:#FFFFFF;border:0;font-weight:800;font-size:17px;padding:15px;border-radius:14px}
 .enviar:hover{background:#18763F}
 .vaciar{background:none;border:0;color:#8A5A86;text-decoration:underline;font-size:14px;align-self:center;padding:6px}
@@ -139,7 +152,7 @@ footer a{color:#FFFFFF;font-weight:700}
 <section class="intro">
 <div class="contenedor">
 <h1>Armá tu pedido</h1>
-<p>Elegí los productos, mandanos la lista por WhatsApp y te confirmamos disponibilidad y precio final. Retirás en el local, todo preparado.</p>
+<p>Elegí los productos, mandanos la lista por WhatsApp y te confirmamos disponibilidad y precio final. Lo retirás en el local o te lo enviamos.</p>
 </div>
 </section>
 
@@ -174,6 +187,14 @@ footer a{color:#FFFFFF;font-weight:700}
 // Número del local que recibe los pedidos (código de país + área sin 0 + número sin 15)
 const WHATSAPP = "5491134522786";
 const CLAVE = "todocotillon-carrito-v2";
+
+// Formas de entrega y medios de pago que se ofrecen en el carrito
+const ENTREGAS = [
+  { id: "retiro", icono: "🏬", nombre: "Retiro en el local", detalle: "Centenario Uruguayo 1543, Villa Domínico. Sin cargo." },
+  { id: "domicilio", icono: "🛵", nombre: "Envío a domicilio", detalle: "Avellaneda y alrededores. El envío se suma al total según la zona." },
+  { id: "mensajeria", icono: "📦", nombre: "Envío por mensajería", detalle: "Lo retirás en una sucursal de mensajería. Con cargo." },
+];
+const PAGOS = ["Efectivo", "Transferencia", "Tarjeta de crédito", "Tarjeta de débito", "QR"];
 
 const $ = id => document.getElementById(id);
 const plata = n => "$" + n.toLocaleString("es-AR");
@@ -289,11 +310,28 @@ function dibujarCarrito() {
     </div>`;
   }).join("") + `
     <div class="total"><span>Total estimado</span><strong>${plata(total)}</strong></div>
-    <p class="aviso">Los precios pueden variar según stock. Te confirmamos el total por WhatsApp antes de prepararlo. Retiro en Centenario Uruguayo 1543, Villa Domínico.</p>
+    <p class="aviso">Los precios pueden variar según stock. Te confirmamos el total por WhatsApp antes de prepararlo.</p>
     <form class="form" id="form">
       <h3>Tus datos</h3>
       <label>Nombre y apellido<input name="nombre" required autocomplete="name" value="${esc(datos.nombre)}"></label>
       <label>¿Para cuándo lo necesitás? (opcional)<input name="fecha" type="date" value="${esc(datos.fecha)}"></label>
+      <fieldset class="grupo">
+        <legend>¿Cómo lo recibís?</legend>
+        ${ENTREGAS.map(e => `<label class="radio"><input type="radio" name="entrega" value="${e.id}" required ${datos.entrega === e.id ? "checked" : ""}><span><strong>${e.icono} ${e.nombre}</strong><small>${e.detalle}</small></span></label>`).join("")}
+      </fieldset>
+      <div class="extra" data-para="domicilio" ${datos.entrega === "domicilio" ? "" : "hidden"}>
+        <label>Dirección (calle y altura)<input name="direccion" required autocomplete="street-address" value="${esc(datos.direccion)}" ${datos.entrega === "domicilio" ? "" : "disabled"}></label>
+        <label>Localidad<input name="localidad" required autocomplete="address-level2" value="${esc(datos.localidad)}" ${datos.entrega === "domicilio" ? "" : "disabled"}></label>
+        <label>Entre calles / referencia (opcional)<input name="referencia" value="${esc(datos.referencia)}" ${datos.entrega === "domicilio" ? "" : "disabled"}></label>
+      </div>
+      <div class="extra" data-para="mensajeria" ${datos.entrega === "mensajeria" ? "" : "hidden"}>
+        <label>Localidad y código postal<input name="destino" required placeholder="Ej: Quilmes, 1878" value="${esc(datos.destino)}" ${datos.entrega === "mensajeria" ? "" : "disabled"}></label>
+        <label>Mensajería o sucursal preferida (opcional)<input name="sucursal" placeholder="Ej: la más cercana a tu casa" value="${esc(datos.sucursal)}" ${datos.entrega === "mensajeria" ? "" : "disabled"}></label>
+      </div>
+      <fieldset class="grupo">
+        <legend>¿Cómo pagás? <span class="sin-recargo">Sin recargo con tarjetas</span></legend>
+        <div class="pagos">${PAGOS.map(p => `<label class="radio chico"><input type="radio" name="pago" value="${p}" required ${datos.pago === p ? "checked" : ""}><span>${p}</span></label>`).join("")}</div>
+      </fieldset>
       <label>Comentarios (opcional)<textarea name="notas" placeholder="Temática, colores, cantidad de invitados…">${esc(datos.notas)}</textarea></label>
       <button type="submit" class="enviar">Enviar pedido por WhatsApp</button>
       <div id="listo"></div>
@@ -302,28 +340,35 @@ function dibujarCarrito() {
 }
 
 // Conserva lo que el cliente ya escribió cuando se redibuja el carrito
-let formGuardado = { nombre: "", fecha: "", notas: "" };
+const CAMPOS = ["nombre", "fecha", "notas", "entrega", "direccion", "localidad", "referencia", "destino", "sucursal", "pago"];
+let formGuardado = Object.fromEntries(CAMPOS.map(c => [c, ""]));
 function leerForm() {
   const f = $("form");
-  if (f) formGuardado = { nombre: f.nombre.value, fecha: f.fecha.value, notas: f.notas.value };
+  if (f) formGuardado = Object.fromEntries(CAMPOS.map(c => [c, f.elements[c] ? f.elements[c].value : ""]));
   return formGuardado;
 }
 
-function armarMensaje({ nombre, fecha, notas }) {
+function armarMensaje({ nombre, fecha, notas, entrega, direccion, localidad, referencia, destino, sucursal, pago }) {
   const { unidades, total } = resumen();
   const lineas = Object.keys(carrito).map(id => {
     const p = porId[id], n = carrito[id];
     return `• ${n} × ${p.nombre} — ${p.detalle} [${id}] — ${plata(p.precio * n)}${p.oferta ? " (oferta)" : ""}`;
   });
-  let m = `¡Hola Todo Cotillón! 👋 Quiero hacer este pedido:\n\n🛒 *PEDIDO*\n${lineas.join("\n")}\n\n*Total estimado: ${plata(total)}* (${unidades} ${unidades === 1 ? "unidad" : "unidades"})\n\n👤 *Nombre:* ${nombre.trim()}`;
+  let m = `¡Hola Todo Cotillón! 👋 Quiero hacer este pedido:\n\n🛒 *PEDIDO*\n${lineas.join("\n")}\n\n*Total estimado: ${plata(total)}*${entrega === "retiro" ? "" : " + envío"} (${unidades} ${unidades === 1 ? "unidad" : "unidades"})\n\n👤 *Nombre:* ${nombre.trim()}`;
   if (fecha) {
     const d = new Date(fecha + "T12:00:00");
     const txt = d.toLocaleDateString("es-AR", { weekday: "long", day: "numeric", month: "numeric", year: "numeric" });
     m += `\n📅 *Lo necesito para:* ${txt}`;
   }
-  m += `\n🏬 *Entrega:* retiro en el local`;
+  const e = ENTREGAS.find(x => x.id === entrega);
+  m += `\n${e.icono} *Entrega:* ${e.nombre.toLowerCase()}`;
+  if (entrega === "domicilio") m += `\n📍 *Dirección:* ${direccion.trim()}, ${localidad.trim()}${referencia.trim() ? ` (${referencia.trim()})` : ""}`;
+  if (entrega === "mensajeria") m += `\n📍 *Destino:* ${destino.trim()}${sucursal.trim() ? `\n🏤 *Sucursal preferida:* ${sucursal.trim()}` : ""}`;
+  m += `\n💳 *Pago:* ${pago}`;
   if (notas.trim()) m += `\n📝 *Comentarios:* ${notas.trim()}`;
-  m += `\n\n¿Me confirman disponibilidad y precio final? ¡Gracias!`;
+  m += entrega === "retiro"
+    ? `\n\n¿Me confirman disponibilidad y precio final? ¡Gracias!`
+    : `\n\n¿Me confirman disponibilidad, precio final y costo del envío? ¡Gracias!`;
   return m;
 }
 
@@ -368,11 +413,23 @@ $("fondo").addEventListener("click", cerrar);
 document.addEventListener("keydown", e => { if (e.key === "Escape" && $("panel").classList.contains("abierto")) cerrar(); });
 $("buscador").addEventListener("input", e => { busqueda = e.target.value; dibujarCatalogo(); });
 
+// Muestra los datos de envío que corresponden a la forma de entrega elegida
+document.addEventListener("change", e => {
+  if (e.target.name !== "entrega") return;
+  document.querySelectorAll(".extra").forEach(div => {
+    const activo = div.dataset.para === e.target.value;
+    div.hidden = !activo;
+    div.querySelectorAll("input").forEach(i => { i.disabled = !activo; });
+  });
+  leerForm();
+});
+
 document.addEventListener("submit", e => {
   if (e.target.id !== "form") return;
   e.preventDefault();
   const datos = leerForm();
   if (!datos.nombre.trim()) { e.target.nombre.focus(); return; }
+  if (!e.target.reportValidity()) return;
   window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(armarMensaje(datos))}`, "_blank");
   $("listo").innerHTML = `<div class="listo">✅ Se abrió WhatsApp con tu pedido. Solo falta tocar “Enviar”.</div>`;
 });
