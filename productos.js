@@ -150,7 +150,7 @@ const PRODUCTOS = [
     { codigo: "REP-022-01", detalle: "½ kg", precio: 2800 },
     { codigo: "REP-022-02", detalle: "1 kg", precio: 4900 },
   ]},
-  { codigo: "REP-023", nombre: "Crema Ledevit", presentaciones: [
+  { codigo: "REP-023", nombre: "Crema Ledevit", foto: "img/rep-023-crema.webp", presentaciones: [
     { codigo: "REP-023-01", detalle: "½ litro", precio: 5200 },
     { codigo: "REP-023-02", detalle: "1 litro", precio: 9200 },
     { codigo: "REP-023-03", detalle: "Bidón 4,7 litros", precio: 39000 },
