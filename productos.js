@@ -122,7 +122,7 @@ const PRODUCTOS = [
   { codigo: "REP-014", nombre: "Pasta para cubrir torta Ballina", foto: "img/rep-014-pasta-cubrir.webp", presentaciones: [
     { codigo: "REP-014-01", detalle: "½ kg", precio: 4500 },
   ]},
-  { codigo: "REP-015", nombre: "Pasta de goma", presentaciones: [
+  { codigo: "REP-015", nombre: "Pasta de goma", foto: "img/rep-015-pasta-goma.webp", presentaciones: [
     { codigo: "REP-015-01", detalle: "½ kg", precio: 4800 },
   ]},
   { codigo: "REP-016", nombre: "Pastillaje", presentaciones: [
