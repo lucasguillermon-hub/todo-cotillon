@@ -146,7 +146,7 @@ const PRODUCTOS = [
   { codigo: "REP-021", nombre: "Cacao amargo", foto: "img/rep-021-cacao.webp", presentaciones: [
     { codigo: "REP-021-01", detalle: "Bolsa 100 g", precio: 2300 },
   ]},
-  { codigo: "REP-022", nombre: "Dulce de leche", presentaciones: [
+  { codigo: "REP-022", nombre: "Dulce de leche", foto: "img/rep-022-dulce-de-leche.webp", presentaciones: [
     { codigo: "REP-022-01", detalle: "½ kg", precio: 2800 },
     { codigo: "REP-022-02", detalle: "1 kg", precio: 4900 },
   ]},
