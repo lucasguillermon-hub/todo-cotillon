@@ -211,7 +211,7 @@ const PRODUCTOS = [
   { codigo: "GOL-011", nombre: "Bolitas dulces Le.q", presentaciones: [
     { codigo: "GOL-011-01", detalle: "Bolsa 383 g", precio: 4800 },
   ]},
-  { codigo: "GOL-012", nombre: "Chicitos de maíz sabor queso Frit Bom", presentaciones: [
+  { codigo: "GOL-012", nombre: "Chizitos de maíz sabor queso Frit Bom", presentaciones: [
     { codigo: "GOL-012-01", detalle: "Bolsa 400 g", precio: 2500 },
   ]},
   { codigo: "GOL-013", nombre: "Palitos salados Frit Bom", presentaciones: [
