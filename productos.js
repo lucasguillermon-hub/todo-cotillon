@@ -136,7 +136,7 @@ const PRODUCTOS = [
     { codigo: "REP-018-02", detalle: "½ kg · blanco", precio: 7000 },
     { codigo: "REP-018-03", detalle: "½ kg · semiamargo", precio: 7000 },
   ]},
-  { codigo: "REP-019", nombre: "Chocolate Mapsa en sobre", presentaciones: [
+  { codigo: "REP-019", nombre: "Chocolate Mapsa en sobre", foto: "img/rep-019-chocolate-sobre.webp", presentaciones: [
     { codigo: "REP-019-01", detalle: "150 g · blanco", precio: 3200 },
     { codigo: "REP-019-02", detalle: "150 g · semiamargo", precio: 3200 },
   ]},
