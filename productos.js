@@ -107,7 +107,7 @@ const PRODUCTOS = [
   { codigo: "REP-009", nombre: "Marroc con relleno de pasta de maní", foto: "img/rep-009-marroc.webp", presentaciones: [
     { codigo: "REP-009-01", detalle: "Bolsa 100 g", precio: 3000 },
   ]},
-  { codigo: "REP-010", nombre: "Crocante de maní", presentaciones: [
+  { codigo: "REP-010", nombre: "Crocante de maní", foto: "img/rep-010-crocante-mani.webp", presentaciones: [
     { codigo: "REP-010-01", detalle: "Bolsa 100 g", precio: 1200 },
   ]},
   { codigo: "REP-011", nombre: "Merenguitos", presentaciones: [
