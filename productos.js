@@ -91,8 +91,8 @@ const PRODUCTOS = [
     { codigo: "REP-004-01", detalle: "Blanco · 100 g", precio: 1900 },
     { codigo: "REP-004-02", detalle: "Negro · 100 g", precio: 1900 },
   ]},
-  { codigo: "REP-005", nombre: "Chips de chocolate semiamargo Mapsa", presentaciones: [
-    { codigo: "REP-005-01", detalle: "Marca Mapsa", precio: 7500 },
+  { codigo: "REP-005", nombre: "Chips de chocolate semiamargo Mapsa", foto: "img/rep-005-chips-semiamargo.webp", presentaciones: [
+    { codigo: "REP-005-01", detalle: "Bolsa 500 g · marca Mapsa", precio: 7500 },
   ]},
   { codigo: "REP-006", nombre: "Rocklet", presentaciones: [
     { codigo: "REP-006-01", detalle: "Bolsa 100 g", precio: 2200 },
