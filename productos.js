@@ -159,7 +159,7 @@ const PRODUCTOS = [
     { codigo: "REP-024-01", detalle: "Bolsa 100 g", precio: 1700 },
     { codigo: "REP-024-02", detalle: "½ kg", precio: 8000 },
   ]},
-  { codigo: "REP-025", nombre: "Azúcar impalpable Dewey", presentaciones: [
+  { codigo: "REP-025", nombre: "Azúcar impalpable Dewey", foto: "img/rep-025-azucar-impalpable.webp", presentaciones: [
     { codigo: "REP-025-01", detalle: "1 kg", precio: 3000 },
   ]},
   { codigo: "REP-026", nombre: "Vainillín Fleibor", presentaciones: [
