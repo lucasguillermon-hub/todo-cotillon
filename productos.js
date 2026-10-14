@@ -81,7 +81,7 @@ const PRODUCTOS = [
   { codigo: "REP-001", nombre: "Granas de colores", foto: "img/rep-001-granas.webp", presentaciones: [
     { codigo: "REP-001-01", detalle: "Bolsa 100 g", precio: 900 },
   ]},
-  { codigo: "REP-002", nombre: "Grajeas multicolores", presentaciones: [
+  { codigo: "REP-002", nombre: "Grajeas multicolores", foto: "img/rep-002-grajeas.webp", presentaciones: [
     { codigo: "REP-002-01", detalle: "Bolsa 100 g", precio: 1200 },
   ]},
   { codigo: "REP-003", nombre: "Municiones plateadas", presentaciones: [
