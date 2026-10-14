@@ -113,7 +113,7 @@ const PRODUCTOS = [
   { codigo: "REP-011", nombre: "Merenguitos", foto: "img/rep-011-merenguitos.webp", presentaciones: [
     { codigo: "REP-011-01", detalle: "Bolsa 100 g", precio: 1700 },
   ]},
-  { codigo: "REP-012", nombre: "Colorantes en gel", presentaciones: [
+  { codigo: "REP-012", nombre: "Colorantes en gel", foto: "img/rep-012-colorantes-gel.webp", presentaciones: [
     { codigo: "REP-012-01", detalle: "Unidad · colores varios (indicá el color en comentarios)", precio: 2800 },
   ]},
   { codigo: "REP-013", nombre: "Lápices de glacé", presentaciones: [
