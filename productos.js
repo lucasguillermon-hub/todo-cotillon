@@ -155,7 +155,7 @@ const PRODUCTOS = [
     { codigo: "REP-023-02", detalle: "1 litro", precio: 9200 },
     { codigo: "REP-023-03", detalle: "Bidón 4,7 litros", precio: 39000 },
   ]},
-  { codigo: "REP-024", nombre: "Coco rallado", presentaciones: [
+  { codigo: "REP-024", nombre: "Coco rallado", foto: "img/rep-024-coco-rallado.webp", presentaciones: [
     { codigo: "REP-024-01", detalle: "Bolsa 100 g", precio: 1700 },
     { codigo: "REP-024-02", detalle: "½ kg", precio: 8000 },
   ]},
