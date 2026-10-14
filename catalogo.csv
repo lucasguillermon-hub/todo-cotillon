@@ -55,18 +55,70 @@ Repostería,REP-026-01,Vainillín Fleibor,110 cc,2300,undefined,sí
 Repostería,REP-026-02,Vainillín Fleibor,1 litro,5500,undefined,sí
 Repostería,REP-027-01,Polvo de hornear,Bolsa 100 g,1300,undefined,sí
 Repostería,REP-028-01,Bicarbonato de sodio,Bolsa 100 g,1000,undefined,sí
-Golosinas y snacks,GOL-001-01,Chupetines frutales,Bolsa x 25 u.,4200,img/golosinas.webp,sí
-Golosinas y snacks,GOL-001-02,Chupetines frutales,Bolsa x 50 u.,7800,img/golosinas.webp,sí
-Golosinas y snacks,GOL-002-01,Gomitas surtidas,Bolsa 500 g,5100,img/golosinas.webp,sí
-Golosinas y snacks,GOL-002-02,Gomitas surtidas,Bolsa 1 kg,9500,img/golosinas.webp,sí
-Golosinas y snacks,GOL-003-01,Papas fritas clásicas,Bolsa 150 g,2400,img/snacks.webp,sí
-Golosinas y snacks,GOL-003-02,Papas fritas clásicas,Bolsa 300 g,4300,img/snacks.webp,sí
-Golosinas y snacks,GOL-004-01,Palitos salados,Bolsa 500 g,3700,img/snacks.webp,sí
+Golosinas y snacks,GOL-001-01,Alfajor Fulbito,Pack x 4 u.,1000,undefined,sí
+Golosinas y snacks,GOL-001-02,Alfajor Fulbito,Caja x 44 u.,9000,undefined,sí
+Golosinas y snacks,GOL-002-01,Turrón Fulbito,Pack x 5 u.,1000,undefined,sí
+Golosinas y snacks,GOL-002-02,Turrón Fulbito,Caja x 50 u.,8900,undefined,sí
+Golosinas y snacks,GOL-003-01,Bon o Bon,Caja x 30 u.,10900,undefined,sí
+Golosinas y snacks,GOL-004-01,Chupetines Lheritier pelotita,Bolsa x 50 u.,4200,undefined,sí
+Golosinas y snacks,GOL-005-01,Chupetines Lheritier cebollita,Bolsa x 40 u.,2500,undefined,sí
+Golosinas y snacks,GOL-006-01,Caramelos masticables Misky,Bolsa x 50 u. · surtidos,2500,undefined,sí
+Golosinas y snacks,GOL-006-02,Caramelos masticables Misky,Bolsa 800 g · surtidos,7900,undefined,sí
+Golosinas y snacks,GOL-007-01,Caramelos masticables Flimpaf,Bolsa x 70 u.,9000,undefined,sí
+Golosinas y snacks,GOL-008-01,Gomitas masticables,½ kg,5700,undefined,sí
+Golosinas y snacks,GOL-009-01,Malvaviscos,Bolsa 200 g,3000,undefined,sí
+Golosinas y snacks,GOL-010-01,Jugo Baggio manzana,Pack x 18 u. · 125 ml c/u,7000,undefined,sí
+Golosinas y snacks,GOL-011-01,Bolitas dulces Le.q,Bolsa 383 g,4800,undefined,sí
+Golosinas y snacks,GOL-012-01,Chicitos de maíz sabor queso Frit Bom,Bolsa 400 g,2500,undefined,sí
+Golosinas y snacks,GOL-013-01,Palitos salados Frit Bom,Bolsa 800 g,4900,undefined,sí
+Golosinas y snacks,GOL-014-01,Papas fritas Frit Bom,Bolsa 500 g,4800,undefined,sí
 Bebidas,BEB-001-01,Gaseosa cola,"Botella 1,5 L",2800,img/bebidas.webp,sí
 Bebidas,BEB-001-02,Gaseosa cola,"Botella 2,25 L",3800,img/bebidas.webp,sí
 Bebidas,BEB-002-01,Agua mineral sin gas,Botella 2 L,1700,img/bebidas.webp,sí
 Bebidas,BEB-003-01,Jugo de naranja,"Botella 1,5 L",2900,img/bebidas.webp,sí
-Papelería,PAP-001-01,Papel de regalo,Pack x 10 pliegos · infantil,3500,img/papeleria.webp,sí
-Papelería,PAP-002-01,Bolsitas para sorpresitas,Pack x 10 u. · con moño,2800,img/papeleria.webp,sí
+Papelería,PAP-001-01,Bandejas de cartón (precio por unidad),N° 1,30,undefined,sí
+Papelería,PAP-001-02,Bandejas de cartón (precio por unidad),N° 2,40,undefined,sí
+Papelería,PAP-001-03,Bandejas de cartón (precio por unidad),N° 3,50,undefined,sí
+Papelería,PAP-001-04,Bandejas de cartón (precio por unidad),N° 4,60,undefined,sí
+Papelería,PAP-001-05,Bandejas de cartón (precio por unidad),N° 5,70,undefined,sí
+Papelería,PAP-001-06,Bandejas de cartón (precio por unidad),N° 6,80,undefined,sí
+Papelería,PAP-001-07,Bandejas de cartón (precio por unidad),N° 13,70,undefined,sí
+Papelería,PAP-001-08,Bandejas de cartón (precio por unidad),N° 13½,80,undefined,sí
+Papelería,PAP-001-09,Bandejas de cartón (precio por unidad),N° 14,100,undefined,sí
+Papelería,PAP-002-01,Bandeja de cartón para freidora,Unidad,450,undefined,sí
+Papelería,PAP-003-01,Bandejas para microondas (precio por unidad),N° 102,100,undefined,sí
+Papelería,PAP-003-02,Bandejas para microondas (precio por unidad),N° 103,130,undefined,sí
+Papelería,PAP-003-03,Bandejas para microondas (precio por unidad),N° 105,180,undefined,sí
+Papelería,PAP-004-01,Bandejas de fibro fácil,Rectangular para 3 kg,1900,undefined,sí
+Papelería,PAP-004-02,Bandejas de fibro fácil,Redonda 25 cm,1600,undefined,sí
+Papelería,PAP-004-03,Bandejas de fibro fácil,Redonda 28 cm,1800,undefined,sí
+Papelería,PAP-005-01,Pirotines,N° 6 · x 20 u.,500,undefined,sí
+Papelería,PAP-005-02,Pirotines,N° 8 · x 20 u.,800,undefined,sí
+Papelería,PAP-005-03,Pirotines,N° 10 · x 20 u.,1000,undefined,sí
+Papelería,PAP-006-01,Molde de pan dulce (por unidad),100 g,125,undefined,sí
+Papelería,PAP-006-02,Molde de pan dulce (por unidad),¼ kg,140,undefined,sí
+Papelería,PAP-006-03,Molde de pan dulce (por unidad),½ kg,165,undefined,sí
+Papelería,PAP-006-04,Molde de pan dulce (por unidad),¾ kg,190,undefined,sí
+Papelería,PAP-006-05,Molde de pan dulce (por unidad),1 kg,200,undefined,sí
+Papelería,PAP-007-01,Moldes de pan dulce x 10,100 g · x 10 u.,1100,undefined,sí
+Papelería,PAP-007-02,Moldes de pan dulce x 10,¼ kg · x 10 u.,1300,undefined,sí
+Papelería,PAP-007-03,Moldes de pan dulce x 10,½ kg · x 10 u.,1500,undefined,sí
+Papelería,PAP-007-04,Moldes de pan dulce x 10,¾ kg · x 10 u.,1800,undefined,sí
+Papelería,PAP-007-05,Moldes de pan dulce x 10,1 kg · x 10 u.,1900,undefined,sí
+Papelería,PAP-008-01,Platos plásticos blancos,Pack x 50 u.,4800,undefined,sí
+Papelería,PAP-009-01,Servilletas 33 × 33 cm,Pack x 80 u.,1800,undefined,sí
+Papelería,PAP-010-01,Manteles,"Metalizado · 1,37 × 1,83 m",2500,undefined,sí
+Papelería,PAP-010-02,Manteles,"Plástico · 1,20 × 1,80 m",2500,undefined,sí
+Papelería,PAP-011-01,Vasos shot,Pack x 10 u.,1200,undefined,sí
+Papelería,PAP-012-01,Bolsas Kraft,25 × 38 × 12 cm · x 50 u.,9900,undefined,sí
+Papelería,PAP-012-02,Bolsas Kraft,20 × 30 × 9 cm · x 50 u.,6900,undefined,sí
+Papelería,PAP-013-01,Bolsas de cartón colores varios,Pack x 10 u.,2500,undefined,sí
+Papelería,PAP-014-01,Bolsas de polietileno,10 × 15 cm · x 200 u.,2600,undefined,sí
+Papelería,PAP-014-02,Bolsas de polietileno,15 × 25 cm · x 100 u.,2900,undefined,sí
+Papelería,PAP-014-03,Bolsas de polietileno,20 × 30 cm · x 100 u.,3500,undefined,sí
+Papelería,PAP-014-04,Bolsas de polietileno,25 × 35 cm · x 100 u.,4700,undefined,sí
+Papelería,PAP-015-01,Bolsas camiseta económicas,30 × 40 cm · x 100 u.,1900,undefined,sí
+Papelería,PAP-015-02,Bolsas camiseta económicas,40 × 50 cm · x 100 u.,2300,undefined,sí
+Papelería,PAP-015-03,Bolsas camiseta económicas,50 × 60 cm · x 100 u.,7500,undefined,sí
 Temporada y disfraces,TEM-001-01,Kit deco Halloween,"Calabazas, telarañas y guirnalda",15900,img/kit-halloween.webp,sí
 Temporada y disfraces,TEM-002-01,Disfraz infantil de bruja,Talles 4 a 10 · vestido + sombrero,21000,img/disfraces.webp,sí

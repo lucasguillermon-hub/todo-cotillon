@@ -23,7 +23,7 @@ const CATEGORIAS = [
   { codigo: "REP", nombre: "Repostería", icono: "🧁" },
   { codigo: "GOL", nombre: "Golosinas y snacks", icono: "🍬" },
   { codigo: "BEB", nombre: "Bebidas", icono: "🥤" },
-  { codigo: "PAP", nombre: "Papelería", icono: "🎁" },
+  { codigo: "PAP", nombre: "Papelería", icono: "🛍️" },
   { codigo: "TEM", nombre: "Temporada y disfraces", icono: "🎃" },
 ];
 
@@ -173,21 +173,52 @@ const PRODUCTOS = [
     { codigo: "REP-028-01", detalle: "Bolsa 100 g", precio: 1000 },
   ]},
 
-  // ── GOL · Golosinas y snacks ──────────────────────────────────
-  { codigo: "GOL-001", nombre: "Chupetines frutales", foto: "img/golosinas.webp", presentaciones: [
-    { codigo: "GOL-001-01", detalle: "Bolsa x 25 u.", precio: 4200 },
-    { codigo: "GOL-001-02", detalle: "Bolsa x 50 u.", precio: 7800 },
+  // ── GOL · Golosinas y snacks (lista real, 14/10/2026) ──────────────────
+  // Sin foto todavía. Primero golosinas (001–010), después snacks (011–014).
+  { codigo: "GOL-001", nombre: "Alfajor Fulbito", presentaciones: [
+    { codigo: "GOL-001-01", detalle: "Pack x 4 u.", precio: 1000 },
+    { codigo: "GOL-001-02", detalle: "Caja x 44 u.", precio: 9000 },
   ]},
-  { codigo: "GOL-002", nombre: "Gomitas surtidas", foto: "img/golosinas.webp", presentaciones: [
-    { codigo: "GOL-002-01", detalle: "Bolsa 500 g", precio: 5100 },
-    { codigo: "GOL-002-02", detalle: "Bolsa 1 kg", precio: 9500 },
+  { codigo: "GOL-002", nombre: "Turrón Fulbito", presentaciones: [
+    { codigo: "GOL-002-01", detalle: "Pack x 5 u.", precio: 1000 },
+    { codigo: "GOL-002-02", detalle: "Caja x 50 u.", precio: 8900 },
   ]},
-  { codigo: "GOL-003", nombre: "Papas fritas clásicas", foto: "img/snacks.webp", presentaciones: [
-    { codigo: "GOL-003-01", detalle: "Bolsa 150 g", precio: 2400 },
-    { codigo: "GOL-003-02", detalle: "Bolsa 300 g", precio: 4300 },
+  { codigo: "GOL-003", nombre: "Bon o Bon", presentaciones: [
+    { codigo: "GOL-003-01", detalle: "Caja x 30 u.", precio: 10900 },
   ]},
-  { codigo: "GOL-004", nombre: "Palitos salados", foto: "img/snacks.webp", presentaciones: [
-    { codigo: "GOL-004-01", detalle: "Bolsa 500 g", precio: 3700 },
+  { codigo: "GOL-004", nombre: "Chupetines Lheritier pelotita", presentaciones: [
+    { codigo: "GOL-004-01", detalle: "Bolsa x 50 u.", precio: 4200 },
+  ]},
+  { codigo: "GOL-005", nombre: "Chupetines Lheritier cebollita", presentaciones: [
+    { codigo: "GOL-005-01", detalle: "Bolsa x 40 u.", precio: 2500 },
+  ]},
+  { codigo: "GOL-006", nombre: "Caramelos masticables Misky", presentaciones: [
+    { codigo: "GOL-006-01", detalle: "Bolsa x 50 u. · surtidos", precio: 2500 },
+    { codigo: "GOL-006-02", detalle: "Bolsa 800 g · surtidos", precio: 7900 },
+  ]},
+  { codigo: "GOL-007", nombre: "Caramelos masticables Flimpaf", presentaciones: [
+    { codigo: "GOL-007-01", detalle: "Bolsa x 70 u.", precio: 9000 },
+  ]},
+  { codigo: "GOL-008", nombre: "Gomitas masticables", presentaciones: [
+    { codigo: "GOL-008-01", detalle: "½ kg", precio: 5700 },
+  ]},
+  { codigo: "GOL-009", nombre: "Malvaviscos", presentaciones: [
+    { codigo: "GOL-009-01", detalle: "Bolsa 200 g", precio: 3000 },
+  ]},
+  { codigo: "GOL-010", nombre: "Jugo Baggio manzana", presentaciones: [
+    { codigo: "GOL-010-01", detalle: "Pack x 18 u. · 125 ml c/u", precio: 7000 },
+  ]},
+  { codigo: "GOL-011", nombre: "Bolitas dulces Le.q", presentaciones: [
+    { codigo: "GOL-011-01", detalle: "Bolsa 383 g", precio: 4800 },
+  ]},
+  { codigo: "GOL-012", nombre: "Chicitos de maíz sabor queso Frit Bom", presentaciones: [
+    { codigo: "GOL-012-01", detalle: "Bolsa 400 g", precio: 2500 },
+  ]},
+  { codigo: "GOL-013", nombre: "Palitos salados Frit Bom", presentaciones: [
+    { codigo: "GOL-013-01", detalle: "Bolsa 800 g", precio: 4900 },
+  ]},
+  { codigo: "GOL-014", nombre: "Papas fritas Frit Bom", presentaciones: [
+    { codigo: "GOL-014-01", detalle: "Bolsa 500 g", precio: 4800 },
   ]},
 
   // ── BEB · Bebidas ─────────────────────────────────────────────
@@ -202,12 +233,81 @@ const PRODUCTOS = [
     { codigo: "BEB-003-01", detalle: "Botella 1,5 L", precio: 2900 },
   ]},
 
-  // ── PAP · Papelería ───────────────────────────────────────────
-  { codigo: "PAP-001", nombre: "Papel de regalo", foto: "img/papeleria.webp", presentaciones: [
-    { codigo: "PAP-001-01", detalle: "Pack x 10 pliegos · infantil", precio: 3500 },
+  // ── PAP · Papelería (lista real, 14/10/2026) ──────────────────
+  // Sin foto todavía. Pendiente: Vasos de postre x 10 (falta el precio) → será PAP-016.
+  { codigo: "PAP-001", nombre: "Bandejas de cartón (precio por unidad)", presentaciones: [
+    { codigo: "PAP-001-01", detalle: "N° 1", precio: 30 },
+    { codigo: "PAP-001-02", detalle: "N° 2", precio: 40 },
+    { codigo: "PAP-001-03", detalle: "N° 3", precio: 50 },
+    { codigo: "PAP-001-04", detalle: "N° 4", precio: 60 },
+    { codigo: "PAP-001-05", detalle: "N° 5", precio: 70 },
+    { codigo: "PAP-001-06", detalle: "N° 6", precio: 80 },
+    { codigo: "PAP-001-07", detalle: "N° 13", precio: 70 },
+    { codigo: "PAP-001-08", detalle: "N° 13½", precio: 80 },
+    { codigo: "PAP-001-09", detalle: "N° 14", precio: 100 },
   ]},
-  { codigo: "PAP-002", nombre: "Bolsitas para sorpresitas", foto: "img/papeleria.webp", presentaciones: [
-    { codigo: "PAP-002-01", detalle: "Pack x 10 u. · con moño", precio: 2800 },
+  { codigo: "PAP-002", nombre: "Bandeja de cartón para freidora", presentaciones: [
+    { codigo: "PAP-002-01", detalle: "Unidad", precio: 450 },
+  ]},
+  { codigo: "PAP-003", nombre: "Bandejas para microondas (precio por unidad)", presentaciones: [
+    { codigo: "PAP-003-01", detalle: "N° 102", precio: 100 },
+    { codigo: "PAP-003-02", detalle: "N° 103", precio: 130 },
+    { codigo: "PAP-003-03", detalle: "N° 105", precio: 180 },
+  ]},
+  { codigo: "PAP-004", nombre: "Bandejas de fibro fácil", presentaciones: [
+    { codigo: "PAP-004-01", detalle: "Rectangular para 3 kg", precio: 1900 },
+    { codigo: "PAP-004-02", detalle: "Redonda 25 cm", precio: 1600 },
+    { codigo: "PAP-004-03", detalle: "Redonda 28 cm", precio: 1800 },
+  ]},
+  { codigo: "PAP-005", nombre: "Pirotines", presentaciones: [
+    { codigo: "PAP-005-01", detalle: "N° 6 · x 20 u.", precio: 500 },
+    { codigo: "PAP-005-02", detalle: "N° 8 · x 20 u.", precio: 800 },
+    { codigo: "PAP-005-03", detalle: "N° 10 · x 20 u.", precio: 1000 },
+  ]},
+  { codigo: "PAP-006", nombre: "Molde de pan dulce (por unidad)", presentaciones: [
+    { codigo: "PAP-006-01", detalle: "100 g", precio: 125 },
+    { codigo: "PAP-006-02", detalle: "¼ kg", precio: 140 },
+    { codigo: "PAP-006-03", detalle: "½ kg", precio: 165 },
+    { codigo: "PAP-006-04", detalle: "¾ kg", precio: 190 },
+    { codigo: "PAP-006-05", detalle: "1 kg", precio: 200 },
+  ]},
+  { codigo: "PAP-007", nombre: "Moldes de pan dulce x 10", presentaciones: [
+    { codigo: "PAP-007-01", detalle: "100 g · x 10 u.", precio: 1100 },
+    { codigo: "PAP-007-02", detalle: "¼ kg · x 10 u.", precio: 1300 },
+    { codigo: "PAP-007-03", detalle: "½ kg · x 10 u.", precio: 1500 },
+    { codigo: "PAP-007-04", detalle: "¾ kg · x 10 u.", precio: 1800 },
+    { codigo: "PAP-007-05", detalle: "1 kg · x 10 u.", precio: 1900 },
+  ]},
+  { codigo: "PAP-008", nombre: "Platos plásticos blancos", presentaciones: [
+    { codigo: "PAP-008-01", detalle: "Pack x 50 u.", precio: 4800 },
+  ]},
+  { codigo: "PAP-009", nombre: "Servilletas 33 × 33 cm", presentaciones: [
+    { codigo: "PAP-009-01", detalle: "Pack x 80 u.", precio: 1800 },
+  ]},
+  { codigo: "PAP-010", nombre: "Manteles", presentaciones: [
+    { codigo: "PAP-010-01", detalle: "Metalizado · 1,37 × 1,83 m", precio: 2500 },
+    { codigo: "PAP-010-02", detalle: "Plástico · 1,20 × 1,80 m", precio: 2500 },
+  ]},
+  { codigo: "PAP-011", nombre: "Vasos shot", presentaciones: [
+    { codigo: "PAP-011-01", detalle: "Pack x 10 u.", precio: 1200 },
+  ]},
+  { codigo: "PAP-012", nombre: "Bolsas Kraft", presentaciones: [
+    { codigo: "PAP-012-01", detalle: "25 × 38 × 12 cm · x 50 u.", precio: 9900 },
+    { codigo: "PAP-012-02", detalle: "20 × 30 × 9 cm · x 50 u.", precio: 6900 },
+  ]},
+  { codigo: "PAP-013", nombre: "Bolsas de cartón colores varios", presentaciones: [
+    { codigo: "PAP-013-01", detalle: "Pack x 10 u.", precio: 2500 },
+  ]},
+  { codigo: "PAP-014", nombre: "Bolsas de polietileno", presentaciones: [
+    { codigo: "PAP-014-01", detalle: "10 × 15 cm · x 200 u.", precio: 2600 },
+    { codigo: "PAP-014-02", detalle: "15 × 25 cm · x 100 u.", precio: 2900 },
+    { codigo: "PAP-014-03", detalle: "20 × 30 cm · x 100 u.", precio: 3500 },
+    { codigo: "PAP-014-04", detalle: "25 × 35 cm · x 100 u.", precio: 4700 },
+  ]},
+  { codigo: "PAP-015", nombre: "Bolsas camiseta económicas", presentaciones: [
+    { codigo: "PAP-015-01", detalle: "30 × 40 cm · x 100 u.", precio: 1900 },
+    { codigo: "PAP-015-02", detalle: "40 × 50 cm · x 100 u.", precio: 2300 },
+    { codigo: "PAP-015-03", detalle: "50 × 60 cm · x 100 u.", precio: 7500 },
   ]},
 
   // ── TEM · Temporada y disfraces ───────────────────────────────
@@ -232,7 +332,6 @@ const OFERTAS = [
   { codigo: "TEM-001-01", precio: 12900, hasta: "2026-10-31", texto: "Especial Halloween" },
   { codigo: "GLO-001-02", precio: 5200, hasta: "2026-10-31", texto: "Ideal para arcos y guirnaldas" },
   { codigo: "COT-002-01", precio: 9900, hasta: "2026-11-15", texto: "Para fiestas de 15" },
-  { codigo: "GOL-002-02", precio: 7900, hasta: "2026-10-25" },
   { codigo: "BEB-001-02", precio: 3300, hasta: "2026-10-31" },
   { codigo: "DES-002-02", precio: 2300, hasta: "2026-11-30", texto: "Llevá de colores combinados" },
 ];
