@@ -119,7 +119,7 @@ const PRODUCTOS = [
   { codigo: "REP-013", nombre: "Lápices de glacé", presentaciones: [
     { codigo: "REP-013-01", detalle: "Unidad · colores varios (indicá el color en comentarios)", precio: 3000 },
   ]},
-  { codigo: "REP-014", nombre: "Pasta para cubrir torta Ballina", presentaciones: [
+  { codigo: "REP-014", nombre: "Pasta para cubrir torta Ballina", foto: "img/rep-014-pasta-cubrir.webp", presentaciones: [
     { codigo: "REP-014-01", detalle: "½ kg", precio: 4500 },
   ]},
   { codigo: "REP-015", nombre: "Pasta de goma", presentaciones: [
