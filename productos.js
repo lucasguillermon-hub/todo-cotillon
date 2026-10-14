@@ -100,7 +100,7 @@ const PRODUCTOS = [
   { codigo: "REP-007", nombre: "Mini Rocklet", foto: "img/rep-007-mini-rocklet.webp", presentaciones: [
     { codigo: "REP-007-01", detalle: "Bolsa 100 g", precio: 2200 },
   ]},
-  { codigo: "REP-008", nombre: "Micro galletitas bañadas en chocolate", presentaciones: [
+  { codigo: "REP-008", nombre: "Micro galletitas bañadas en chocolate", foto: "img/rep-008-micro-galletitas.webp", presentaciones: [
     { codigo: "REP-008-01", detalle: "Chocolate negro · 100 g", precio: 3500 },
     { codigo: "REP-008-02", detalle: "Chocolate blanco · 100 g", precio: 3500 },
   ]},
