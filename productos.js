@@ -104,7 +104,7 @@ const PRODUCTOS = [
     { codigo: "REP-008-01", detalle: "Chocolate negro · 100 g", precio: 3500 },
     { codigo: "REP-008-02", detalle: "Chocolate blanco · 100 g", precio: 3500 },
   ]},
-  { codigo: "REP-009", nombre: "Marroc con relleno de pasta de maní", presentaciones: [
+  { codigo: "REP-009", nombre: "Marroc con relleno de pasta de maní", foto: "img/rep-009-marroc.webp", presentaciones: [
     { codigo: "REP-009-01", detalle: "Bolsa 100 g", precio: 3000 },
   ]},
   { codigo: "REP-010", nombre: "Crocante de maní", presentaciones: [
