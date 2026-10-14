@@ -116,7 +116,7 @@ const PRODUCTOS = [
   { codigo: "REP-012", nombre: "Colorantes en gel", foto: "img/rep-012-colorantes-gel.webp", presentaciones: [
     { codigo: "REP-012-01", detalle: "Unidad · colores varios (indicá el color en comentarios)", precio: 2800 },
   ]},
-  { codigo: "REP-013", nombre: "Lápices de glacé", presentaciones: [
+  { codigo: "REP-013", nombre: "Lápices de glacé", foto: "img/rep-013-lapices-glace.webp", presentaciones: [
     { codigo: "REP-013-01", detalle: "Unidad · colores varios (indicá el color en comentarios)", precio: 3000 },
   ]},
   { codigo: "REP-014", nombre: "Pasta para cubrir torta Ballina", foto: "img/rep-014-pasta-cubrir.webp", presentaciones: [
