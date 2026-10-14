@@ -78,7 +78,7 @@ const PRODUCTOS = [
 
   // ── REP · Repostería (lista real, 14/10/2026) ──────────────────
   // Sin foto todavía: la tienda muestra un recuadro con el ícono de la categoría.
-  { codigo: "REP-001", nombre: "Granas de colores", presentaciones: [
+  { codigo: "REP-001", nombre: "Granas de colores", foto: "img/rep-001-granas.webp", presentaciones: [
     { codigo: "REP-001-01", detalle: "Bolsa 100 g", precio: 900 },
   ]},
   { codigo: "REP-002", nombre: "Grajeas multicolores", presentaciones: [
