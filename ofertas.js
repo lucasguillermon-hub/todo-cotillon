@@ -41,7 +41,7 @@
         : `<a class="of-btn" href="tienda.html?agregar=${o.codigo}">Lo quiero</a>`;
       return `<article class="of-card">
         <span class="of-pct">-${pct}%</span>
-        <img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy">
+        ${p.foto ? `<img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy">` : `<div class="of-sin-foto" role="img" aria-label="${esc(p.nombre)}">${esc((CATEGORIAS.find(c => c.codigo === p.codigo.slice(0, 3)) || {}).icono || "🎉")}</div>`}
         <div class="of-cuerpo">
           <span class="of-nombre">${esc(p.nombre)}</span>
           <span class="of-det">${esc(pres.detalle)}</span>

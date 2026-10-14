@@ -28,8 +28,7 @@ for (const p of PRODUCTOS) {
   else if (!cats[p.codigo.slice(0, 3)]) errores.push(`${donde}: no existe la categoría ${p.codigo.slice(0, 3)}`);
   unico(p.codigo, "producto");
   if (!p.nombre) errores.push(`${donde}: falta el nombre`);
-  if (!p.foto) errores.push(`${donde}: falta la foto`);
-  else if (!fs.existsSync(path.join(raiz, p.foto))) errores.push(`${donde}: no existe la foto ${p.foto}`);
+  if (p.foto && !fs.existsSync(path.join(raiz, p.foto))) errores.push(`${donde}: no existe la foto ${p.foto}`);
   if (!Array.isArray(p.presentaciones) || !p.presentaciones.length) { errores.push(`${donde}: no tiene presentaciones`); continue; }
   for (const pr of p.presentaciones) {
     const d = `${pr.codigo || "?"} (${p.nombre})`;

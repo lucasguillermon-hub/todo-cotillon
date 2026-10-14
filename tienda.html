@@ -65,6 +65,11 @@ header{background:#FFFFFF;border-bottom:1px solid var(--borde);position:sticky;t
 .opcion{border:2px solid var(--borde);background:#FFFFFF;color:var(--uva);font-size:13px;font-weight:700;padding:5px 10px;border-radius:10px;text-align:left;line-height:1.3}
 .opcion[aria-pressed="true"]{border-color:var(--fucsia);background:var(--rosa);color:var(--fucsia-osc)}
 .producto .codigo{font-size:12px;color:#8A5A86;margin:-8px 0 10px;letter-spacing:.03em}
+.sin-foto{width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,var(--rosa),var(--lila));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.sin-foto span{font-size:64px;line-height:1}
+.sin-foto small{font-size:12px;font-weight:700;color:#8A5A86;letter-spacing:.02em}
+.sin-foto.chico{width:64px;height:64px;aspect-ratio:auto;border-radius:12px}
+.sin-foto.chico span{font-size:30px}
 .vacio-busqueda{font-size:18px;padding:30px 0}
 
 /* Barra inferior con el resumen */
@@ -204,12 +209,17 @@ const sinTildes = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 // La categoría sale de las 3 primeras letras del código (GLO-001 → GLO)
 const visibles = PRODUCTOS.filter(p => !p.oculto);
 const nombreCat = Object.fromEntries(CATEGORIAS.map(c => [c.codigo, c.nombre]));
+// Foto del producto o, si todavía no tiene, un recuadro con el ícono de su categoría
+const iconoCat = Object.fromEntries(CATEGORIAS.map(c => [c.codigo, c.icono || "🎉"]));
+const imagen = (p, alt, chico) => p.foto
+  ? `<img src="${esc(p.foto)}" alt="${esc(alt)}" loading="lazy">`
+  : `<div class="sin-foto${chico ? " chico" : ""}" role="img" aria-label="${esc(alt)}"><span>${iconoCat[p.codigo.slice(0, 3)]}</span>${chico ? "" : "<small>Foto próximamente</small>"}</div>`;
 // porId: código de presentación → datos para el carrito
 // Si la presentación está en oferta hoy, el precio que se cobra es el de oferta
 const ofertas = Ofertas.porCodigo();
 const porId = {};
 for (const p of visibles) for (const pr of p.presentaciones)
-  porId[pr.codigo] = { nombre: p.nombre, foto: p.foto, detalle: pr.detalle, precio: ofertas[pr.codigo] ? ofertas[pr.codigo].precio : pr.precio, normal: pr.precio, oferta: !!ofertas[pr.codigo] };
+  porId[pr.codigo] = { nombre: p.nombre, codigo: p.codigo, foto: p.foto, detalle: pr.detalle, precio: ofertas[pr.codigo] ? ofertas[pr.codigo].precio : pr.precio, normal: pr.precio, oferta: !!ofertas[pr.codigo] };
 // Presentación elegida en cada tarjeta (por defecto, la primera)
 const elegida = Object.fromEntries(visibles.map(p => [p.codigo, p.presentaciones[0].codigo]));
 
@@ -257,7 +267,7 @@ function tarjeta(p) {
   return `
       <article class="producto">
         ${p.presentaciones.some(pr => ofertas[pr.codigo]) ? `<span class="etiqueta-oferta">OFERTA</span>` : ""}
-        <img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy">
+        ${imagen(p, p.nombre)}
         <div class="cuerpo">
           <h3>${esc(p.nombre)}</h3>
           ${opciones}
@@ -299,7 +309,7 @@ function dibujarCarrito() {
   $("panel-cuerpo").innerHTML = ids.map(id => {
     const p = porId[id];
     return `<div class="item">
-      <img src="${esc(p.foto)}" alt="">
+      ${imagen(p, "", true)}
       <div>
         <div class="nombre">${esc(p.nombre)}</div>
         <div class="pres">${esc(p.detalle)} · ${p.oferta ? `<s>${plata(p.normal)}</s> ` : ""}${plata(p.precio)} c/u${p.oferta ? " 🔥 oferta" : ""}</div>

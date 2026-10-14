@@ -1,7 +1,7 @@
 // CATÁLOGO DE LA TIENDA (tienda.html)
 //
 // Códigos:
-//   Categoría     3 letras             GLO
+//   Categoría     3 letras             GLO   (icono: emoji que se muestra cuando un producto no tiene foto)
 //   Producto      categoría + número   GLO-001
 //   Presentación  producto + número    GLO-001-01   ← este es el código que va al carrito y al pedido
 //
@@ -11,20 +11,20 @@
 // - Productos nuevos: siguiente número libre de su categoría. Presentaciones nuevas: siguiente número
 //   libre dentro del producto.
 // - precio: en pesos, sin puntos ni signo (ej: 6500).
-// - foto: archivo dentro de img/.
+// - foto: archivo dentro de img/ (opcional: sin foto se muestra un recuadro con el ícono de la categoría).
 // - Antes de publicar: `node herramientas/catalogo.js` revisa que no haya errores y arma catalogo.csv.
 //
 // Los productos y precios de abajo son DE EJEMPLO: se van reemplazando por los reales.
 
 const CATEGORIAS = [
-  { codigo: "GLO", nombre: "Globos" },
-  { codigo: "COT", nombre: "Cotillón" },
-  { codigo: "DES", nombre: "Descartables" },
-  { codigo: "REP", nombre: "Repostería" },
-  { codigo: "GOL", nombre: "Golosinas y snacks" },
-  { codigo: "BEB", nombre: "Bebidas" },
-  { codigo: "PAP", nombre: "Papelería" },
-  { codigo: "TEM", nombre: "Temporada y disfraces" },
+  { codigo: "GLO", nombre: "Globos", icono: "🎈" },
+  { codigo: "COT", nombre: "Cotillón", icono: "🎉" },
+  { codigo: "DES", nombre: "Descartables", icono: "🥤" },
+  { codigo: "REP", nombre: "Repostería", icono: "🧁" },
+  { codigo: "GOL", nombre: "Golosinas y snacks", icono: "🍬" },
+  { codigo: "BEB", nombre: "Bebidas", icono: "🥤" },
+  { codigo: "PAP", nombre: "Papelería", icono: "🎁" },
+  { codigo: "TEM", nombre: "Temporada y disfraces", icono: "🎃" },
 ];
 
 const PRODUCTOS = [
@@ -76,22 +76,101 @@ const PRODUCTOS = [
     { codigo: "DES-004-01", detalle: "Unidad · 1,20 x 1,80 m", precio: 2400 },
   ]},
 
-  // ── REP · Repostería ──────────────────────────────────────────
-  { codigo: "REP-001", nombre: "Caja para torta con visor", foto: "img/cajas-torta.webp", presentaciones: [
-    { codigo: "REP-001-01", detalle: "25 x 25 x 12 cm · unidad", precio: 1700 },
-    { codigo: "REP-001-02", detalle: "30 x 30 x 15 cm · unidad", precio: 2100 },
+  // ── REP · Repostería (lista real, 14/10/2026) ──────────────────
+  // Sin foto todavía: la tienda muestra un recuadro con el ícono de la categoría.
+  { codigo: "REP-001", nombre: "Granas de colores", presentaciones: [
+    { codigo: "REP-001-01", detalle: "Bolsa 100 g", precio: 900 },
   ]},
-  { codigo: "REP-002", nombre: "Crema vegetal para batir", foto: "img/crema.webp", presentaciones: [
-    { codigo: "REP-002-01", detalle: "Envase 1 L", precio: 5600 },
+  { codigo: "REP-002", nombre: "Grajeas multicolores", presentaciones: [
+    { codigo: "REP-002-01", detalle: "Bolsa 100 g", precio: 1200 },
   ]},
-  { codigo: "REP-003", nombre: "Premezcla bizcochuelo vainilla", foto: "img/bizcochuelos.webp", presentaciones: [
-    { codigo: "REP-003-01", detalle: "Caja 540 g", precio: 3200 },
+  { codigo: "REP-003", nombre: "Municiones plateadas", presentaciones: [
+    { codigo: "REP-003-01", detalle: "Bolsa 100 g", precio: 1200 },
   ]},
-  { codigo: "REP-004", nombre: "Vela número", foto: "img/velas.webp", presentaciones: [
-    { codigo: "REP-004-01", detalle: "Unidad · 0 al 9 · varios colores", precio: 1500 },
+  { codigo: "REP-004", nombre: "Chips de chocolate", presentaciones: [
+    { codigo: "REP-004-01", detalle: "Blanco · 100 g", precio: 1900 },
+    { codigo: "REP-004-02", detalle: "Negro · 100 g", precio: 1900 },
   ]},
-  { codigo: "REP-005", nombre: "Velitas de colores", foto: "img/velas.webp", presentaciones: [
-    { codigo: "REP-005-01", detalle: "Caja x 24 u.", precio: 1300 },
+  { codigo: "REP-005", nombre: "Chips de chocolate semiamargo Mapsa", presentaciones: [
+    { codigo: "REP-005-01", detalle: "Marca Mapsa", precio: 7500 },
+  ]},
+  { codigo: "REP-006", nombre: "Rocklet", presentaciones: [
+    { codigo: "REP-006-01", detalle: "Bolsa 100 g", precio: 2200 },
+  ]},
+  { codigo: "REP-007", nombre: "Mini Rocklet", presentaciones: [
+    { codigo: "REP-007-01", detalle: "Bolsa 100 g", precio: 2200 },
+  ]},
+  { codigo: "REP-008", nombre: "Micro galletitas bañadas en chocolate", presentaciones: [
+    { codigo: "REP-008-01", detalle: "Chocolate negro · 100 g", precio: 3500 },
+    { codigo: "REP-008-02", detalle: "Chocolate blanco · 100 g", precio: 3500 },
+  ]},
+  { codigo: "REP-009", nombre: "Marroc con relleno de pasta de maní", presentaciones: [
+    { codigo: "REP-009-01", detalle: "Bolsa 100 g", precio: 3000 },
+  ]},
+  { codigo: "REP-010", nombre: "Crocante de maní", presentaciones: [
+    { codigo: "REP-010-01", detalle: "Bolsa 100 g", precio: 1200 },
+  ]},
+  { codigo: "REP-011", nombre: "Merenguitos", presentaciones: [
+    { codigo: "REP-011-01", detalle: "Bolsa 100 g", precio: 1700 },
+  ]},
+  { codigo: "REP-012", nombre: "Colorantes en gel", presentaciones: [
+    { codigo: "REP-012-01", detalle: "Unidad · colores varios (indicá el color en comentarios)", precio: 2800 },
+  ]},
+  { codigo: "REP-013", nombre: "Lápices de glacé", presentaciones: [
+    { codigo: "REP-013-01", detalle: "Unidad · colores varios (indicá el color en comentarios)", precio: 3000 },
+  ]},
+  { codigo: "REP-014", nombre: "Pasta para cubrir torta Ballina", presentaciones: [
+    { codigo: "REP-014-01", detalle: "½ kg", precio: 4500 },
+  ]},
+  { codigo: "REP-015", nombre: "Pasta de goma", presentaciones: [
+    { codigo: "REP-015-01", detalle: "½ kg", precio: 4800 },
+  ]},
+  { codigo: "REP-016", nombre: "Pastillaje", presentaciones: [
+    { codigo: "REP-016-01", detalle: "½ kg", precio: 5500 },
+  ]},
+  { codigo: "REP-017", nombre: "Pasta relleno de maní Mapsa", presentaciones: [
+    { codigo: "REP-017-01", detalle: "Envase 450 g", precio: 6800 },
+  ]},
+  { codigo: "REP-018", nombre: "Chocolate Alpino en tableta", presentaciones: [
+    { codigo: "REP-018-01", detalle: "½ kg · leche", precio: 7000 },
+    { codigo: "REP-018-02", detalle: "½ kg · blanco", precio: 7000 },
+    { codigo: "REP-018-03", detalle: "½ kg · semiamargo", precio: 7000 },
+  ]},
+  { codigo: "REP-019", nombre: "Chocolate Mapsa en sobre", presentaciones: [
+    { codigo: "REP-019-01", detalle: "150 g · blanco", precio: 3200 },
+    { codigo: "REP-019-02", detalle: "150 g · semiamargo", precio: 3200 },
+  ]},
+  { codigo: "REP-020", nombre: "Mousse de chocolate", presentaciones: [
+    { codigo: "REP-020-01", detalle: "Bolsa 100 g", precio: 2800 },
+  ]},
+  { codigo: "REP-021", nombre: "Cacao amargo", presentaciones: [
+    { codigo: "REP-021-01", detalle: "Bolsa 100 g", precio: 2300 },
+  ]},
+  { codigo: "REP-022", nombre: "Dulce de leche", presentaciones: [
+    { codigo: "REP-022-01", detalle: "½ kg", precio: 2800 },
+    { codigo: "REP-022-02", detalle: "1 kg", precio: 4900 },
+  ]},
+  { codigo: "REP-023", nombre: "Crema Ledevit", presentaciones: [
+    { codigo: "REP-023-01", detalle: "½ litro", precio: 5200 },
+    { codigo: "REP-023-02", detalle: "1 litro", precio: 9200 },
+    { codigo: "REP-023-03", detalle: "Bidón 4,7 litros", precio: 39000 },
+  ]},
+  { codigo: "REP-024", nombre: "Coco rallado", presentaciones: [
+    { codigo: "REP-024-01", detalle: "Bolsa 100 g", precio: 1700 },
+    { codigo: "REP-024-02", detalle: "½ kg", precio: 8000 },
+  ]},
+  { codigo: "REP-025", nombre: "Azúcar impalpable Dewey", presentaciones: [
+    { codigo: "REP-025-01", detalle: "1 kg", precio: 3000 },
+  ]},
+  { codigo: "REP-026", nombre: "Vainillín Fleibor", presentaciones: [
+    { codigo: "REP-026-01", detalle: "110 cc", precio: 2300 },
+    { codigo: "REP-026-02", detalle: "1 litro", precio: 5500 },
+  ]},
+  { codigo: "REP-027", nombre: "Polvo de hornear", presentaciones: [
+    { codigo: "REP-027-01", detalle: "Bolsa 100 g", precio: 1300 },
+  ]},
+  { codigo: "REP-028", nombre: "Bicarbonato de sodio", presentaciones: [
+    { codigo: "REP-028-01", detalle: "Bolsa 100 g", precio: 1000 },
   ]},
 
   // ── GOL · Golosinas y snacks ──────────────────────────────────
@@ -154,7 +233,6 @@ const OFERTAS = [
   { codigo: "GLO-001-02", precio: 5200, hasta: "2026-10-31", texto: "Ideal para arcos y guirnaldas" },
   { codigo: "COT-002-01", precio: 9900, hasta: "2026-11-15", texto: "Para fiestas de 15" },
   { codigo: "GOL-002-02", precio: 7900, hasta: "2026-10-25" },
-  { codigo: "REP-002-01", precio: 4700, hasta: "2026-10-20" },
   { codigo: "BEB-001-02", precio: 3300, hasta: "2026-10-31" },
   { codigo: "DES-002-02", precio: 2300, hasta: "2026-11-30", texto: "Llevá de colores combinados" },
 ];
