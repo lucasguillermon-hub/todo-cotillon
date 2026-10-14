@@ -110,7 +110,7 @@ const PRODUCTOS = [
   { codigo: "REP-010", nombre: "Crocante de maní", foto: "img/rep-010-crocante-mani.webp", presentaciones: [
     { codigo: "REP-010-01", detalle: "Bolsa 100 g", precio: 1200 },
   ]},
-  { codigo: "REP-011", nombre: "Merenguitos", presentaciones: [
+  { codigo: "REP-011", nombre: "Merenguitos", foto: "img/rep-011-merenguitos.webp", presentaciones: [
     { codigo: "REP-011-01", detalle: "Bolsa 100 g", precio: 1700 },
   ]},
   { codigo: "REP-012", nombre: "Colorantes en gel", presentaciones: [
