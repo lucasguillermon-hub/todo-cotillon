@@ -128,7 +128,7 @@ const PRODUCTOS = [
   { codigo: "REP-016", nombre: "Pastillaje", foto: "img/rep-016-pastillaje.webp", presentaciones: [
     { codigo: "REP-016-01", detalle: "½ kg", precio: 5500 },
   ]},
-  { codigo: "REP-017", nombre: "Pasta relleno de maní Mapsa", presentaciones: [
+  { codigo: "REP-017", nombre: "Pasta relleno de maní Mapsa", foto: "img/rep-017-pasta-mani.webp", presentaciones: [
     { codigo: "REP-017-01", detalle: "Envase 450 g", precio: 6800 },
   ]},
   { codigo: "REP-018", nombre: "Chocolate Alpino en tableta", presentaciones: [
