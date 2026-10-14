@@ -169,7 +169,7 @@ const PRODUCTOS = [
   { codigo: "REP-027", nombre: "Polvo de hornear", foto: "img/rep-027-polvo-hornear.webp", presentaciones: [
     { codigo: "REP-027-01", detalle: "Bolsa 100 g", precio: 1300 },
   ]},
-  { codigo: "REP-028", nombre: "Bicarbonato de sodio", presentaciones: [
+  { codigo: "REP-028", nombre: "Bicarbonato de sodio", foto: "img/rep-028-bicarbonato.webp", presentaciones: [
     { codigo: "REP-028-01", detalle: "Bolsa 100 g", precio: 1000 },
   ]},
 
