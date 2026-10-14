@@ -162,7 +162,7 @@ const PRODUCTOS = [
   { codigo: "REP-025", nombre: "Azúcar impalpable Dewey", foto: "img/rep-025-azucar-impalpable.webp", presentaciones: [
     { codigo: "REP-025-01", detalle: "1 kg", precio: 3000 },
   ]},
-  { codigo: "REP-026", nombre: "Vainillín Fleibor", presentaciones: [
+  { codigo: "REP-026", nombre: "Vainillín Fleibor", foto: "img/rep-026-vainillin.webp", presentaciones: [
     { codigo: "REP-026-01", detalle: "110 cc", precio: 2300 },
     { codigo: "REP-026-02", detalle: "1 litro", precio: 5500 },
   ]},
