@@ -312,7 +312,7 @@ const PRODUCTOS = [
     { codigo: "PAP-007-04", detalle: "¾ kg · x 10 u.", precio: 1800 },
     { codigo: "PAP-007-05", detalle: "1 kg · x 10 u.", precio: 1900 },
   ]},
-  { codigo: "PAP-008", nombre: "Platos plásticos blancos", presentaciones: [
+  { codigo: "PAP-008", nombre: "Platos plásticos blancos", foto: "img/pap-008-platos-plasticos.webp", presentaciones: [
     { codigo: "PAP-008-01", detalle: "Pack x 50 u.", precio: 4800 },
   ]},
   { codigo: "PAP-009", nombre: "Servilletas 33 × 33 cm", presentaciones: [
