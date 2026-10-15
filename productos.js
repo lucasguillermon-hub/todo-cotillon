@@ -249,7 +249,7 @@ const PRODUCTOS = [
     { codigo: "BEB-001-01", detalle: "Pack 2,25 L x 6 u.", precio: 30000 },
     { codigo: "BEB-001-02", detalle: "Pack 1,5 L x 8 u.", precio: 30000 },
   ]},
-  { codigo: "BEB-002", nombre: "Coca-Cola Zero", presentaciones: [
+  { codigo: "BEB-002", nombre: "Coca-Cola Zero", foto: "img/beb-002-coca-cola-zero.webp", presentaciones: [
     { codigo: "BEB-002-01", detalle: "Pack 2,25 L x 6 u.", precio: 30000 },
     { codigo: "BEB-002-02", detalle: "Pack 1,5 L x 8 u.", precio: 30000 },
   ]},
