@@ -253,7 +253,7 @@ const PRODUCTOS = [
     { codigo: "BEB-002-01", detalle: "Pack 2,25 L x 6 u.", precio: 30000 },
     { codigo: "BEB-002-02", detalle: "Pack 1,5 L x 8 u.", precio: 30000 },
   ]},
-  { codigo: "BEB-003", nombre: "Sprite", presentaciones: [
+  { codigo: "BEB-003", nombre: "Sprite", foto: "img/beb-003-sprite.webp", presentaciones: [
     { codigo: "BEB-003-01", detalle: "Pack 2,25 L x 6 u.", precio: 30000 },
     { codigo: "BEB-003-02", detalle: "Pack 1,5 L x 8 u.", precio: 30000 },
   ]},
