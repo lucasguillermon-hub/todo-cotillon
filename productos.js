@@ -305,7 +305,7 @@ const PRODUCTOS = [
     { codigo: "REP-041-02", detalle: "Independiente", precio: 4500 },
     { codigo: "REP-041-03", detalle: "River", precio: null },
   ]},
-  { codigo: "REP-042", nombre: "Cajas para torta blancas", foto: "img/rep-042-cajas-torta-blancas.webp", presentaciones: [
+  { codigo: "REP-042", nombre: "Cajas para torta blancas", foto: "img/rep-042-cajas-torta-blancas-gemini.webp", presentaciones: [
     { codigo: "REP-042-01", detalle: "15 × 15 × 8 cm", precio: 1800 },
     { codigo: "REP-042-02", detalle: "20 × 20 × 10 cm", precio: 2000 },
     { codigo: "REP-042-03", detalle: "25 × 25 × 7 cm", precio: 2000 },
