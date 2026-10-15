@@ -230,7 +230,7 @@ const PRODUCTOS = [
   { codigo: "GOL-010", nombre: "Jugo Baggio manzana", foto: "img/gol-010-jugo-baggio.webp", presentaciones: [
     { codigo: "GOL-010-01", detalle: "Pack x 18 u. · 125 ml c/u", precio: 7000 },
   ]},
-  { codigo: "GOL-011", nombre: "Bolitas dulces Le.q", presentaciones: [
+  { codigo: "GOL-011", nombre: "Bolitas dulces Le.q", foto: "img/gol-011-bolitas-leq.webp", presentaciones: [
     { codigo: "GOL-011-01", detalle: "Bolsa 383 g", precio: 4800 },
   ]},
   { codigo: "GOL-012", nombre: "Chizitos de maíz sabor queso Frit Bom", presentaciones: [
