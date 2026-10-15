@@ -286,7 +286,7 @@ const PRODUCTOS = [
   { codigo: "REP-036", nombre: "Flores de azúcar para tortas y cupcakes", foto: "img/rep-036-flores-azucar-gemini.webp", presentaciones: [
     { codigo: "REP-036-01", detalle: "Pote · peso a confirmar", precio: 3000 },
   ]},
-  { codigo: "REP-037", nombre: "Lámina comestible temática", foto: "img/rep-037-laminas-comestibles.webp", presentaciones: [
+  { codigo: "REP-037", nombre: "Lámina comestible temática", foto: "img/rep-037-lamina-comestible-gemini.webp", presentaciones: [
     { codigo: "REP-037-01", detalle: "Unidad · temática a elegir (indicala en comentarios)", precio: null },
   ]},
   { codigo: "REP-038", nombre: "Topper temático para torta", foto: "img/rep-038-topper-tematico.webp", presentaciones: [
