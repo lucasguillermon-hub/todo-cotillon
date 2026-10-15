@@ -62,7 +62,7 @@ const PRODUCTOS = [
     colores: ["Negro", "Dorado", "Violeta", "Azul", "Rosa gold", "Rojo", "Plateado", "Fucsia", "Verde manzana"], presentaciones: [
     { codigo: "GLO-009-01", detalle: "14 u. · 12 estrellas + 2 corazones", precio: 4500 },
   ]},
-  { codigo: "GLO-010", nombre: "Cortina / lluvia decorativa",
+  { codigo: "GLO-010", nombre: "Cortina / lluvia decorativa", foto: "img/glo-010-cortina-lluvia.webp",
     colores: ["Celeste", "Plata", "Rosa gold", "Oro", "Fucsia", "Negro", "Blanco", "Verde", "Rojo", "Azul Francia", "Lila o violeta"], presentaciones: [
     { codigo: "GLO-010-01", detalle: "2 m de largo × 1 m de ancho", precio: 2600 },
   ]},
