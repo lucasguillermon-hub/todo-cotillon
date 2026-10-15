@@ -263,7 +263,7 @@ const PRODUCTOS = [
     colores: ["Azul y dorado", "Rojo y blanco", "Rosa", "Celeste"], presentaciones: [
     { codigo: "REP-030-01", detalle: "Unidad · número del 0 al 9 (indicalo en comentarios)", precio: null },
   ]},
-  { codigo: "REP-031", nombre: "Velas corazón metalizadas",
+  { codigo: "REP-031", nombre: "Velas corazón metalizadas", foto: "img/rep-031-velas-corazon.webp",
     colores: ["Lila", "Dorado", "Plateado", "Rojo"], presentaciones: [
     { codigo: "REP-031-01", detalle: "Blíster · cantidad a confirmar", precio: null },
   ]},
