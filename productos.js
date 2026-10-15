@@ -224,7 +224,7 @@ const PRODUCTOS = [
   { codigo: "GOL-008", nombre: "Gomitas masticables", foto: "img/gol-008-gomitas.webp", presentaciones: [
     { codigo: "GOL-008-01", detalle: "½ kg", precio: 5700 },
   ]},
-  { codigo: "GOL-009", nombre: "Malvaviscos", presentaciones: [
+  { codigo: "GOL-009", nombre: "Malvaviscos", foto: "img/gol-009-malvaviscos.webp", presentaciones: [
     { codigo: "GOL-009-01", detalle: "Bolsa 200 g", precio: 3000 },
   ]},
   { codigo: "GOL-010", nombre: "Jugo Baggio manzana", presentaciones: [
