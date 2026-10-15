@@ -332,7 +332,7 @@ const PRODUCTOS = [
   { codigo: "PAP-013", nombre: "Bolsas de cartón colores varios", foto: "img/pap-013-bolsas-carton-colores.webp", presentaciones: [
     { codigo: "PAP-013-01", detalle: "Pack x 10 u.", precio: 2500 },
   ]},
-  { codigo: "PAP-014", nombre: "Bolsas de polietileno", presentaciones: [
+  { codigo: "PAP-014", nombre: "Bolsas de polietileno", foto: "img/pap-014-bolsas-polietileno.webp", presentaciones: [
     { codigo: "PAP-014-01", detalle: "10 × 15 cm · x 200 u.", precio: 2600 },
     { codigo: "PAP-014-02", detalle: "15 × 25 cm · x 100 u.", precio: 2900 },
     { codigo: "PAP-014-03", detalle: "20 × 30 cm · x 100 u.", precio: 3500 },
