@@ -322,7 +322,7 @@ const PRODUCTOS = [
     { codigo: "PAP-010-01", detalle: "Metalizado · 1,37 × 1,83 m", precio: 2500 },
     { codigo: "PAP-010-02", detalle: "Plástico · 1,20 × 1,80 m", precio: 2500 },
   ]},
-  { codigo: "PAP-011", nombre: "Vasos shot", presentaciones: [
+  { codigo: "PAP-011", nombre: "Vasos shot", foto: "img/pap-011-vasos-shot.webp", presentaciones: [
     { codigo: "PAP-011-01", detalle: "Pack x 10 u.", precio: 1200 },
   ]},
   { codigo: "PAP-012", nombre: "Bolsas Kraft", presentaciones: [
