@@ -271,7 +271,7 @@ const PRODUCTOS = [
     { codigo: "REP-032-01", detalle: "Metalizadas · unidad", precio: 800 },
     { codigo: "REP-032-02", detalle: "Brillo · unidad", precio: 1000 },
   ]},
-  { codigo: "REP-033", nombre: "Velas espiral metalizadas", foto: "img/rep-033-velas-espiral.webp",
+  { codigo: "REP-033", nombre: "Velas espiral metalizadas", foto: "img/rep-033-velas-espiral-gemini.webp",
     colores: ["Plateado", "Dorado"], presentaciones: [
     { codigo: "REP-033-01", detalle: "Blíster · cantidad a confirmar", precio: 2500 },
   ]},
