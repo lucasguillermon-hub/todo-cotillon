@@ -58,7 +58,7 @@ const PRODUCTOS = [
   { codigo: "GLO-006", nombre: "Frase \"Feliz Cumpleaños\" inflable", foto: "img/glo-006-feliz-cumpleanos.webp", presentaciones: [
     { codigo: "GLO-006-01", detalle: "Unidad · colores surtidos", precio: 2500 },
   ]},
-  { codigo: "GLO-009", nombre: "Set de globos metalizados y transparentes con confeti",
+  { codigo: "GLO-009", nombre: "Set de globos metalizados y transparentes con confeti", foto: "img/glo-009-set-metalizados-confeti.webp",
     colores: ["Negro", "Dorado", "Violeta", "Azul", "Rosa gold", "Rojo", "Plateado", "Fucsia", "Verde manzana"], presentaciones: [
     { codigo: "GLO-009-01", detalle: "14 u. · 12 estrellas + 2 corazones", precio: 4500 },
   ]},
