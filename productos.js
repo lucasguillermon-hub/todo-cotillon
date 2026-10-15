@@ -283,7 +283,7 @@ const PRODUCTOS = [
     colores: ["Verde", "Azul"], presentaciones: [
     { codigo: "REP-035-01", detalle: "Unidad · medida a confirmar", precio: null },
   ]},
-  { codigo: "REP-036", nombre: "Flores de azúcar para tortas y cupcakes", foto: "img/rep-036-flores-azucar.webp", presentaciones: [
+  { codigo: "REP-036", nombre: "Flores de azúcar para tortas y cupcakes", foto: "img/rep-036-flores-azucar-gemini.webp", presentaciones: [
     { codigo: "REP-036-01", detalle: "Pote · peso a confirmar", precio: 3000 },
   ]},
   { codigo: "REP-037", nombre: "Lámina comestible temática", foto: "img/rep-037-laminas-comestibles.webp", presentaciones: [
