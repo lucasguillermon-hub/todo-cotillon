@@ -338,7 +338,7 @@ const PRODUCTOS = [
     { codigo: "PAP-014-03", detalle: "20 × 30 cm · x 100 u.", precio: 3500 },
     { codigo: "PAP-014-04", detalle: "25 × 35 cm · x 100 u.", precio: 4700 },
   ]},
-  { codigo: "PAP-015", nombre: "Bolsas camiseta económicas", presentaciones: [
+  { codigo: "PAP-015", nombre: "Bolsas camiseta económicas", foto: "img/pap-015-bolsas-camiseta.webp", presentaciones: [
     { codigo: "PAP-015-01", detalle: "30 × 40 cm · x 100 u.", precio: 1900 },
     { codigo: "PAP-015-02", detalle: "40 × 50 cm · x 100 u.", precio: 2300 },
     { codigo: "PAP-015-03", detalle: "50 × 60 cm · x 100 u.", precio: 7500 },
