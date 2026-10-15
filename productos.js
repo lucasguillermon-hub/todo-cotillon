@@ -315,7 +315,7 @@ const PRODUCTOS = [
   { codigo: "PAP-008", nombre: "Platos plásticos blancos", foto: "img/pap-008-platos-plasticos.webp", presentaciones: [
     { codigo: "PAP-008-01", detalle: "Pack x 50 u.", precio: 4800 },
   ]},
-  { codigo: "PAP-009", nombre: "Servilletas 33 × 33 cm", presentaciones: [
+  { codigo: "PAP-009", nombre: "Servilletas 33 × 33 cm", foto: "img/pap-009-servilletas.webp", presentaciones: [
     { codigo: "PAP-009-01", detalle: "Pack x 80 u.", precio: 1800 },
   ]},
   { codigo: "PAP-010", nombre: "Manteles", presentaciones: [
