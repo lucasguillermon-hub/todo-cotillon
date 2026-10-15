@@ -288,7 +288,7 @@ const PRODUCTOS = [
     { codigo: "PAP-003-02", detalle: "N° 103", precio: 130 },
     { codigo: "PAP-003-03", detalle: "N° 105", precio: 180 },
   ]},
-  { codigo: "PAP-004", nombre: "Bandejas de fibro fácil", presentaciones: [
+  { codigo: "PAP-004", nombre: "Bandejas de fibro fácil", foto: "img/pap-004-bandejas-fibro-facil.webp", presentaciones: [
     { codigo: "PAP-004-01", detalle: "Rectangular para 3 kg", precio: 1900 },
     { codigo: "PAP-004-02", detalle: "Redonda 25 cm", precio: 1600 },
     { codigo: "PAP-004-03", detalle: "Redonda 28 cm", precio: 1800 },
