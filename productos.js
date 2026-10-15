@@ -325,7 +325,7 @@ const PRODUCTOS = [
   { codigo: "PAP-011", nombre: "Vasos shot", foto: "img/pap-011-vasos-shot.webp", presentaciones: [
     { codigo: "PAP-011-01", detalle: "Pack x 10 u.", precio: 1200 },
   ]},
-  { codigo: "PAP-012", nombre: "Bolsas Kraft", presentaciones: [
+  { codigo: "PAP-012", nombre: "Bolsas Kraft", foto: "img/pap-012-bolsas-kraft.webp", presentaciones: [
     { codigo: "PAP-012-01", detalle: "25 × 38 × 12 cm · x 50 u.", precio: 9900 },
     { codigo: "PAP-012-02", detalle: "20 × 30 × 9 cm · x 50 u.", precio: 6900 },
   ]},
