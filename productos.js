@@ -239,7 +239,7 @@ const PRODUCTOS = [
   { codigo: "GOL-013", nombre: "Palitos salados Frit Bom", foto: "img/gol-013-palitos-salados.webp", presentaciones: [
     { codigo: "GOL-013-01", detalle: "Bolsa 800 g", precio: 4900 },
   ]},
-  { codigo: "GOL-014", nombre: "Papas fritas Frit Bom", presentaciones: [
+  { codigo: "GOL-014", nombre: "Papas fritas Frit Bom", foto: "img/gol-014-papas-fritas.webp", presentaciones: [
     { codigo: "GOL-014-01", detalle: "Bolsa 500 g", precio: 4800 },
   ]},
 
