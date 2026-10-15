@@ -259,7 +259,7 @@ const PRODUCTOS = [
     { codigo: "REP-029-09", detalle: "N° 8", precio: 1500 },
     { codigo: "REP-029-10", detalle: "N° 9", precio: 1500 },
   ]},
-  { codigo: "REP-030", nombre: "Vela número (otros modelos)",
+  { codigo: "REP-030", nombre: "Vela número (otros modelos)", foto: "img/rep-030-vela-numero-otros.webp",
     colores: ["Azul y dorado", "Rojo y blanco", "Rosa", "Celeste"], presentaciones: [
     { codigo: "REP-030-01", detalle: "Unidad · número del 0 al 9 (indicalo en comentarios)", precio: null },
   ]},
