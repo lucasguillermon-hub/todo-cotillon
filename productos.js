@@ -36,7 +36,7 @@ const PRODUCTOS = [
     colores: ["Blanco", "Verde manzana", "Celeste", "Verde oscuro", "Naranja", "Negro", "Rojo", "Rosa", "Amarillo", "Fucsia", "Lila", "Multicolor"], presentaciones: [
     { codigo: "GLO-001-01", detalle: "Bolsa x 10 u.", precio: 900 },
   ]},
-  { codigo: "GLO-002", nombre: "Globos perlados 12\"",
+  { codigo: "GLO-002", nombre: "Globos perlados 12\"", foto: "img/glo-002-globos-perlados.webp",
     colores: ["Oro", "Plata", "Verde manzana", "Salmón", "Celeste", "Blanco", "Negro", "Lila", "Rosa", "Rojo", "Azul Francia"], presentaciones: [
     { codigo: "GLO-002-01", detalle: "Bolsa x 10 u.", precio: 1900 },
   ]},
