@@ -227,7 +227,7 @@ const PRODUCTOS = [
   { codigo: "GOL-009", nombre: "Malvaviscos", foto: "img/gol-009-malvaviscos.webp", presentaciones: [
     { codigo: "GOL-009-01", detalle: "Bolsa 200 g", precio: 3000 },
   ]},
-  { codigo: "GOL-010", nombre: "Jugo Baggio manzana", presentaciones: [
+  { codigo: "GOL-010", nombre: "Jugo Baggio manzana", foto: "img/gol-010-jugo-baggio.webp", presentaciones: [
     { codigo: "GOL-010-01", detalle: "Pack x 18 u. · 125 ml c/u", precio: 7000 },
   ]},
   { codigo: "GOL-011", nombre: "Bolitas dulces Le.q", presentaciones: [
