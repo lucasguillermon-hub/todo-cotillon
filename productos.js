@@ -211,7 +211,7 @@ const PRODUCTOS = [
   { codigo: "GOL-004", nombre: "Chupetines Lheritier pelotita", foto: "img/gol-004-chupetines-pelotita.webp", presentaciones: [
     { codigo: "GOL-004-01", detalle: "Bolsa x 50 u.", precio: 4200 },
   ]},
-  { codigo: "GOL-005", nombre: "Chupetines Lheritier cebollita", presentaciones: [
+  { codigo: "GOL-005", nombre: "Chupetines Lheritier cebollita", foto: "img/gol-005-chupetines-cebollita.webp", presentaciones: [
     { codigo: "GOL-005-01", detalle: "Bolsa x 40 u.", precio: 2500 },
   ]},
   { codigo: "GOL-006", nombre: "Caramelos masticables Misky", presentaciones: [
