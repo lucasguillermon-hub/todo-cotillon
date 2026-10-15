@@ -201,7 +201,7 @@ const PRODUCTOS = [
     { codigo: "GOL-001-01", detalle: "Pack x 4 u.", precio: 1000 },
     { codigo: "GOL-001-02", detalle: "Caja x 44 u.", precio: 9000 },
   ]},
-  { codigo: "GOL-002", nombre: "Turrón Fulbito", presentaciones: [
+  { codigo: "GOL-002", nombre: "Turrón Fulbito", foto: "img/gol-002-turron-fulbito.webp", presentaciones: [
     { codigo: "GOL-002-01", detalle: "Pack x 5 u.", precio: 1000 },
     { codigo: "GOL-002-02", detalle: "Caja x 50 u.", precio: 8900 },
   ]},
