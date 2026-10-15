@@ -267,7 +267,7 @@ const PRODUCTOS = [
     colores: ["Lila", "Dorado", "Plateado", "Rojo"], presentaciones: [
     { codigo: "REP-031-01", detalle: "Blíster · cantidad a confirmar", precio: null },
   ]},
-  { codigo: "REP-032", nombre: "Bengalas para torta", foto: "img/rep-032-bengalas.webp", presentaciones: [
+  { codigo: "REP-032", nombre: "Bengalas para torta", foto: "img/rep-032-bengalas-gemini.webp", presentaciones: [
     { codigo: "REP-032-01", detalle: "Metalizadas · unidad", precio: 800 },
     { codigo: "REP-032-02", detalle: "Brillo · unidad", precio: 1000 },
   ]},
