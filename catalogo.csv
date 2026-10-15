@@ -88,15 +88,15 @@ Bebidas,BEB-003-02,Sprite,"Pack 1,5 L x 8 u.",30000,undefined,sí
 Bebidas,BEB-004-01,7Up,Pack 2 L x 8 u.,28000,undefined,sí
 Bebidas,BEB-005-01,Jugo Baggio exprimido naranja,Pack 1 L x 12 u.,35000,undefined,sí
 Bebidas,BEB-006-01,Agua Villavicencio,Pack 2 L x 6 u.,13000,undefined,sí
-Papelería,PAP-001-01,Bandejas de cartón (precio por unidad),N° 1,30,undefined,sí
-Papelería,PAP-001-02,Bandejas de cartón (precio por unidad),N° 2,40,undefined,sí
-Papelería,PAP-001-03,Bandejas de cartón (precio por unidad),N° 3,50,undefined,sí
-Papelería,PAP-001-04,Bandejas de cartón (precio por unidad),N° 4,60,undefined,sí
-Papelería,PAP-001-05,Bandejas de cartón (precio por unidad),N° 5,70,undefined,sí
-Papelería,PAP-001-06,Bandejas de cartón (precio por unidad),N° 6,80,undefined,sí
-Papelería,PAP-001-07,Bandejas de cartón (precio por unidad),N° 13,70,undefined,sí
-Papelería,PAP-001-08,Bandejas de cartón (precio por unidad),N° 13½,80,undefined,sí
-Papelería,PAP-001-09,Bandejas de cartón (precio por unidad),N° 14,100,undefined,sí
+Papelería,PAP-001-01,Bandejas de cartón (precio por unidad),N° 1,30,img/pap-001-bandejas-carton.webp,sí
+Papelería,PAP-001-02,Bandejas de cartón (precio por unidad),N° 2,40,img/pap-001-bandejas-carton.webp,sí
+Papelería,PAP-001-03,Bandejas de cartón (precio por unidad),N° 3,50,img/pap-001-bandejas-carton.webp,sí
+Papelería,PAP-001-04,Bandejas de cartón (precio por unidad),N° 4,60,img/pap-001-bandejas-carton.webp,sí
+Papelería,PAP-001-05,Bandejas de cartón (precio por unidad),N° 5,70,img/pap-001-bandejas-carton.webp,sí
+Papelería,PAP-001-06,Bandejas de cartón (precio por unidad),N° 6,80,img/pap-001-bandejas-carton.webp,sí
+Papelería,PAP-001-07,Bandejas de cartón (precio por unidad),N° 13,70,img/pap-001-bandejas-carton.webp,sí
+Papelería,PAP-001-08,Bandejas de cartón (precio por unidad),N° 13½,80,img/pap-001-bandejas-carton.webp,sí
+Papelería,PAP-001-09,Bandejas de cartón (precio por unidad),N° 14,100,img/pap-001-bandejas-carton.webp,sí
 Papelería,PAP-002-01,Bandeja de cartón para freidora,Unidad,450,undefined,sí
 Papelería,PAP-003-01,Bandejas para microondas (precio por unidad),N° 102,100,undefined,sí
 Papelería,PAP-003-02,Bandejas para microondas (precio por unidad),N° 103,130,undefined,sí

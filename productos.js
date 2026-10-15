@@ -269,7 +269,7 @@ const PRODUCTOS = [
 
   // ── PAP · Papelería (lista real, 14/10/2026) ──────────────────
   // Sin foto todavía. Pendiente: Vasos de postre x 10 (falta el precio) → será PAP-016.
-  { codigo: "PAP-001", nombre: "Bandejas de cartón (precio por unidad)", presentaciones: [
+  { codigo: "PAP-001", nombre: "Bandejas de cartón (precio por unidad)", foto: "img/pap-001-bandejas-carton.webp", presentaciones: [
     { codigo: "PAP-001-01", detalle: "N° 1", precio: 30 },
     { codigo: "PAP-001-02", detalle: "N° 2", precio: 40 },
     { codigo: "PAP-001-03", detalle: "N° 3", precio: 50 },
