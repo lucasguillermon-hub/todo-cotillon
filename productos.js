@@ -318,7 +318,7 @@ const PRODUCTOS = [
   { codigo: "PAP-009", nombre: "Servilletas 33 × 33 cm", foto: "img/pap-009-servilletas.webp", presentaciones: [
     { codigo: "PAP-009-01", detalle: "Pack x 80 u.", precio: 1800 },
   ]},
-  { codigo: "PAP-010", nombre: "Manteles", presentaciones: [
+  { codigo: "PAP-010", nombre: "Manteles", foto: "img/pap-010-manteles.webp", presentaciones: [
     { codigo: "PAP-010-01", detalle: "Metalizado · 1,37 × 1,83 m", precio: 2500 },
     { codigo: "PAP-010-02", detalle: "Plástico · 1,20 × 1,80 m", precio: 2500 },
   ]},
