@@ -257,7 +257,7 @@ const PRODUCTOS = [
     { codigo: "BEB-003-01", detalle: "Pack 2,25 L x 6 u.", precio: 30000 },
     { codigo: "BEB-003-02", detalle: "Pack 1,5 L x 8 u.", precio: 30000 },
   ]},
-  { codigo: "BEB-004", nombre: "7Up", presentaciones: [
+  { codigo: "BEB-004", nombre: "7Up", foto: "img/beb-004-7up.webp", presentaciones: [
     { codigo: "BEB-004-01", detalle: "Pack 2 L x 8 u.", precio: 28000 },
   ]},
   { codigo: "BEB-005", nombre: "Jugo Baggio exprimido naranja", presentaciones: [
