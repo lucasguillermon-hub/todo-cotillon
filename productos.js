@@ -46,7 +46,7 @@ const PRODUCTOS = [
   { codigo: "GLO-004", nombre: "Globos Party Time 9\"", foto: "img/glo-004-globos-party-time.webp", presentaciones: [
     { codigo: "GLO-004-01", detalle: "Bolsa x 50 u.", precio: 4200 },
   ]},
-  { codigo: "GLO-005", nombre: "Globo número 14\" (36 cm)", presentaciones: [
+  { codigo: "GLO-005", nombre: "Globo número 14\" (36 cm)", foto: "img/glo-005-globo-numero.webp", presentaciones: [
     { codigo: "GLO-005-01", detalle: "N° 3", precio: 1600 },
     { codigo: "GLO-005-02", detalle: "N° 4", precio: 1600 },
     { codigo: "GLO-005-03", detalle: "N° 5", precio: 1600 },
