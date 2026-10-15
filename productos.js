@@ -32,7 +32,7 @@ const PRODUCTOS = [
   // ── GLO · Globos (lista real, 15/10/2026) ─────────────────────
   // Los códigos siguen la numeración de la lista del local. Sin foto todavía.
   // Pendientes (falta el precio): GLO-007 Set de globos corazón 18" x 10 · GLO-008 Set de globos estrella 18" x 10.
-  { codigo: "GLO-001", nombre: "Globos lisos 9\"",
+  { codigo: "GLO-001", nombre: "Globos lisos 9\"", foto: "img/glo-001-globos-lisos.webp",
     colores: ["Blanco", "Verde manzana", "Celeste", "Verde oscuro", "Naranja", "Negro", "Rojo", "Rosa", "Amarillo", "Fucsia", "Lila", "Multicolor"], presentaciones: [
     { codigo: "GLO-001-01", detalle: "Bolsa x 10 u.", precio: 900 },
   ]},

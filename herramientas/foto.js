@@ -19,9 +19,10 @@ const rel = `img/${codigo.toLowerCase()}-${slug}.webp`;
   await sharp(origen).resize(800, 800, { fit: "cover" }).webp({ quality: 82 }).toFile(path.join(raiz, rel));
   const archivo = path.join(raiz, "productos.js");
   let h = fs.readFileSync(archivo, "utf8");
-  const re = new RegExp(`(\\{ codigo: "${codigo}", nombre: (?:"(?:[^"\\\\]|\\\\.)*"))(, foto: "[^"]*")?(, presentaciones)`);
+  // La foto va justo después del nombre (sirve aunque el producto tenga colores u otros campos)
+  const re = new RegExp(`(\\{ codigo: "${codigo}", nombre: (?:"(?:[^"\\\\]|\\\\.)*"))(, foto: "[^"]*")?`);
   if (!re.test(h)) { console.error(`No encontré el producto ${codigo} en productos.js`); process.exit(1); }
-  h = h.replace(re, `$1, foto: "${rel}"$3`);
+  h = h.replace(re, `$1, foto: "${rel}"`);
   fs.writeFileSync(archivo, h);
   const kb = Math.round(fs.statSync(path.join(raiz, rel)).size / 1024);
   console.log(`✓ ${codigo} → ${rel} (${kb} KB)`);
