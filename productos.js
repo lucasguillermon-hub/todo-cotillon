@@ -205,7 +205,7 @@ const PRODUCTOS = [
     { codigo: "GOL-002-01", detalle: "Pack x 5 u.", precio: 1000 },
     { codigo: "GOL-002-02", detalle: "Caja x 50 u.", precio: 8900 },
   ]},
-  { codigo: "GOL-003", nombre: "Bon o Bon", presentaciones: [
+  { codigo: "GOL-003", nombre: "Bon o Bon", foto: "img/gol-003-bon-o-bon.webp", presentaciones: [
     { codigo: "GOL-003-01", detalle: "Caja x 30 u.", precio: 10900 },
   ]},
   { codigo: "GOL-004", nombre: "Chupetines Lheritier pelotita", presentaciones: [
