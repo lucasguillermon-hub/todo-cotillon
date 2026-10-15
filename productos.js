@@ -246,7 +246,7 @@ const PRODUCTOS = [
 
   // ── REP · Repostería, más productos (fotos del local, 15/10/2026) ───────────
   // null = "Precio a confirmar". Sin foto todavía los que no tienen "foto".
-  { codigo: "REP-029", nombre: "Vela número con glitter", foto: "img/rep-029-velas-numero-glitter.webp",
+  { codigo: "REP-029", nombre: "Vela número con glitter", foto: "img/rep-029-vela-numero-glitter-gemini.webp",
     colores: ["Rojo", "Rosa", "Azul", "Rosa con lunares", "Celeste con lunares"], presentaciones: [
     { codigo: "REP-029-01", detalle: "N° 0", precio: 1500 },
     { codigo: "REP-029-02", detalle: "N° 1", precio: 1500 },
