@@ -279,7 +279,7 @@ const PRODUCTOS = [
     colores: ["Dorado", "Plateado", "Azul"], presentaciones: [
     { codigo: "REP-034-01", detalle: "Caja · cantidad a confirmar", precio: 4000 },
   ]},
-  { codigo: "REP-035", nombre: "Velas con glitter",
+  { codigo: "REP-035", nombre: "Velas con glitter", foto: "img/rep-035-velas-glitter.webp",
     colores: ["Verde", "Azul"], presentaciones: [
     { codigo: "REP-035-01", detalle: "Unidad · medida a confirmar", precio: null },
   ]},
