@@ -245,7 +245,7 @@ const PRODUCTOS = [
 
   // ── BEB · Bebidas (lista real, 15/10/2026) ────────────────────
   // Sin foto todavía.
-  { codigo: "BEB-001", nombre: "Coca-Cola", presentaciones: [
+  { codigo: "BEB-001", nombre: "Coca-Cola", foto: "img/beb-001-coca-cola.webp", presentaciones: [
     { codigo: "BEB-001-01", detalle: "Pack 2,25 L x 6 u.", precio: 30000 },
     { codigo: "BEB-001-02", detalle: "Pack 1,5 L x 8 u.", precio: 30000 },
   ]},
