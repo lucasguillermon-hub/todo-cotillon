@@ -218,7 +218,7 @@ const PRODUCTOS = [
     { codigo: "GOL-006-01", detalle: "Bolsa x 50 u. · surtidos", precio: 2500 },
     { codigo: "GOL-006-02", detalle: "Bolsa 800 g · surtidos", precio: 7900 },
   ]},
-  { codigo: "GOL-007", nombre: "Caramelos masticables Flimpaf", presentaciones: [
+  { codigo: "GOL-007", nombre: "Caramelos masticables Flimpaf", foto: "img/gol-007-caramelos-flimpaf.webp", presentaciones: [
     { codigo: "GOL-007-01", detalle: "Bolsa x 70 u.", precio: 9000 },
   ]},
   { codigo: "GOL-008", nombre: "Gomitas masticables", presentaciones: [
