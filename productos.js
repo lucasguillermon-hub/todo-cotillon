@@ -10,7 +10,7 @@
 //   (o se borra) pero su número no se vuelve a usar para otra cosa.
 // - Productos nuevos: siguiente número libre de su categoría. Presentaciones nuevas: siguiente número
 //   libre dentro del producto.
-// - precio: en pesos, sin puntos ni signo (ej: 6500).
+// - precio: en pesos, sin puntos ni signo (ej: 6500). null = "Precio a confirmar" (se puede pedir igual).
 // - colores (opcional): lista de colores; el cliente elige uno en la tarjeta y va al pedido.
 // - foto: archivo dentro de img/ (opcional: sin foto se muestra un recuadro con el ícono de la categoría).
 // - Antes de publicar: `node herramientas/catalogo.js` revisa que no haya errores y arma catalogo.csv.
@@ -67,19 +67,68 @@ const PRODUCTOS = [
     { codigo: "GLO-010-01", detalle: "2 m de largo × 1 m de ancho", precio: 2600 },
   ]},
 
-  // ── COT · Cotillón ────────────────────────────────────────────
-  { codigo: "COT-001", nombre: "Collares hawaianos", foto: "img/cotillon-carioca.webp", presentaciones: [
-    { codigo: "COT-001-01", detalle: "Pack x 12 u. · colores surtidos", precio: 3900 },
+  // ── COT · Cotillón (fotos del local, 15/10/2026) ───────────
+  // null = "Precio a confirmar". Sin foto todavía los que no tienen "foto".
+  { codigo: "COT-001", nombre: "Collar plástico", foto: "img/cot-001-collar-plastico.webp", presentaciones: [
+    { codigo: "COT-001-01", detalle: "Unidad · colores surtidos", precio: 300 },
   ]},
-  { codigo: "COT-002", nombre: "Vinchas luminosas LED", foto: "img/cotillon-carioca.webp", presentaciones: [
-    { codigo: "COT-002-01", detalle: "Pack x 10 u.", precio: 12500 },
+  { codigo: "COT-002", nombre: "Porras flúor", foto: "img/cot-002-porras-fluor.webp", presentaciones: [
+    { codigo: "COT-002-01", detalle: "Unidad", precio: 600 },
   ]},
-  { codigo: "COT-003", nombre: "Antifaces de carnaval", foto: "img/carnaval.webp", presentaciones: [
-    { codigo: "COT-003-01", detalle: "Pack x 12 u. · con plumas", precio: 8900 },
+  { codigo: "COT-003", nombre: "Goma eva picada", foto: "img/cot-003-goma-eva-picada.webp", presentaciones: [
+    { codigo: "COT-003-01", detalle: "Bolsa", precio: 600 },
   ]},
-  { codigo: "COT-004", nombre: "Piñata estrella", foto: "img/pinatas.webp", presentaciones: [
-    { codigo: "COT-004-01", detalle: "Mediana · 45 cm", precio: 14000 },
-    { codigo: "COT-004-02", detalle: "Grande · 60 cm", precio: 19500 },
+  { codigo: "COT-004", nombre: "Bonetes metalizados", foto: "img/cot-004-bonetes.webp",
+    colores: ["Plateado", "Rosa", "Celeste", "Dorado"], presentaciones: [
+    { codigo: "COT-004-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "COT-005", nombre: "Galeras y sombreros de cotillón", foto: "img/cot-005-galeras.webp", presentaciones: [
+    { codigo: "COT-005-01", detalle: "Unidad · modelo a elegir", precio: null },
+  ]},
+  { codigo: "COT-006", nombre: "Cornetas flúor", foto: "img/cot-006-cornetas-fluor.webp", presentaciones: [
+    { codigo: "COT-006-01", detalle: "Unidad · medida a confirmar", precio: null },
+  ]},
+  { codigo: "COT-007", nombre: "Vinchas flúor y luminosas", presentaciones: [
+    { codigo: "COT-007-01", detalle: "Unidad · modelo a elegir", precio: null },
+  ]},
+  { codigo: "COT-008", nombre: "Antifaces (flúor y carnaval)", presentaciones: [
+    { codigo: "COT-008-01", detalle: "Unidad · modelo a elegir", precio: null },
+  ]},
+  { codigo: "COT-009", nombre: "Pelucas de colores", presentaciones: [
+    { codigo: "COT-009-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "COT-010", nombre: "Anteojos flúor", presentaciones: [
+    { codigo: "COT-010-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "COT-011", nombre: "Guantes de red flúor", presentaciones: [
+    { codigo: "COT-011-01", detalle: "Par", precio: null },
+  ]},
+  { codigo: "COT-012", nombre: "Collar hawaiano de flores", presentaciones: [
+    { codigo: "COT-012-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "COT-013", nombre: "Vasos flúor", presentaciones: [
+    { codigo: "COT-013-01", detalle: "Pack · cantidad a confirmar", precio: null },
+  ]},
+  { codigo: "COT-014", nombre: "Banderines flúor", presentaciones: [
+    { codigo: "COT-014-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "COT-015", nombre: "Cornetitas y pitos", foto: "img/cot-015-cotillon-cornetitas.webp", presentaciones: [
+    { codigo: "COT-015-01", detalle: "Bolsa · cantidad a confirmar", precio: null },
+  ]},
+  { codigo: "COT-016", nombre: "Pelotitas de colores", presentaciones: [
+    { codigo: "COT-016-01", detalle: "Bolsa · cantidad a confirmar", precio: null },
+  ]},
+  { codigo: "COT-017", nombre: "Narices de payaso", presentaciones: [
+    { codigo: "COT-017-01", detalle: "Bolsa · cantidad a confirmar", precio: null },
+  ]},
+  { codigo: "COT-018", nombre: "Cotillón de fútbol (metegol)", presentaciones: [
+    { codigo: "COT-018-01", detalle: "Unidad · equipo a elegir", precio: null },
+  ]},
+  { codigo: "COT-019", nombre: "Banderín \"Feliz Cumpleaños\"", presentaciones: [
+    { codigo: "COT-019-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "COT-020", nombre: "Vinchas con flores", presentaciones: [
+    { codigo: "COT-020-01", detalle: "Unidad", precio: null },
   ]},
 
   // ── DES · Descartables ────────────────────────────────────────
@@ -193,6 +242,124 @@ const PRODUCTOS = [
   ]},
   { codigo: "REP-028", nombre: "Bicarbonato de sodio", foto: "img/rep-028-bicarbonato.webp", presentaciones: [
     { codigo: "REP-028-01", detalle: "Bolsa 100 g", precio: 1000 },
+  ]},
+
+  // ── REP · Repostería, más productos (fotos del local, 15/10/2026) ───────────
+  // null = "Precio a confirmar". Sin foto todavía los que no tienen "foto".
+  { codigo: "REP-029", nombre: "Vela número con glitter", foto: "img/rep-029-velas-numero-glitter.webp",
+    colores: ["Rojo", "Rosa", "Azul", "Rosa con lunares", "Celeste con lunares"], presentaciones: [
+    { codigo: "REP-029-01", detalle: "N° 0", precio: 1500 },
+    { codigo: "REP-029-02", detalle: "N° 1", precio: 1500 },
+    { codigo: "REP-029-03", detalle: "N° 2", precio: 1500 },
+    { codigo: "REP-029-04", detalle: "N° 3", precio: 1500 },
+    { codigo: "REP-029-05", detalle: "N° 4", precio: 1500 },
+    { codigo: "REP-029-06", detalle: "N° 5", precio: 1500 },
+    { codigo: "REP-029-07", detalle: "N° 6", precio: 1500 },
+    { codigo: "REP-029-08", detalle: "N° 7", precio: 1500 },
+    { codigo: "REP-029-09", detalle: "N° 8", precio: 1500 },
+    { codigo: "REP-029-10", detalle: "N° 9", precio: 1500 },
+  ]},
+  { codigo: "REP-030", nombre: "Vela número (otros modelos)",
+    colores: ["Azul y dorado", "Rojo y blanco", "Rosa", "Celeste"], presentaciones: [
+    { codigo: "REP-030-01", detalle: "Unidad · número del 0 al 9 (indicalo en comentarios)", precio: null },
+  ]},
+  { codigo: "REP-031", nombre: "Velas corazón metalizadas",
+    colores: ["Lila", "Dorado", "Plateado", "Rojo"], presentaciones: [
+    { codigo: "REP-031-01", detalle: "Blíster · cantidad a confirmar", precio: null },
+  ]},
+  { codigo: "REP-032", nombre: "Bengalas para torta", foto: "img/rep-032-bengalas.webp", presentaciones: [
+    { codigo: "REP-032-01", detalle: "Metalizadas · unidad", precio: 800 },
+    { codigo: "REP-032-02", detalle: "Brillo · unidad", precio: 1000 },
+  ]},
+  { codigo: "REP-033", nombre: "Velas espiral metalizadas", foto: "img/rep-033-velas-espiral.webp",
+    colores: ["Plateado", "Dorado"], presentaciones: [
+    { codigo: "REP-033-01", detalle: "Blíster · cantidad a confirmar", precio: 2500 },
+  ]},
+  { codigo: "REP-034", nombre: "Velas largas con glitter", foto: "img/rep-034-velas-largas-glitter.webp",
+    colores: ["Dorado", "Plateado", "Azul"], presentaciones: [
+    { codigo: "REP-034-01", detalle: "Caja · cantidad a confirmar", precio: 4000 },
+  ]},
+  { codigo: "REP-035", nombre: "Velas con glitter",
+    colores: ["Verde", "Azul"], presentaciones: [
+    { codigo: "REP-035-01", detalle: "Unidad · medida a confirmar", precio: null },
+  ]},
+  { codigo: "REP-036", nombre: "Flores de azúcar para tortas y cupcakes", foto: "img/rep-036-flores-azucar.webp", presentaciones: [
+    { codigo: "REP-036-01", detalle: "Pote · peso a confirmar", precio: 3000 },
+  ]},
+  { codigo: "REP-037", nombre: "Lámina comestible temática", foto: "img/rep-037-laminas-comestibles.webp", presentaciones: [
+    { codigo: "REP-037-01", detalle: "Unidad · temática a elegir (indicala en comentarios)", precio: null },
+  ]},
+  { codigo: "REP-038", nombre: "Topper temático para torta", foto: "img/rep-038-topper-tematico.webp", presentaciones: [
+    { codigo: "REP-038-01", detalle: "Set con palitos · temática a elegir (indicala en comentarios)", precio: null },
+  ]},
+  { codigo: "REP-039", nombre: "Cake topper \"Feliz Cumpleaños\"", foto: "img/rep-039-cake-topper-feliz-cumple.webp",
+    colores: ["Dorado", "Plateado", "Celeste", "Fucsia", "Rosa gold"], presentaciones: [
+    { codigo: "REP-039-01", detalle: "Unidad · modelo a elegir", precio: null },
+  ]},
+  { codigo: "REP-040", nombre: "Esferas decorativas para torta",
+    colores: ["Dorado", "Plateado", "Perladas", "Blancas"], presentaciones: [
+    { codigo: "REP-040-01", detalle: "Bolsa · cantidad a confirmar", precio: null },
+  ]},
+  { codigo: "REP-041", nombre: "Escenario banderín \"Mi cumple\"", foto: "img/rep-041-escenario-banderin.webp", presentaciones: [
+    { codigo: "REP-041-01", detalle: "Boca", precio: null },
+    { codigo: "REP-041-02", detalle: "Independiente", precio: 4500 },
+    { codigo: "REP-041-03", detalle: "River", precio: null },
+  ]},
+  { codigo: "REP-042", nombre: "Cajas para torta blancas", foto: "img/rep-042-cajas-torta-blancas.webp", presentaciones: [
+    { codigo: "REP-042-01", detalle: "15 × 15 × 8 cm", precio: 1800 },
+    { codigo: "REP-042-02", detalle: "20 × 20 × 10 cm", precio: 2000 },
+    { codigo: "REP-042-03", detalle: "25 × 25 × 7 cm", precio: 2000 },
+    { codigo: "REP-042-04", detalle: "30 × 30 × 12 cm", precio: 3000 },
+    { codigo: "REP-042-05", detalle: "Otras medidas (consultá)", precio: null },
+  ]},
+  { codigo: "REP-043", nombre: "Cajas para torta decoradas", foto: "img/rep-043-cajas-torta-decoradas.webp", presentaciones: [
+    { codigo: "REP-043-01", detalle: "Modelo y medida a confirmar", precio: null },
+  ]},
+  { codigo: "REP-044", nombre: "Cajas transparentes para torta con moño",
+    colores: ["Dorado", "Rosa"], presentaciones: [
+    { codigo: "REP-044-01", detalle: "Medida a confirmar", precio: null },
+  ]},
+  { codigo: "REP-045", nombre: "Bolsas para freezer y horno", presentaciones: [
+    { codigo: "REP-045-01", detalle: "Pack x 10", precio: 3300 },
+    { codigo: "REP-045-02", detalle: "Bolsas para hornear Hornal · cantidad a confirmar", precio: null },
+    { codigo: "REP-045-03", detalle: "Bolsas para freezer medianas · cantidad a confirmar", precio: null },
+  ]},
+  { codigo: "REP-046", nombre: "Picos y boquillas de repostería", foto: "img/rep-046-picos-reposteria.webp", presentaciones: [
+    { codigo: "REP-046-01", detalle: "Set · modelo a elegir", precio: null },
+  ]},
+  { codigo: "REP-047", nombre: "Utensilios de silicona (espátulas, cucharas, pinceles)", foto: "img/rep-047-utensilios-silicona.webp", presentaciones: [
+    { codigo: "REP-047-01", detalle: "Unidad · modelo a elegir", precio: null },
+  ]},
+  { codigo: "REP-048", nombre: "Moldes de silicona para bombones y chocolate", foto: "img/rep-048-moldes-silicona.webp", presentaciones: [
+    { codigo: "REP-048-01", detalle: "Unidad · modelo a elegir", precio: null },
+  ]},
+  { codigo: "REP-049", nombre: "Cortantes y set para fondant", presentaciones: [
+    { codigo: "REP-049-01", detalle: "Set · modelo a elegir", precio: null },
+  ]},
+  { codigo: "REP-050", nombre: "Molde multiuso rectangular (asadera / bizcochuelo)", foto: "img/rep-050-molde-multiuso.webp", presentaciones: [
+    { codigo: "REP-050-01", detalle: "Medida a confirmar", precio: null },
+  ]},
+  { codigo: "REP-051", nombre: "Pizzera de aluminio", presentaciones: [
+    { codigo: "REP-051-01", detalle: "Medida a confirmar", precio: null },
+  ]},
+  { codigo: "REP-052", nombre: "Moldes redondos para torta de aluminio", presentaciones: [
+    { codigo: "REP-052-01", detalle: "Medida a confirmar", precio: null },
+  ]},
+  { codigo: "REP-053", nombre: "Molde rosca / savarín de aluminio", foto: "img/rep-053-molde-rosca.webp", presentaciones: [
+    { codigo: "REP-053-01", detalle: "Medida a confirmar", precio: null },
+  ]},
+  { codigo: "REP-054", nombre: "Tartera acanalada", foto: "img/rep-054-tartera.webp", presentaciones: [
+    { codigo: "REP-054-01", detalle: "Medida a confirmar", precio: 7600 },
+  ]},
+  { codigo: "REP-055", nombre: "Molde para muffins x 12 (antiadherente)", foto: "img/rep-055-molde-muffins.webp", presentaciones: [
+    { codigo: "REP-055-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "REP-056", nombre: "Budinera antiadherente", foto: "img/rep-056-budinera.webp", presentaciones: [
+    { codigo: "REP-056-01", detalle: "Medida a confirmar", precio: null },
+  ]},
+  { codigo: "REP-057", nombre: "Molde desmontable antiadherente", foto: "img/rep-057-moldes-desmontables.webp", presentaciones: [
+    { codigo: "REP-057-01", detalle: "Redondo · medida a confirmar", precio: null },
+    { codigo: "REP-057-02", detalle: "Ovalado · medida a confirmar", precio: null },
   ]},
 
   // ── GOL · Golosinas y snacks (lista real, 14/10/2026) ──────────────────
@@ -344,12 +511,24 @@ const PRODUCTOS = [
     { codigo: "PAP-015-03", detalle: "50 × 60 cm · x 100 u.", precio: 7500 },
   ]},
 
-  // ── TEM · Temporada y disfraces ───────────────────────────────
-  { codigo: "TEM-001", nombre: "Kit deco Halloween", foto: "img/kit-halloween.webp", presentaciones: [
-    { codigo: "TEM-001-01", detalle: "Calabazas, telarañas y guirnalda", precio: 15900 },
+  // ── TEM · Temporada y disfraces (fotos del local, 15/10/2026) ───────────
+  // null = "Precio a confirmar". Sin foto todavía los que no tienen "foto".
+  { codigo: "TEM-001", nombre: "Tutú con glitter", foto: "img/tem-001-tutus.webp",
+    colores: ["Negro", "Blanco", "Rojo"], presentaciones: [
+    { codigo: "TEM-001-01", detalle: "Unidad · talle a confirmar", precio: null },
   ]},
-  { codigo: "TEM-002", nombre: "Disfraz infantil de bruja", foto: "img/disfraces.webp", presentaciones: [
-    { codigo: "TEM-002-01", detalle: "Talles 4 a 10 · vestido + sombrero", precio: 21000 },
+  { codigo: "TEM-002", nombre: "Alas de mariposa", foto: "img/tem-002-alas.webp",
+    colores: ["Negra con luz LED", "Roja con luz LED", "Roja", "Rosa"], presentaciones: [
+    { codigo: "TEM-002-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "TEM-003", nombre: "Alas de vaquita de San Antonio", presentaciones: [
+    { codigo: "TEM-003-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "TEM-004", nombre: "Alas de abeja", presentaciones: [
+    { codigo: "TEM-004-01", detalle: "Unidad", precio: null },
+  ]},
+  { codigo: "TEM-005", nombre: "Capa de Drácula infantil", presentaciones: [
+    { codigo: "TEM-005-01", detalle: "Unidad", precio: null },
   ]},
 ];
 
@@ -363,7 +542,5 @@ const PRODUCTOS = [
 // Las de abajo son DE EJEMPLO.
 
 const OFERTAS = [
-  { codigo: "TEM-001-01", precio: 12900, hasta: "2026-10-31", texto: "Especial Halloween" },
-  { codigo: "COT-002-01", precio: 9900, hasta: "2026-11-15", texto: "Para fiestas de 15" },
   { codigo: "DES-002-02", precio: 2300, hasta: "2026-11-30", texto: "Llevá de colores combinados" },
 ];

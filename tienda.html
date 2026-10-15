@@ -73,6 +73,7 @@ header{background:#FFFFFF;border-bottom:1px solid var(--borde);position:sticky;t
 .color-sel{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:800;margin-top:6px}
 .color-sel select{font:inherit;font-size:14px;font-weight:700;padding:8px 10px;border:2px solid var(--borde);border-radius:10px;background:#FFFFFF;color:var(--uva)}
 .color-sel select.falta{border-color:var(--fucsia);box-shadow:0 0 0 3px rgba(194,24,122,.2)}
+.producto .precio.a-confirmar{font-size:16px;color:#8A5A86;font-weight:800}
 .vacio-busqueda{font-size:18px;padding:30px 0}
 
 /* Barra inferior con el resumen */
@@ -262,9 +263,13 @@ function cambiar(id, delta) {
 }
 
 function resumen() {
-  let unidades = 0, total = 0;
-  for (const id in carrito) { unidades += carrito[id]; total += carrito[id] * info(id).precio; }
-  return { unidades, total };
+  let unidades = 0, total = 0, aConfirmar = 0;
+  for (const id in carrito) {
+    unidades += carrito[id];
+    const precio = info(id).precio;
+    if (precio == null) aConfirmar += carrito[id]; else total += carrito[id] * precio;
+  }
+  return { unidades, total, aConfirmar };
 }
 
 function controlCantidad(id) {
@@ -296,7 +301,7 @@ function tarjeta(p) {
           <h3>${esc(p.nombre)}</h3>
           ${opciones}
           ${colores}
-          <span class="precio">${ofertas[sel.codigo] ? `<s>${plata(sel.precio)}</s> ${plata(ofertas[sel.codigo].precio)}` : plata(sel.precio)}</span>
+          ${sel.precio == null ? `<span class="precio a-confirmar">Precio a confirmar</span>` : `<span class="precio">${ofertas[sel.codigo] ? `<s>${plata(sel.precio)}</s> ${plata(ofertas[sel.codigo].precio)}` : plata(sel.precio)}</span>`}
           <span class="codigo">Cód. ${sel.codigo}</span>
           <div class="accion">${clave && carrito[clave] ? controlCantidad(clave) : `<button type="button" class="btn-agregar" data-mas="${sel.codigo}">Agregar</button>`}</div>
         </div>
@@ -325,7 +330,7 @@ function dibujarCatalogo() {
 
 function dibujarCarrito() {
   const ids = Object.keys(carrito);
-  const { total } = resumen();
+  const { total, aConfirmar } = resumen();
   if (!ids.length) {
     $("panel-cuerpo").innerHTML = `<div class="carrito-vacio"><span class="titulo">Tu carrito está vacío</span><span>Agregá productos del catálogo para armar tu pedido.</span><button type="button" class="btn-agregar" style="width:auto;padding:12px 22px" data-cerrar>Ver productos</button></div>`;
     return;
@@ -337,14 +342,15 @@ function dibujarCarrito() {
       ${imagen(p, "", true)}
       <div>
         <div class="nombre">${esc(p.nombre)}</div>
-        <div class="pres">${esc(p.detalle)}${p.color ? ` · color <strong>${esc(p.color)}</strong>` : ""} · ${p.oferta ? `<s>${plata(p.normal)}</s> ` : ""}${plata(p.precio)} c/u${p.oferta ? " 🔥 oferta" : ""}</div>
+        <div class="pres">${esc(p.detalle)}${p.color ? ` · color <strong>${esc(p.color)}</strong>` : ""} · ${p.precio == null ? "precio a confirmar" : `${p.oferta ? `<s>${plata(p.normal)}</s> ` : ""}${plata(p.precio)} c/u${p.oferta ? " 🔥 oferta" : ""}`}</div>
         <div class="pres">Cód. ${separar(id).cod}</div>
-        <div class="fila">${controlCantidad(id)}<span class="subtotal">${plata(p.precio * carrito[id])}</span></div>
+        <div class="fila">${controlCantidad(id)}<span class="subtotal">${p.precio == null ? "A confirmar" : plata(p.precio * carrito[id])}</span></div>
         <button type="button" class="quitar" data-quitar="${id}">Quitar</button>
       </div>
     </div>`;
   }).join("") + `
     <div class="total"><span>Total estimado</span><strong>${plata(total)}</strong></div>
+    ${aConfirmar ? `<p class="aviso">+ ${aConfirmar} ${aConfirmar === 1 ? "producto" : "productos"} con precio a confirmar: te pasamos el precio por WhatsApp.</p>` : ""}
     <p class="aviso">Los precios pueden variar según stock. Te confirmamos el total por WhatsApp antes de prepararlo.</p>
     <form class="form" id="form">
       <h3>Tus datos</h3>
@@ -384,12 +390,12 @@ function leerForm() {
 }
 
 function armarMensaje({ nombre, fecha, notas, entrega, direccion, localidad, referencia, destino, sucursal, pago }) {
-  const { unidades, total } = resumen();
+  const { unidades, total, aConfirmar } = resumen();
   const lineas = Object.keys(carrito).map(id => {
     const p = info(id), n = carrito[id];
-    return `• ${n} × ${p.nombre} — ${p.detalle}${p.color ? ` · color ${p.color}` : ""} [${separar(id).cod}] — ${plata(p.precio * n)}${p.oferta ? " (oferta)" : ""}`;
+    return `• ${n} × ${p.nombre} — ${p.detalle}${p.color ? ` · color ${p.color}` : ""} [${separar(id).cod}] — ${p.precio == null ? "precio a confirmar" : plata(p.precio * n) + (p.oferta ? " (oferta)" : "")}`;
   });
-  let m = `¡Hola Todo Cotillón! 👋 Quiero hacer este pedido:\n\n🛒 *PEDIDO*\n${lineas.join("\n")}\n\n*Total estimado: ${plata(total)}*${entrega === "retiro" ? "" : " + envío"} (${unidades} ${unidades === 1 ? "unidad" : "unidades"})\n\n👤 *Nombre:* ${nombre.trim()}`;
+  let m = `¡Hola Todo Cotillón! 👋 Quiero hacer este pedido:\n\n🛒 *PEDIDO*\n${lineas.join("\n")}\n\n*Total estimado: ${plata(total)}*${aConfirmar ? " + productos con precio a confirmar" : ""}${entrega === "retiro" ? "" : " + envío"} (${unidades} ${unidades === 1 ? "unidad" : "unidades"})\n\n👤 *Nombre:* ${nombre.trim()}`;
   if (fecha) {
     const d = new Date(fecha + "T12:00:00");
     const txt = d.toLocaleDateString("es-AR", { weekday: "long", day: "numeric", month: "numeric", year: "numeric" });
@@ -408,11 +414,11 @@ function armarMensaje({ nombre, fecha, notas, entrega, direccion, localidad, ref
 }
 
 function actualizar() {
-  const { unidades, total } = resumen();
+  const { unidades, total, aConfirmar } = resumen();
   $("contador").textContent = unidades;
   $("barra").classList.toggle("visible", unidades > 0);
   $("barra-cant").textContent = `Ver carrito · ${unidades} ${unidades === 1 ? "producto" : "productos"}`;
-  $("barra-total").textContent = plata(total);
+  $("barra-total").textContent = plata(total) + (aConfirmar ? " + a confirmar" : "");
   dibujarCatalogo();
   if ($("panel").classList.contains("abierto")) dibujarCarrito();
 }

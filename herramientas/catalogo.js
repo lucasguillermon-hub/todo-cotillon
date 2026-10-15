@@ -36,8 +36,8 @@ for (const p of PRODUCTOS) {
     if (!new RegExp(`^${p.codigo}-\\d{2}$`).test(pr.codigo || "")) errores.push(`${d}: el código de presentación debe ser ${p.codigo}-01, -02…`);
     unico(pr.codigo, "presentación");
     if (!pr.detalle) errores.push(`${d}: falta el detalle de la presentación`);
-    if (!Number.isInteger(pr.precio) || pr.precio <= 0) errores.push(`${d}: precio inválido (${pr.precio}); va en pesos, sin puntos`);
-    filas.push([cats[p.codigo.slice(0, 3)] || "?", pr.codigo, p.nombre, pr.detalle, pr.precio, p.foto, p.oculto ? "no" : "sí"]);
+    if (pr.precio !== null && (!Number.isInteger(pr.precio) || pr.precio <= 0)) errores.push(`${d}: precio inválido (${pr.precio}); va en pesos, sin puntos, o null si está a confirmar`);
+    filas.push([cats[p.codigo.slice(0, 3)] || "?", pr.codigo, p.nombre, pr.detalle, pr.precio === null ? "a confirmar" : pr.precio, p.foto, p.oculto ? "no" : "sí"]);
   }
 }
 
