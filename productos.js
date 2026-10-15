@@ -221,7 +221,7 @@ const PRODUCTOS = [
   { codigo: "GOL-007", nombre: "Caramelos masticables Flimpaf", foto: "img/gol-007-caramelos-flimpaf.webp", presentaciones: [
     { codigo: "GOL-007-01", detalle: "Bolsa x 70 u.", precio: 9000 },
   ]},
-  { codigo: "GOL-008", nombre: "Gomitas masticables", presentaciones: [
+  { codigo: "GOL-008", nombre: "Gomitas masticables", foto: "img/gol-008-gomitas.webp", presentaciones: [
     { codigo: "GOL-008-01", detalle: "½ kg", precio: 5700 },
   ]},
   { codigo: "GOL-009", nombre: "Malvaviscos", presentaciones: [
