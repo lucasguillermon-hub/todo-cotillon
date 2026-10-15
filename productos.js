@@ -293,7 +293,7 @@ const PRODUCTOS = [
     { codigo: "PAP-004-02", detalle: "Redonda 25 cm", precio: 1600 },
     { codigo: "PAP-004-03", detalle: "Redonda 28 cm", precio: 1800 },
   ]},
-  { codigo: "PAP-005", nombre: "Pirotines", presentaciones: [
+  { codigo: "PAP-005", nombre: "Pirotines", foto: "img/pap-005-pirotines.webp", presentaciones: [
     { codigo: "PAP-005-01", detalle: "N° 6 · x 20 u.", precio: 500 },
     { codigo: "PAP-005-02", detalle: "N° 8 · x 20 u.", precio: 800 },
     { codigo: "PAP-005-03", detalle: "N° 10 · x 20 u.", precio: 1000 },
