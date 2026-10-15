@@ -43,7 +43,7 @@ const PRODUCTOS = [
   { codigo: "GLO-003", nombre: "Piñata globo grande 36\"", foto: "img/glo-003-pinata-globo.webp", presentaciones: [
     { codigo: "GLO-003-01", detalle: "Unidad", precio: 3500 },
   ]},
-  { codigo: "GLO-004", nombre: "Globos Party Time 9\"", presentaciones: [
+  { codigo: "GLO-004", nombre: "Globos Party Time 9\"", foto: "img/glo-004-globos-party-time.webp", presentaciones: [
     { codigo: "GLO-004-01", detalle: "Bolsa x 50 u.", precio: 4200 },
   ]},
   { codigo: "GLO-005", nombre: "Globo número 14\" (36 cm)", presentaciones: [
