@@ -236,7 +236,7 @@ const PRODUCTOS = [
   { codigo: "GOL-012", nombre: "Chizitos de maíz sabor queso Frit Bom", foto: "img/gol-012-chizitos.webp", presentaciones: [
     { codigo: "GOL-012-01", detalle: "Bolsa 400 g", precio: 2500 },
   ]},
-  { codigo: "GOL-013", nombre: "Palitos salados Frit Bom", presentaciones: [
+  { codigo: "GOL-013", nombre: "Palitos salados Frit Bom", foto: "img/gol-013-palitos-salados.webp", presentaciones: [
     { codigo: "GOL-013-01", detalle: "Bolsa 800 g", precio: 4900 },
   ]},
   { codigo: "GOL-014", nombre: "Papas fritas Frit Bom", presentaciones: [
