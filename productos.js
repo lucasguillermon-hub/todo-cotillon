@@ -289,7 +289,7 @@ const PRODUCTOS = [
   { codigo: "REP-037", nombre: "Lámina comestible temática", foto: "img/rep-037-lamina-comestible-gemini.webp", presentaciones: [
     { codigo: "REP-037-01", detalle: "Unidad · temática a elegir (indicala en comentarios)", precio: null },
   ]},
-  { codigo: "REP-038", nombre: "Topper temático para torta", foto: "img/rep-038-topper-tematico.webp", presentaciones: [
+  { codigo: "REP-038", nombre: "Topper temático para torta", foto: "img/rep-038-topper-tematico-gemini.webp", presentaciones: [
     { codigo: "REP-038-01", detalle: "Set con palitos · temática a elegir (indicala en comentarios)", precio: null },
   ]},
   { codigo: "REP-039", nombre: "Cake topper \"Feliz Cumpleaños\"", foto: "img/rep-039-cake-topper-feliz-cumple.webp",
