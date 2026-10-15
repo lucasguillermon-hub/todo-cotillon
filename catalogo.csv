@@ -79,10 +79,15 @@ Golosinas y snacks,GOL-011-01,Bolitas dulces Le.q,Bolsa 383 g,4800,img/gol-011-b
 Golosinas y snacks,GOL-012-01,Chizitos de maíz sabor queso Frit Bom,Bolsa 400 g,2500,img/gol-012-chizitos.webp,sí
 Golosinas y snacks,GOL-013-01,Palitos salados Frit Bom,Bolsa 800 g,4900,img/gol-013-palitos-salados.webp,sí
 Golosinas y snacks,GOL-014-01,Papas fritas Frit Bom,Bolsa 500 g,4800,img/gol-014-papas-fritas.webp,sí
-Bebidas,BEB-001-01,Gaseosa cola,"Botella 1,5 L",2800,img/bebidas.webp,sí
-Bebidas,BEB-001-02,Gaseosa cola,"Botella 2,25 L",3800,img/bebidas.webp,sí
-Bebidas,BEB-002-01,Agua mineral sin gas,Botella 2 L,1700,img/bebidas.webp,sí
-Bebidas,BEB-003-01,Jugo de naranja,"Botella 1,5 L",2900,img/bebidas.webp,sí
+Bebidas,BEB-001-01,Coca-Cola,"Pack 2,25 L x 6 u.",30000,undefined,sí
+Bebidas,BEB-001-02,Coca-Cola,"Pack 1,5 L x 8 u.",30000,undefined,sí
+Bebidas,BEB-002-01,Coca-Cola Zero,"Pack 2,25 L x 6 u.",30000,undefined,sí
+Bebidas,BEB-002-02,Coca-Cola Zero,"Pack 1,5 L x 8 u.",30000,undefined,sí
+Bebidas,BEB-003-01,Sprite,"Pack 2,25 L x 6 u.",30000,undefined,sí
+Bebidas,BEB-003-02,Sprite,"Pack 1,5 L x 8 u.",30000,undefined,sí
+Bebidas,BEB-004-01,7Up,Pack 2 L x 8 u.,28000,undefined,sí
+Bebidas,BEB-005-01,Jugo Baggio exprimido naranja,Pack 1 L x 12 u.,35000,undefined,sí
+Bebidas,BEB-006-01,Agua Villavicencio,Pack 2 L x 6 u.,13000,undefined,sí
 Papelería,PAP-001-01,Bandejas de cartón (precio por unidad),N° 1,30,undefined,sí
 Papelería,PAP-001-02,Bandejas de cartón (precio por unidad),N° 2,40,undefined,sí
 Papelería,PAP-001-03,Bandejas de cartón (precio por unidad),N° 3,50,undefined,sí

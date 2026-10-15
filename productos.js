@@ -243,16 +243,28 @@ const PRODUCTOS = [
     { codigo: "GOL-014-01", detalle: "Bolsa 500 g", precio: 4800 },
   ]},
 
-  // ── BEB · Bebidas ─────────────────────────────────────────────
-  { codigo: "BEB-001", nombre: "Gaseosa cola", foto: "img/bebidas.webp", presentaciones: [
-    { codigo: "BEB-001-01", detalle: "Botella 1,5 L", precio: 2800 },
-    { codigo: "BEB-001-02", detalle: "Botella 2,25 L", precio: 3800 },
+  // ── BEB · Bebidas (lista real, 15/10/2026) ────────────────────
+  // Sin foto todavía.
+  { codigo: "BEB-001", nombre: "Coca-Cola", presentaciones: [
+    { codigo: "BEB-001-01", detalle: "Pack 2,25 L x 6 u.", precio: 30000 },
+    { codigo: "BEB-001-02", detalle: "Pack 1,5 L x 8 u.", precio: 30000 },
   ]},
-  { codigo: "BEB-002", nombre: "Agua mineral sin gas", foto: "img/bebidas.webp", presentaciones: [
-    { codigo: "BEB-002-01", detalle: "Botella 2 L", precio: 1700 },
+  { codigo: "BEB-002", nombre: "Coca-Cola Zero", presentaciones: [
+    { codigo: "BEB-002-01", detalle: "Pack 2,25 L x 6 u.", precio: 30000 },
+    { codigo: "BEB-002-02", detalle: "Pack 1,5 L x 8 u.", precio: 30000 },
   ]},
-  { codigo: "BEB-003", nombre: "Jugo de naranja", foto: "img/bebidas.webp", presentaciones: [
-    { codigo: "BEB-003-01", detalle: "Botella 1,5 L", precio: 2900 },
+  { codigo: "BEB-003", nombre: "Sprite", presentaciones: [
+    { codigo: "BEB-003-01", detalle: "Pack 2,25 L x 6 u.", precio: 30000 },
+    { codigo: "BEB-003-02", detalle: "Pack 1,5 L x 8 u.", precio: 30000 },
+  ]},
+  { codigo: "BEB-004", nombre: "7Up", presentaciones: [
+    { codigo: "BEB-004-01", detalle: "Pack 2 L x 8 u.", precio: 28000 },
+  ]},
+  { codigo: "BEB-005", nombre: "Jugo Baggio exprimido naranja", presentaciones: [
+    { codigo: "BEB-005-01", detalle: "Pack 1 L x 12 u.", precio: 35000 },
+  ]},
+  { codigo: "BEB-006", nombre: "Agua Villavicencio", presentaciones: [
+    { codigo: "BEB-006-01", detalle: "Pack 2 L x 6 u.", precio: 13000 },
   ]},
 
   // ── PAP · Papelería (lista real, 14/10/2026) ──────────────────
@@ -353,6 +365,5 @@ const PRODUCTOS = [
 const OFERTAS = [
   { codigo: "TEM-001-01", precio: 12900, hasta: "2026-10-31", texto: "Especial Halloween" },
   { codigo: "COT-002-01", precio: 9900, hasta: "2026-11-15", texto: "Para fiestas de 15" },
-  { codigo: "BEB-001-02", precio: 3300, hasta: "2026-10-31" },
   { codigo: "DES-002-02", precio: 2300, hasta: "2026-11-30", texto: "Llevá de colores combinados" },
 ];
