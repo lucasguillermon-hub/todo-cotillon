@@ -197,7 +197,7 @@ const PRODUCTOS = [
 
   // ── GOL · Golosinas y snacks (lista real, 14/10/2026) ──────────────────
   // Sin foto todavía. Primero golosinas (001–010), después snacks (011–014).
-  { codigo: "GOL-001", nombre: "Alfajor Fulbito", presentaciones: [
+  { codigo: "GOL-001", nombre: "Alfajor Fulbito", foto: "img/gol-001-alfajor-fulbito.webp", presentaciones: [
     { codigo: "GOL-001-01", detalle: "Pack x 4 u.", precio: 1000 },
     { codigo: "GOL-001-02", detalle: "Caja x 44 u.", precio: 9000 },
   ]},
