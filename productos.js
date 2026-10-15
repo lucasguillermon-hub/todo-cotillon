@@ -263,7 +263,7 @@ const PRODUCTOS = [
   { codigo: "BEB-005", nombre: "Jugo Baggio exprimido naranja", foto: "img/beb-005-jugo-baggio-naranja.webp", presentaciones: [
     { codigo: "BEB-005-01", detalle: "Pack 1 L x 12 u.", precio: 35000 },
   ]},
-  { codigo: "BEB-006", nombre: "Agua Villavicencio", presentaciones: [
+  { codigo: "BEB-006", nombre: "Agua Villavicencio", foto: "img/beb-006-agua-villavicencio.webp", presentaciones: [
     { codigo: "BEB-006-01", detalle: "Pack 2 L x 6 u.", precio: 13000 },
   ]},
 
