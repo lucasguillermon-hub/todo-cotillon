@@ -296,7 +296,7 @@ const PRODUCTOS = [
     colores: ["Dorado", "Plateado", "Celeste", "Fucsia", "Rosa gold"], presentaciones: [
     { codigo: "REP-039-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
-  { codigo: "REP-040", nombre: "Esferas decorativas para torta",
+  { codigo: "REP-040", nombre: "Esferas decorativas para torta", foto: "img/rep-040-esferas-decorativas.webp",
     colores: ["Dorado", "Plateado", "Perladas", "Blancas"], presentaciones: [
     { codigo: "REP-040-01", detalle: "Bolsa · cantidad a confirmar", precio: null },
   ]},
