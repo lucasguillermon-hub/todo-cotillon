@@ -292,7 +292,7 @@ const PRODUCTOS = [
   { codigo: "REP-038", nombre: "Topper temático para torta", foto: "img/rep-038-topper-tematico-gemini.webp", presentaciones: [
     { codigo: "REP-038-01", detalle: "Set con palitos · temática a elegir (indicala en comentarios)", precio: null },
   ]},
-  { codigo: "REP-039", nombre: "Cake topper \"Feliz Cumpleaños\"", foto: "img/rep-039-cake-topper-feliz-cumple.webp",
+  { codigo: "REP-039", nombre: "Cake topper \"Feliz Cumpleaños\"", foto: "img/rep-039-cake-topper-gemini.webp",
     colores: ["Dorado", "Plateado", "Celeste", "Fucsia", "Rosa gold"], presentaciones: [
     { codigo: "REP-039-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
