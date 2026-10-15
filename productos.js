@@ -283,7 +283,7 @@ const PRODUCTOS = [
   { codigo: "PAP-002", nombre: "Bandeja de cartón para freidora", foto: "img/pap-002-bandeja-freidora.webp", presentaciones: [
     { codigo: "PAP-002-01", detalle: "Unidad", precio: 450 },
   ]},
-  { codigo: "PAP-003", nombre: "Bandejas para microondas (precio por unidad)", presentaciones: [
+  { codigo: "PAP-003", nombre: "Bandejas para microondas (precio por unidad)", foto: "img/pap-003-bandejas-microondas.webp", presentaciones: [
     { codigo: "PAP-003-01", detalle: "N° 102", precio: 100 },
     { codigo: "PAP-003-02", detalle: "N° 103", precio: 130 },
     { codigo: "PAP-003-03", detalle: "N° 105", precio: 180 },
