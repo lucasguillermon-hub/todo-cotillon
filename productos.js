@@ -300,7 +300,7 @@ const PRODUCTOS = [
     colores: ["Dorado", "Plateado", "Perladas", "Blancas"], presentaciones: [
     { codigo: "REP-040-01", detalle: "Bolsa · cantidad a confirmar", precio: null },
   ]},
-  { codigo: "REP-041", nombre: "Escenario banderín \"Mi cumple\"", foto: "img/rep-041-escenario-banderin.webp", presentaciones: [
+  { codigo: "REP-041", nombre: "Escenario banderín \"Mi cumple\"", foto: "img/rep-041-escenario-banderin-gemini.webp", presentaciones: [
     { codigo: "REP-041-01", detalle: "Boca", precio: null },
     { codigo: "REP-041-02", detalle: "Independiente", precio: 4500 },
     { codigo: "REP-041-03", detalle: "River", precio: null },
