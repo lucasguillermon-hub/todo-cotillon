@@ -70,6 +70,9 @@ header{background:#FFFFFF;border-bottom:1px solid var(--borde);position:sticky;t
 .sin-foto small{font-size:12px;font-weight:700;color:#8A5A86;letter-spacing:.02em}
 .sin-foto.chico{width:64px;height:64px;aspect-ratio:auto;border-radius:12px}
 .sin-foto.chico span{font-size:30px}
+.color-sel{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:800;margin-top:6px}
+.color-sel select{font:inherit;font-size:14px;font-weight:700;padding:8px 10px;border:2px solid var(--borde);border-radius:10px;background:#FFFFFF;color:var(--uva)}
+.color-sel select.falta{border-color:var(--fucsia);box-shadow:0 0 0 3px rgba(194,24,122,.2)}
 .vacio-busqueda{font-size:18px;padding:30px 0}
 
 /* Barra inferior con el resumen */
@@ -219,14 +222,30 @@ const imagen = (p, alt, chico) => p.foto
 const ofertas = Ofertas.porCodigo();
 const porId = {};
 for (const p of visibles) for (const pr of p.presentaciones)
-  porId[pr.codigo] = { nombre: p.nombre, codigo: p.codigo, foto: p.foto, detalle: pr.detalle, precio: ofertas[pr.codigo] ? ofertas[pr.codigo].precio : pr.precio, normal: pr.precio, oferta: !!ofertas[pr.codigo] };
+  porId[pr.codigo] = { nombre: p.nombre, codigo: p.codigo, colores: p.colores, foto: p.foto, detalle: pr.detalle, precio: ofertas[pr.codigo] ? ofertas[pr.codigo].precio : pr.precio, normal: pr.precio, oferta: !!ofertas[pr.codigo] };
 // Presentación elegida en cada tarjeta (por defecto, la primera)
 const elegida = Object.fromEntries(visibles.map(p => [p.codigo, p.presentaciones[0].codigo]));
 
-// Carrito: { códigoPresentación: cantidad }. Se recuerda en el navegador del cliente.
+// Productos con `colores`: el cliente elige uno en la tarjeta y la clave del carrito es "CÓDIGO|Color"
+const colorElegido = {};
+const separar = clave => { const [cod, color] = clave.split("|"); return { cod, color }; };
+const info = clave => { const { cod, color } = separar(clave); return porId[cod] && { ...porId[cod], color }; };
+// Clave del carrito para una presentación según el color elegido (null si falta elegirlo)
+function claveDe(codPres) {
+  const p = porId[codPres];
+  if (!p.colores) return codPres;
+  const c = colorElegido[p.codigo];
+  return c ? codPres + "|" + c : null;
+}
+
+// Carrito: { clave: cantidad }. Se recuerda en el navegador del cliente.
 let carrito = {};
 try { carrito = JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (e) {}
-for (const id in carrito) if (!porId[id] || !(carrito[id] > 0)) delete carrito[id];
+for (const id in carrito) {
+  const i = info(id);
+  const valido = i && carrito[id] > 0 && (i.colores ? i.colores.includes(i.color) : !i.color);
+  if (!valido) delete carrito[id];
+}
 
 let categoria = "Todos";
 let busqueda = "";
@@ -244,7 +263,7 @@ function cambiar(id, delta) {
 
 function resumen() {
   let unidades = 0, total = 0;
-  for (const id in carrito) { unidades += carrito[id]; total += carrito[id] * porId[id].precio; }
+  for (const id in carrito) { unidades += carrito[id]; total += carrito[id] * info(id).precio; }
   return { unidades, total };
 }
 
@@ -264,6 +283,11 @@ function tarjeta(p) {
     ? `<div class="opciones" role="group" aria-label="Presentación">` + p.presentaciones.map(pr =>
         `<button type="button" class="opcion" data-elegir="${pr.codigo}" data-prod="${p.codigo}" aria-pressed="${pr.codigo === sel.codigo}">${esc(pr.detalle)}${enOferta(pr)}</button>`).join("") + `</div>`
     : `<span class="pres">${esc(sel.detalle)}</span>`;
+  const colores = p.colores
+    ? `<label class="color-sel">Color<select data-color="${p.codigo}"><option value="">Elegí un color</option>${p.colores.map(c =>
+        `<option${colorElegido[p.codigo] === c ? " selected" : ""}>${esc(c)}</option>`).join("")}</select></label>`
+    : "";
+  const clave = claveDe(sel.codigo);
   return `
       <article class="producto">
         ${p.presentaciones.some(pr => ofertas[pr.codigo]) ? `<span class="etiqueta-oferta">OFERTA</span>` : ""}
@@ -271,9 +295,10 @@ function tarjeta(p) {
         <div class="cuerpo">
           <h3>${esc(p.nombre)}</h3>
           ${opciones}
+          ${colores}
           <span class="precio">${ofertas[sel.codigo] ? `<s>${plata(sel.precio)}</s> ${plata(ofertas[sel.codigo].precio)}` : plata(sel.precio)}</span>
           <span class="codigo">Cód. ${sel.codigo}</span>
-          <div class="accion">${carrito[sel.codigo] ? controlCantidad(sel.codigo) : `<button type="button" class="btn-agregar" data-mas="${sel.codigo}">Agregar</button>`}</div>
+          <div class="accion">${clave && carrito[clave] ? controlCantidad(clave) : `<button type="button" class="btn-agregar" data-mas="${sel.codigo}">Agregar</button>`}</div>
         </div>
       </article>`;
 }
@@ -281,7 +306,7 @@ function tarjeta(p) {
 function dibujarCatalogo() {
   const q = sinTildes(busqueda.trim());
   const coincide = p => !q || sinTildes([p.nombre, p.codigo, nombreCat[p.codigo.slice(0, 3)],
-    ...p.presentaciones.flatMap(pr => [pr.detalle, pr.codigo])].join(" ")).includes(q);
+    ...p.presentaciones.flatMap(pr => [pr.detalle, pr.codigo]), ...(p.colores || [])].join(" ")).includes(q);
   if (categoria === "OFERTAS") {
     const lista = visibles.filter(p => p.presentaciones.some(pr => ofertas[pr.codigo]) && coincide(p));
     lista.forEach(p => { const o = p.presentaciones.find(pr => ofertas[pr.codigo]); if (!ofertas[elegida[p.codigo]]) elegida[p.codigo] = o.codigo; });
@@ -307,13 +332,13 @@ function dibujarCarrito() {
   }
   const datos = leerForm();
   $("panel-cuerpo").innerHTML = ids.map(id => {
-    const p = porId[id];
+    const p = info(id);
     return `<div class="item">
       ${imagen(p, "", true)}
       <div>
         <div class="nombre">${esc(p.nombre)}</div>
-        <div class="pres">${esc(p.detalle)} · ${p.oferta ? `<s>${plata(p.normal)}</s> ` : ""}${plata(p.precio)} c/u${p.oferta ? " 🔥 oferta" : ""}</div>
-        <div class="pres">Cód. ${id}</div>
+        <div class="pres">${esc(p.detalle)}${p.color ? ` · color <strong>${esc(p.color)}</strong>` : ""} · ${p.oferta ? `<s>${plata(p.normal)}</s> ` : ""}${plata(p.precio)} c/u${p.oferta ? " 🔥 oferta" : ""}</div>
+        <div class="pres">Cód. ${separar(id).cod}</div>
         <div class="fila">${controlCantidad(id)}<span class="subtotal">${plata(p.precio * carrito[id])}</span></div>
         <button type="button" class="quitar" data-quitar="${id}">Quitar</button>
       </div>
@@ -361,8 +386,8 @@ function leerForm() {
 function armarMensaje({ nombre, fecha, notas, entrega, direccion, localidad, referencia, destino, sucursal, pago }) {
   const { unidades, total } = resumen();
   const lineas = Object.keys(carrito).map(id => {
-    const p = porId[id], n = carrito[id];
-    return `• ${n} × ${p.nombre} — ${p.detalle} [${id}] — ${plata(p.precio * n)}${p.oferta ? " (oferta)" : ""}`;
+    const p = info(id), n = carrito[id];
+    return `• ${n} × ${p.nombre} — ${p.detalle}${p.color ? ` · color ${p.color}` : ""} [${separar(id).cod}] — ${plata(p.precio * n)}${p.oferta ? " (oferta)" : ""}`;
   });
   let m = `¡Hola Todo Cotillón! 👋 Quiero hacer este pedido:\n\n🛒 *PEDIDO*\n${lineas.join("\n")}\n\n*Total estimado: ${plata(total)}*${entrega === "retiro" ? "" : " + envío"} (${unidades} ${unidades === 1 ? "unidad" : "unidades"})\n\n👤 *Nombre:* ${nombre.trim()}`;
   if (fecha) {
@@ -409,7 +434,11 @@ function cerrar() {
 document.addEventListener("click", e => {
   const t = e.target.closest("button");
   if (!t) return;
-  if (t.dataset.mas) { leerForm(); cambiar(t.dataset.mas, 1); if (t.classList.contains("of-btn")) { t.textContent = "✓ Agregado"; setTimeout(() => { t.textContent = "Agregar al carrito"; }, 1500); } }
+  if (t.dataset.mas) {
+    const clave = t.dataset.mas.includes("|") ? t.dataset.mas : claveDe(t.dataset.mas);
+    if (!clave) { pedirColor(porId[t.dataset.mas].codigo); return; }
+    leerForm(); cambiar(clave, 1); if (t.classList.contains("of-btn")) { t.textContent = "✓ Agregado"; setTimeout(() => { t.textContent = "Agregar al carrito"; }, 1500); }
+  }
   else if (t.dataset.menos) { leerForm(); cambiar(t.dataset.menos, -1); }
   else if (t.dataset.quitar) { leerForm(); delete carrito[t.dataset.quitar]; guardar(); actualizar(); }
   else if (t.dataset.elegir) { elegida[t.dataset.prod] = t.dataset.elegir; dibujarCatalogo(); }
@@ -423,8 +452,19 @@ $("fondo").addEventListener("click", cerrar);
 document.addEventListener("keydown", e => { if (e.key === "Escape" && $("panel").classList.contains("abierto")) cerrar(); });
 $("buscador").addEventListener("input", e => { busqueda = e.target.value; dibujarCatalogo(); });
 
+// Falta elegir el color: lleva al producto y marca el selector
+function pedirColor(codProducto) {
+  let s = document.querySelector(`select[data-color="${codProducto}"]`);
+  if (!s) { cerrar(); categoria = codProducto.slice(0, 3); busqueda = ""; $("buscador").value = ""; dibujarChips(); dibujarCatalogo(); s = document.querySelector(`select[data-color="${codProducto}"]`); }
+  if (!s) return;
+  s.classList.add("falta");
+  s.scrollIntoView({ block: "center" });
+  s.focus();
+}
+
 // Muestra los datos de envío que corresponden a la forma de entrega elegida
 document.addEventListener("change", e => {
+  if (e.target.dataset.color) { colorElegido[e.target.dataset.color] = e.target.value; dibujarCatalogo(); return; }
   if (e.target.name !== "entrega") return;
   document.querySelectorAll(".extra").forEach(div => {
     const activo = div.dataset.para === e.target.value;
@@ -448,11 +488,11 @@ Ofertas.render($("ofertas"), "tienda");
 
 // Viene de la portada con ?agregar=CÓDIGO: lo suma al carrito y lo muestra
 const pedido = new URLSearchParams(location.search).get("agregar");
-if (pedido && porId[pedido]) { cambiar(pedido, 1); history.replaceState(null, "", location.pathname); }
+if (pedido && porId[pedido] && !porId[pedido].colores) { cambiar(pedido, 1); history.replaceState(null, "", location.pathname); }
 
 dibujarChips();
 actualizar();
-if (pedido && porId[pedido]) abrir();
+if (pedido && porId[pedido] && !porId[pedido].colores) abrir();
 </script>
 </body>
 </html>

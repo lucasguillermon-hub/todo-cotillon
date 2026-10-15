@@ -11,6 +11,7 @@
 // - Productos nuevos: siguiente número libre de su categoría. Presentaciones nuevas: siguiente número
 //   libre dentro del producto.
 // - precio: en pesos, sin puntos ni signo (ej: 6500).
+// - colores (opcional): lista de colores; el cliente elige uno en la tarjeta y va al pedido.
 // - foto: archivo dentro de img/ (opcional: sin foto se muestra un recuadro con el ícono de la categoría).
 // - Antes de publicar: `node herramientas/catalogo.js` revisa que no haya errores y arma catalogo.csv.
 //
@@ -28,21 +29,42 @@ const CATEGORIAS = [
 ];
 
 const PRODUCTOS = [
-  // ── GLO · Globos ──────────────────────────────────────────────
-  { codigo: "GLO-001", nombre: "Globos perlados 12\"", foto: "img/globos-decoracion.webp", presentaciones: [
-    { codigo: "GLO-001-01", detalle: "Bolsa x 25 u. · colores surtidos", precio: 3600 },
-    { codigo: "GLO-001-02", detalle: "Bolsa x 50 u. · colores surtidos", precio: 6500 },
-    { codigo: "GLO-001-03", detalle: "Bolsa x 100 u. · colores surtidos", precio: 11900 },
+  // ── GLO · Globos (lista real, 15/10/2026) ─────────────────────
+  // Los códigos siguen la numeración de la lista del local. Sin foto todavía.
+  // Pendientes (falta el precio): GLO-007 Set de globos corazón 18" x 10 · GLO-008 Set de globos estrella 18" x 10.
+  { codigo: "GLO-001", nombre: "Globos lisos 9\"",
+    colores: ["Blanco", "Verde manzana", "Celeste", "Verde oscuro", "Naranja", "Negro", "Rojo", "Rosa", "Amarillo", "Fucsia", "Lila", "Multicolor"], presentaciones: [
+    { codigo: "GLO-001-01", detalle: "Bolsa x 10 u.", precio: 900 },
   ]},
-  { codigo: "GLO-002", nombre: "Globo número metalizado", foto: "img/sets-globos.webp", presentaciones: [
-    { codigo: "GLO-002-01", detalle: "16\" (40 cm) · unidad", precio: 1800 },
-    { codigo: "GLO-002-02", detalle: "40\" (1 m) · unidad", precio: 4200 },
+  { codigo: "GLO-002", nombre: "Globos perlados 12\"",
+    colores: ["Oro", "Plata", "Verde manzana", "Salmón", "Celeste", "Blanco", "Negro", "Lila", "Rosa", "Rojo", "Azul Francia"], presentaciones: [
+    { codigo: "GLO-002-01", detalle: "Bolsa x 10 u.", precio: 1900 },
   ]},
-  { codigo: "GLO-003", nombre: "Set globos letras \"Feliz Cumple\"", foto: "img/sets-globos.webp", presentaciones: [
-    { codigo: "GLO-003-01", detalle: "Set x 13 letras metalizadas 16\"", precio: 9800 },
+  { codigo: "GLO-003", nombre: "Piñata globo grande 36\"", presentaciones: [
+    { codigo: "GLO-003-01", detalle: "Unidad", precio: 3500 },
   ]},
-  { codigo: "GLO-004", nombre: "Kit arco de globos", foto: "img/globos-decoracion.webp", presentaciones: [
-    { codigo: "GLO-004-01", detalle: "100 globos + cinta + inflador manual", precio: 18500 },
+  { codigo: "GLO-004", nombre: "Globos Party Time 9\"", presentaciones: [
+    { codigo: "GLO-004-01", detalle: "Bolsa x 50 u.", precio: 4200 },
+  ]},
+  { codigo: "GLO-005", nombre: "Globo número 14\" (36 cm)", presentaciones: [
+    { codigo: "GLO-005-01", detalle: "N° 3", precio: 1600 },
+    { codigo: "GLO-005-02", detalle: "N° 4", precio: 1600 },
+    { codigo: "GLO-005-03", detalle: "N° 5", precio: 1600 },
+    { codigo: "GLO-005-04", detalle: "N° 6", precio: 1600 },
+    { codigo: "GLO-005-05", detalle: "N° 7", precio: 1600 },
+    { codigo: "GLO-005-06", detalle: "N° 8", precio: 1600 },
+    { codigo: "GLO-005-07", detalle: "N° 9", precio: 1600 },
+  ]},
+  { codigo: "GLO-006", nombre: "Frase \"Feliz Cumpleaños\" inflable", presentaciones: [
+    { codigo: "GLO-006-01", detalle: "Unidad · colores surtidos", precio: 2500 },
+  ]},
+  { codigo: "GLO-009", nombre: "Set de globos metalizados y transparentes con confeti",
+    colores: ["Negro", "Dorado", "Violeta", "Azul", "Rosa gold", "Rojo", "Plateado", "Fucsia", "Verde manzana"], presentaciones: [
+    { codigo: "GLO-009-01", detalle: "14 u. · 12 estrellas + 2 corazones", precio: 4500 },
+  ]},
+  { codigo: "GLO-010", nombre: "Cortina / lluvia decorativa",
+    colores: ["Celeste", "Plata", "Rosa gold", "Oro", "Fucsia", "Negro", "Blanco", "Verde", "Rojo", "Azul Francia", "Lila o violeta"], presentaciones: [
+    { codigo: "GLO-010-01", detalle: "2 m de largo × 1 m de ancho", precio: 2600 },
   ]},
 
   // ── COT · Cotillón ────────────────────────────────────────────
@@ -330,7 +352,6 @@ const PRODUCTOS = [
 
 const OFERTAS = [
   { codigo: "TEM-001-01", precio: 12900, hasta: "2026-10-31", texto: "Especial Halloween" },
-  { codigo: "GLO-001-02", precio: 5200, hasta: "2026-10-31", texto: "Ideal para arcos y guirnaldas" },
   { codigo: "COT-002-01", precio: 9900, hasta: "2026-11-15", texto: "Para fiestas de 15" },
   { codigo: "BEB-001-02", precio: 3300, hasta: "2026-10-31" },
   { codigo: "DES-002-02", precio: 2300, hasta: "2026-11-30", texto: "Llevá de colores combinados" },

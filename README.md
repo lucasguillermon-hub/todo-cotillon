@@ -54,6 +54,8 @@ Los productos que hay ahora son **de ejemplo**. No se maneja stock.
 | Producto | categoría + número de 3 cifras | `GLO-001` Globos perlados 12" |
 | Presentación | producto + número de 2 cifras | `GLO-001-02` Bolsa x 50 u. — $6.500 |
 
+Un producto puede tener una lista de **colores** (`colores: ["Blanco", "Rosa", …]`): la tarjeta muestra un selector, el cliente elige el color y cada color va como una línea aparte del pedido (ej. "Globos lisos 9" — Bolsa x 10 u. · color Fucsia").
+
 Cada presentación tiene su propio código y precio; es lo que el cliente agrega al carrito y lo que
 aparece en el pedido. Un código **no se reutiliza nunca**: si algo se deja de vender, se marca
 `oculto: true` en el producto (deja de mostrarse pero conserva su código).

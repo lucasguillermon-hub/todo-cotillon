@@ -29,6 +29,7 @@ for (const p of PRODUCTOS) {
   unico(p.codigo, "producto");
   if (!p.nombre) errores.push(`${donde}: falta el nombre`);
   if (p.foto && !fs.existsSync(path.join(raiz, p.foto))) errores.push(`${donde}: no existe la foto ${p.foto}`);
+  if (p.colores !== undefined && (!Array.isArray(p.colores) || !p.colores.length || p.colores.some(c => typeof c !== "string" || !c.trim() || c.includes("|")))) errores.push(`${donde}: colores debe ser una lista de nombres (sin el caracter |)`);
   if (!Array.isArray(p.presentaciones) || !p.presentaciones.length) { errores.push(`${donde}: no tiene presentaciones`); continue; }
   for (const pr of p.presentaciones) {
     const d = `${pr.codigo || "?"} (${p.nombre})`;
