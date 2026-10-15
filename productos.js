@@ -40,7 +40,7 @@ const PRODUCTOS = [
     colores: ["Oro", "Plata", "Verde manzana", "Salmón", "Celeste", "Blanco", "Negro", "Lila", "Rosa", "Rojo", "Azul Francia"], presentaciones: [
     { codigo: "GLO-002-01", detalle: "Bolsa x 10 u.", precio: 1900 },
   ]},
-  { codigo: "GLO-003", nombre: "Piñata globo grande 36\"", presentaciones: [
+  { codigo: "GLO-003", nombre: "Piñata globo grande 36\"", foto: "img/glo-003-pinata-globo.webp", presentaciones: [
     { codigo: "GLO-003-01", detalle: "Unidad", precio: 3500 },
   ]},
   { codigo: "GLO-004", nombre: "Globos Party Time 9\"", presentaciones: [
