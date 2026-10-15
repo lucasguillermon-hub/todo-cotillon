@@ -305,7 +305,7 @@ const PRODUCTOS = [
     { codigo: "PAP-006-04", detalle: "¾ kg", precio: 190 },
     { codigo: "PAP-006-05", detalle: "1 kg", precio: 200 },
   ]},
-  { codigo: "PAP-007", nombre: "Moldes de pan dulce x 10", presentaciones: [
+  { codigo: "PAP-007", nombre: "Moldes de pan dulce x 10", foto: "img/pap-006-moldes-pan-dulce.webp", presentaciones: [
     { codigo: "PAP-007-01", detalle: "100 g · x 10 u.", precio: 1100 },
     { codigo: "PAP-007-02", detalle: "¼ kg · x 10 u.", precio: 1300 },
     { codigo: "PAP-007-03", detalle: "½ kg · x 10 u.", precio: 1500 },
