@@ -95,7 +95,7 @@ const PRODUCTOS = [
   { codigo: "COT-008", nombre: "Antifaces (flúor y carnaval)", foto: "img/cot-008-antifaces.webp", presentaciones: [
     { codigo: "COT-008-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
-  { codigo: "COT-009", nombre: "Pelucas de colores", presentaciones: [
+  { codigo: "COT-009", nombre: "Pelucas de colores", foto: "img/cot-009-pelucas.webp", presentaciones: [
     { codigo: "COT-009-01", detalle: "Unidad", precio: null },
   ]},
   { codigo: "COT-010", nombre: "Anteojos flúor", presentaciones: [
