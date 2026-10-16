@@ -12,7 +12,7 @@
   function activas() {
     const hoy = fecha(new Date());
     const lista = typeof OFERTAS === "undefined" ? [] : OFERTAS;
-    return lista.filter(o => presentaciones[o.codigo] && o.precio < presentaciones[o.codigo].pres.precio &&
+    return lista.filter(o => presentaciones[o.codigo] && o.precio <= presentaciones[o.codigo].pres.precio &&
       (!o.desde || o.desde <= hoy) && (!o.hasta || hoy <= o.hasta));
   }
   const porCodigo = () => Object.fromEntries(activas().map(o => [o.codigo, o]));
@@ -40,13 +40,13 @@
         ? `<button type="button" class="of-btn" data-mas="${o.codigo}">Agregar al carrito</button>`
         : `<a class="of-btn" href="tienda.html?agregar=${o.codigo}">Lo quiero</a>`;
       return `<article class="of-card">
-        <span class="of-pct">-${pct}%</span>
+        <span class="of-pct">${pct > 0 ? `-${pct}%` : "PROMO"}</span>
         ${p.foto ? `<img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy">` : `<div class="of-sin-foto" role="img" aria-label="${esc(p.nombre)}">${esc((CATEGORIAS.find(c => c.codigo === p.codigo.slice(0, 3)) || {}).icono || "🎉")}</div>`}
         <div class="of-cuerpo">
           <span class="of-nombre">${esc(p.nombre)}</span>
           <span class="of-det">${esc(pres.detalle)}</span>
           ${o.texto ? `<span class="of-texto">${esc(o.texto)}</span>` : ""}
-          <span class="of-precios"><span class="of-antes">${plata(pres.precio)}</span><span class="of-ahora">${plata(o.precio)}</span></span>
+          <span class="of-precios">${pct > 0 ? `<span class="of-antes">${plata(pres.precio)}</span>` : ""}<span class="of-ahora">${plata(o.precio)}</span></span>
           <span class="of-plazo">${plazo(o.hasta)}</span>
           ${boton}
         </div>

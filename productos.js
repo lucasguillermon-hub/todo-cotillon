@@ -26,6 +26,7 @@ const CATEGORIAS = [
   { codigo: "BEB", nombre: "Bebidas", icono: "🥤" },
   { codigo: "PAP", nombre: "Papelería", icono: "🛍️" },
   { codigo: "TEM", nombre: "Temporada y disfraces", icono: "🎃" },
+  { codigo: "COM", nombre: "Combos y promos", icono: "🎁" },
 ];
 
 const PRODUCTOS = [
@@ -394,7 +395,7 @@ const PRODUCTOS = [
   { codigo: "GOL-009", nombre: "Malvaviscos", foto: "img/gol-009-malvaviscos.webp", presentaciones: [
     { codigo: "GOL-009-01", detalle: "Bolsa 200 g", precio: 3000 },
   ]},
-  { codigo: "GOL-010", nombre: "Jugo Baggio manzana", foto: "img/gol-010-jugo-baggio.webp", presentaciones: [
+  { codigo: "GOL-010", nombre: "Jugo Baggio Pronto manzana", foto: "img/gol-010-jugo-baggio.webp", presentaciones: [
     { codigo: "GOL-010-01", detalle: "Pack x 18 u. · 125 ml c/u", precio: 7000 },
   ]},
   { codigo: "GOL-011", nombre: "Bolitas dulces Le.q", foto: "img/gol-011-bolitas-leq.webp", presentaciones: [
@@ -530,17 +531,32 @@ const PRODUCTOS = [
   { codigo: "TEM-005", nombre: "Capa de Drácula infantil", presentaciones: [
     { codigo: "TEM-005-01", detalle: "Unidad", precio: null },
   ]},
+  // ── COM · Combos y promos (16/10/2026) ───────────────────────
+  // Un combo es un producto más; para que salga en el carrusel se carga también en OFERTAS
+  // con el mismo precio (se muestra como "PROMO", sin precio tachado).
+  { codigo: "COM-001", nombre: "Combo repostería", foto: "img/com-001-combo-reposteria.webp", presentaciones: [
+    { codigo: "COM-001-01", detalle: "1 bizcochuelo + 1 crema Ledevit 1 L + 1 kg de dulce de leche", precio: 19900 },
+  ]},
+  { codigo: "COM-002", nombre: "Combo snacks: papas + chizitos + palitos", foto: "img/com-002-combo-snacks.webp", presentaciones: [
+    { codigo: "COM-002-01", detalle: "1 papas fritas + 1 chizitos + 1 palitos salados (tamaños a confirmar)", precio: 11500 },
+  ]},
 ];
 
 // OFERTAS
 // Aparecen en el carrusel de la portada y de la tienda, y el precio de oferta se aplica solo en el carrito.
 // - codigo: código de la PRESENTACIÓN en oferta (ej: GLO-001-02).
-// - precio: precio de oferta en pesos (tiene que ser menor al precio normal).
+// - precio: precio de oferta en pesos (menor al precio normal; igual = se muestra como "PROMO", ej. combos).
 // - desde / hasta: fechas AAAA-MM-DD, ambas incluidas y opcionales. Fuera de esas fechas la oferta
 //   desaparece sola; no hace falta borrarla enseguida.
 // - texto: frase corta opcional que se muestra en la tarjeta.
 // Las de abajo son DE EJEMPLO.
 
 const OFERTAS = [
+  { codigo: "COM-001-01", precio: 19900, texto: "Todo lo que necesitás para tus mejores recetas" },
+  { codigo: "COM-002-01", precio: 11500, texto: "El combo perfecto para compartir" },
+  { codigo: "REP-018-01", precio: 6800, texto: "Tableta Alpino ½ kg" },
+  { codigo: "REP-018-02", precio: 6800, texto: "Tableta Alpino ½ kg" },
+  { codigo: "REP-018-03", precio: 6800, texto: "Tableta Alpino ½ kg" },
+  { codigo: "GOL-010-01", precio: 6600, texto: "Caja de 18 unidades de 125 ml" },
   { codigo: "DES-002-02", precio: 2300, hasta: "2026-11-30", texto: "Llevá de colores combinados" },
 ];

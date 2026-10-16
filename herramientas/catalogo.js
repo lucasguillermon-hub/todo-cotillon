@@ -54,7 +54,7 @@ for (const o of OFERTAS) {
   if (vistas.has(o.codigo)) errores.push(`${d}: está cargada dos veces`);
   vistas.add(o.codigo);
   if (!Number.isInteger(o.precio) || o.precio <= 0) errores.push(`${d}: precio inválido (${o.precio})`);
-  else if (o.precio >= precios[o.codigo]) errores.push(`${d}: el precio de oferta (${o.precio}) no es menor al normal (${precios[o.codigo]})`);
+  else if (precios[o.codigo] === null || o.precio > precios[o.codigo]) errores.push(`${d}: el precio de oferta (${o.precio}) es mayor al normal (${precios[o.codigo]})`);
   if (!fechaOk(o.desde) || !fechaOk(o.hasta)) errores.push(`${d}: las fechas van como AAAA-MM-DD`);
   else if (o.desde && o.hasta && o.desde > o.hasta) errores.push(`${d}: "desde" es posterior a "hasta"`);
   if ((!o.desde || o.desde <= hoy) && (!o.hasta || hoy <= o.hasta)) vigentes++;

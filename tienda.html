@@ -223,7 +223,7 @@ const imagen = (p, alt, chico) => p.foto
 const ofertas = Ofertas.porCodigo();
 const porId = {};
 for (const p of visibles) for (const pr of p.presentaciones)
-  porId[pr.codigo] = { nombre: p.nombre, codigo: p.codigo, colores: p.colores, foto: p.foto, detalle: pr.detalle, precio: ofertas[pr.codigo] ? ofertas[pr.codigo].precio : pr.precio, normal: pr.precio, oferta: !!ofertas[pr.codigo] };
+  porId[pr.codigo] = { nombre: p.nombre, codigo: p.codigo, colores: p.colores, foto: p.foto, detalle: pr.detalle, precio: ofertas[pr.codigo] ? ofertas[pr.codigo].precio : pr.precio, normal: pr.precio, oferta: !!ofertas[pr.codigo] && ofertas[pr.codigo].precio < pr.precio };
 // Presentación elegida en cada tarjeta (por defecto, la primera)
 const elegida = Object.fromEntries(visibles.map(p => [p.codigo, p.presentaciones[0].codigo]));
 
@@ -301,7 +301,7 @@ function tarjeta(p) {
           <h3>${esc(p.nombre)}</h3>
           ${opciones}
           ${colores}
-          ${sel.precio == null ? `<span class="precio a-confirmar">Precio a confirmar</span>` : `<span class="precio">${ofertas[sel.codigo] ? `<s>${plata(sel.precio)}</s> ${plata(ofertas[sel.codigo].precio)}` : plata(sel.precio)}</span>`}
+          ${sel.precio == null ? `<span class="precio a-confirmar">Precio a confirmar</span>` : `<span class="precio">${ofertas[sel.codigo] && ofertas[sel.codigo].precio < sel.precio ? `<s>${plata(sel.precio)}</s> ${plata(ofertas[sel.codigo].precio)}` : plata(sel.precio)}</span>`}
           <span class="codigo">Cód. ${sel.codigo}</span>
           <div class="accion">${clave && carrito[clave] ? controlCantidad(clave) : `<button type="button" class="btn-agregar" data-mas="${sel.codigo}">Agregar</button>`}</div>
         </div>
