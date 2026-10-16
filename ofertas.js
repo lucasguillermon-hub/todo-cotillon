@@ -33,18 +33,40 @@
     if (!cont) return;
     if (!lista.length) { cont.hidden = true; return; }
     cont.hidden = false;
-    const tarjetas = lista.map(o => {
-      const { producto: p, pres } = presentaciones[o.codigo];
+    // Una tarjeta por producto: si hay varias presentaciones en oferta (ej. sabores), se eligen con botones
+    const grupos = [];
+    for (const o of lista) {
+      const p = presentaciones[o.codigo].producto;
+      let g = grupos.find(x => x.p === p);
+      if (!g) grupos.push(g = { p, items: [] });
+      g.items.push(o);
+    }
+    // Etiqueta corta de cada opción: lo que cambia entre presentaciones ("½ kg · leche" → "leche")
+    const etiquetas = items => {
+      const partes = items.map(o => presentaciones[o.codigo].pres.detalle.split(" · "));
+      let comun = 0;
+      while (partes.every(x => x.length > comun + 1 && x[comun] === partes[0][comun])) comun++;
+      return { comun: partes[0].slice(0, comun).join(" · "), propias: partes.map(x => x.slice(comun).join(" · ")) };
+    };
+    const tarjetas = grupos.map(({ p, items }, gi) => {
+      const o = items[0], pres = presentaciones[o.codigo].pres;
       const pct = Math.round((1 - o.precio / pres.precio) * 100);
+      const varias = items.length > 1;
+      const et = varias ? etiquetas(items) : null;
       const boton = modo === "tienda"
         ? `<button type="button" class="of-btn" data-mas="${o.codigo}">Agregar al carrito</button>`
         : `<a class="of-btn" href="tienda.html?agregar=${o.codigo}">Lo quiero</a>`;
+      const opciones = varias
+        ? `<div class="of-opciones" role="group" aria-label="Elegí">${items.map((x, i) =>
+            `<button type="button" class="of-opcion" data-of-elegir="${x.codigo}" aria-pressed="${i === 0}">${esc(et.propias[i])}</button>`).join("")}</div>`
+        : "";
       return `<article class="of-card">
         <span class="of-pct">${pct > 0 ? `-${pct}%` : "PROMO"}</span>
         ${p.foto ? `<img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy">` : `<div class="of-sin-foto" role="img" aria-label="${esc(p.nombre)}">${esc((CATEGORIAS.find(c => c.codigo === p.codigo.slice(0, 3)) || {}).icono || "🎉")}</div>`}
         <div class="of-cuerpo">
           <span class="of-nombre">${esc(p.nombre)}</span>
-          <span class="of-det">${esc(pres.detalle)}</span>
+          <span class="of-det">${esc(varias ? et.comun : pres.detalle)}</span>
+          ${opciones}
           ${o.texto ? `<span class="of-texto">${esc(o.texto)}</span>` : ""}
           <span class="of-precios">${pct > 0 ? `<span class="of-antes">${plata(pres.precio)}</span>` : ""}<span class="of-ahora">🔥 ${plata(o.precio)}</span></span>
           <span class="of-plazo">${plazo(o.hasta)}</span>
@@ -59,6 +81,13 @@
       </div>
       <div class="of-pista" tabindex="0" aria-label="Ofertas">${tarjetas}</div>
     </div>`;
+    // Elegir sabor/presentación dentro de una tarjeta agrupada
+    cont.querySelectorAll(".of-opcion").forEach(b => b.addEventListener("click", () => {
+      const card = b.closest(".of-card"), cod = b.dataset.ofElegir;
+      card.querySelectorAll(".of-opcion").forEach(x => x.setAttribute("aria-pressed", x === b));
+      const btn = card.querySelector(".of-btn");
+      if (btn.tagName === "A") btn.href = "tienda.html?agregar=" + cod; else btn.dataset.mas = cod;
+    }));
     mover(cont.querySelector(".of-pista"), cont);
   }
 

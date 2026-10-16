@@ -18,6 +18,9 @@
 .of-cuerpo{padding:14px 16px 16px;display:flex;flex-direction:column;gap:3px;flex-grow:1}
 .of-nombre{font-family:'Fredoka',sans-serif;font-size:19px;font-weight:600;line-height:1.2}
 .of-det{font-size:14px;color:#6B3B66}
+.of-opciones{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 2px}
+.of-opcion{font:inherit;font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px;border:2px solid #F3D6E6;background:#FFFFFF;color:#3A1438;cursor:pointer}
+.of-opcion[aria-pressed="true"]{border-color:#C2187A;background:#FCE4F0;color:#A3136A}
 .of-texto{font-size:13px;font-weight:800;color:#5B3FA0}
 .of-precios{display:flex;align-items:baseline;gap:8px;margin-top:6px}
 .of-antes{text-decoration:line-through;color:#8A5A86;font-size:15px}
