@@ -46,7 +46,7 @@
           <span class="of-nombre">${esc(p.nombre)}</span>
           <span class="of-det">${esc(pres.detalle)}</span>
           ${o.texto ? `<span class="of-texto">${esc(o.texto)}</span>` : ""}
-          <span class="of-precios">${pct > 0 ? `<span class="of-antes">${plata(pres.precio)}</span>` : ""}<span class="of-ahora">${plata(o.precio)}</span></span>
+          <span class="of-precios">${pct > 0 ? `<span class="of-antes">${plata(pres.precio)}</span>` : ""}<span class="of-ahora">🔥 ${plata(o.precio)}</span></span>
           <span class="of-plazo">${plazo(o.hasta)}</span>
           ${boton}
         </div>

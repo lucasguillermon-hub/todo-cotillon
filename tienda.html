@@ -301,7 +301,7 @@ function tarjeta(p) {
           <h3>${esc(p.nombre)}</h3>
           ${opciones}
           ${colores}
-          ${sel.precio == null ? `<span class="precio a-confirmar">Precio a confirmar</span>` : `<span class="precio">${ofertas[sel.codigo] && ofertas[sel.codigo].precio < sel.precio ? `<s>${plata(sel.precio)}</s> ${plata(ofertas[sel.codigo].precio)}` : plata(sel.precio)}</span>`}
+          ${sel.precio == null ? `<span class="precio a-confirmar">Precio a confirmar</span>` : `<span class="precio">${ofertas[sel.codigo] ? (ofertas[sel.codigo].precio < sel.precio ? `<s>${plata(sel.precio)}</s> ` : "") + `🔥 ${plata(ofertas[sel.codigo].precio)}` : plata(sel.precio)}</span>`}
           <span class="codigo">Cód. ${sel.codigo}</span>
           <div class="accion">${clave && carrito[clave] ? controlCantidad(clave) : `<button type="button" class="btn-agregar" data-mas="${sel.codigo}">Agregar</button>`}</div>
         </div>
