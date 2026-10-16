@@ -101,7 +101,7 @@ const PRODUCTOS = [
   { codigo: "COT-010", nombre: "Anteojos flúor", foto: "img/cot-010-anteojos-fluor.webp", presentaciones: [
     { codigo: "COT-010-01", detalle: "Unidad", precio: null },
   ]},
-  { codigo: "COT-011", nombre: "Guantes de red flúor", presentaciones: [
+  { codigo: "COT-011", nombre: "Guantes de red flúor", foto: "img/cot-011-guantes-red-fluor.webp", presentaciones: [
     { codigo: "COT-011-01", detalle: "Par", precio: null },
   ]},
   { codigo: "COT-012", nombre: "Collar hawaiano de flores", presentaciones: [
