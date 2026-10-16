@@ -342,7 +342,7 @@ const PRODUCTOS = [
   { codigo: "REP-051", nombre: "Pizzera de aluminio", foto: "img/rep-051-pizzera.webp", presentaciones: [
     { codigo: "REP-051-01", detalle: "Medida a confirmar", precio: null },
   ]},
-  { codigo: "REP-052", nombre: "Moldes redondos para torta de aluminio", presentaciones: [
+  { codigo: "REP-052", nombre: "Moldes redondos para torta de aluminio", foto: "img/rep-052-moldes-redondos.webp", presentaciones: [
     { codigo: "REP-052-01", detalle: "Medida a confirmar", precio: null },
   ]},
   { codigo: "REP-053", nombre: "Molde rosca / savarín de aluminio", foto: "img/rep-053-molde-rosca.webp", presentaciones: [
