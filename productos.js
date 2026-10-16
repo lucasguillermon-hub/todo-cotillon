@@ -312,7 +312,7 @@ const PRODUCTOS = [
     { codigo: "REP-042-04", detalle: "30 × 30 × 12 cm", precio: 3000 },
     { codigo: "REP-042-05", detalle: "Otras medidas (consultá)", precio: null },
   ]},
-  { codigo: "REP-043", nombre: "Cajas para torta decoradas", foto: "img/rep-043-cajas-torta-decoradas.webp", presentaciones: [
+  { codigo: "REP-043", nombre: "Cajas para torta decoradas", foto: "img/rep-043-cajas-torta-decoradas-gemini.webp", presentaciones: [
     { codigo: "REP-043-01", detalle: "Modelo y medida a confirmar", precio: null },
   ]},
   { codigo: "REP-044", nombre: "Cajas transparentes para torta con moño",
