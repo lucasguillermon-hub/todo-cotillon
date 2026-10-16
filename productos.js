@@ -339,7 +339,7 @@ const PRODUCTOS = [
   { codigo: "REP-050", nombre: "Molde multiuso rectangular (asadera / bizcochuelo)", foto: "img/rep-050-molde-multiuso-gemini.webp", presentaciones: [
     { codigo: "REP-050-01", detalle: "Medida a confirmar", precio: null },
   ]},
-  { codigo: "REP-051", nombre: "Pizzera de aluminio", presentaciones: [
+  { codigo: "REP-051", nombre: "Pizzera de aluminio", foto: "img/rep-051-pizzera.webp", presentaciones: [
     { codigo: "REP-051-01", detalle: "Medida a confirmar", precio: null },
   ]},
   { codigo: "REP-052", nombre: "Moldes redondos para torta de aluminio", presentaciones: [
