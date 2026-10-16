@@ -76,7 +76,7 @@ const PRODUCTOS = [
   { codigo: "COT-002", nombre: "Porras flúor", foto: "img/cot-002-porras-fluor-gemini.webp", presentaciones: [
     { codigo: "COT-002-01", detalle: "Unidad", precio: 600 },
   ]},
-  { codigo: "COT-003", nombre: "Goma eva picada", foto: "img/cot-003-goma-eva-picada.webp", presentaciones: [
+  { codigo: "COT-003", nombre: "Goma eva picada", foto: "img/cot-003-goma-eva-picada-gemini.webp", presentaciones: [
     { codigo: "COT-003-01", detalle: "Bolsa", precio: 600 },
   ]},
   { codigo: "COT-004", nombre: "Bonetes metalizados", foto: "img/cot-004-bonetes.webp",
