@@ -83,7 +83,7 @@ const PRODUCTOS = [
     colores: ["Plateado", "Rosa", "Celeste", "Dorado"], presentaciones: [
     { codigo: "COT-004-01", detalle: "Unidad", precio: null },
   ]},
-  { codigo: "COT-005", nombre: "Galeras y sombreros de cotillón", foto: "img/cot-005-galeras.webp", presentaciones: [
+  { codigo: "COT-005", nombre: "Galeras y sombreros de cotillón", foto: "img/cot-005-galeras-gemini.webp", presentaciones: [
     { codigo: "COT-005-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
   { codigo: "COT-006", nombre: "Cornetas flúor", foto: "img/cot-006-cornetas-fluor.webp", presentaciones: [
