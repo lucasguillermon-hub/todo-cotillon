@@ -534,7 +534,7 @@ const PRODUCTOS = [
   // ── COM · Combos y promos (16/10/2026) ───────────────────────
   // Un combo es un producto más; para que salga en el carrusel se carga también en OFERTAS
   // con el mismo precio (se muestra como "PROMO", sin precio tachado).
-  { codigo: "COM-001", nombre: "Combo repostería", foto: "img/com-001-combo-reposteria.webp", presentaciones: [
+  { codigo: "COM-001", nombre: "Combo repostería", foto: "img/com-001-combo-reposteria-gemini.webp", presentaciones: [
     { codigo: "COM-001-01", detalle: "1 bizcochuelo + 1 crema Ledevit 1 L + 1 kg de dulce de leche", precio: 19900 },
   ]},
   { codigo: "COM-002", nombre: "Combo snacks: papas + chizitos + palitos", foto: "img/com-002-combo-snacks.webp", presentaciones: [
