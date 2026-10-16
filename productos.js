@@ -354,7 +354,7 @@ const PRODUCTOS = [
   { codigo: "REP-055", nombre: "Molde para muffins x 12 (antiadherente)", foto: "img/rep-055-molde-muffins-gemini.webp", presentaciones: [
     { codigo: "REP-055-01", detalle: "Unidad", precio: null },
   ]},
-  { codigo: "REP-056", nombre: "Budinera antiadherente", foto: "img/rep-056-budinera.webp", presentaciones: [
+  { codigo: "REP-056", nombre: "Budinera antiadherente", foto: "img/rep-056-budinera-gemini.webp", presentaciones: [
     { codigo: "REP-056-01", detalle: "Medida a confirmar", precio: null },
   ]},
   { codigo: "REP-057", nombre: "Molde desmontable antiadherente", foto: "img/rep-057-moldes-desmontables.webp", presentaciones: [
