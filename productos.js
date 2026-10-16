@@ -538,7 +538,7 @@ const PRODUCTOS = [
   { codigo: "COM-001", nombre: "Combo repostería", foto: "img/com-001-combo-reposteria-gemini.webp", presentaciones: [
     { codigo: "COM-001-01", detalle: "1 bizcochuelo + 1 crema Ledevit 1 L + 1 kg de dulce de leche", precio: 19900, incluye: ["REP-023-02", "REP-022-02"] },
   ]},
-  { codigo: "COM-002", nombre: "Combo snacks: papas + chizitos + palitos", foto: "img/com-002-combo-snacks.webp", presentaciones: [
+  { codigo: "COM-002", nombre: "Combo snacks: papas + chizitos + palitos", foto: "img/com-002-combo-snacks-gemini.webp", presentaciones: [
     { codigo: "COM-002-01", detalle: "1 papas fritas 500 g + 1 chizitos 400 g + 1 palitos salados 800 g (a confirmar)", precio: 12200, incluye: ["GOL-014-01", "GOL-012-01", "GOL-013-01"] },
   ]},
 ];
