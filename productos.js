@@ -107,7 +107,7 @@ const PRODUCTOS = [
   { codigo: "COT-012", nombre: "Collar hawaiano de flores", foto: "img/cot-012-collar-hawaiano.webp", presentaciones: [
     { codigo: "COT-012-01", detalle: "Unidad", precio: null },
   ]},
-  { codigo: "COT-013", nombre: "Vasos flúor", presentaciones: [
+  { codigo: "COT-013", nombre: "Vasos flúor", foto: "img/cot-013-vasos-fluor.webp", presentaciones: [
     { codigo: "COT-013-01", detalle: "Pack · cantidad a confirmar", precio: null },
   ]},
   { codigo: "COT-014", nombre: "Banderines flúor", presentaciones: [
