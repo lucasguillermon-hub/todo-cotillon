@@ -73,7 +73,7 @@ const PRODUCTOS = [
   { codigo: "COT-001", nombre: "Collar plástico", foto: "img/cot-001-collar-plastico-gemini.webp", presentaciones: [
     { codigo: "COT-001-01", detalle: "Unidad · colores surtidos", precio: 300 },
   ]},
-  { codigo: "COT-002", nombre: "Porras flúor", foto: "img/cot-002-porras-fluor.webp", presentaciones: [
+  { codigo: "COT-002", nombre: "Porras flúor", foto: "img/cot-002-porras-fluor-gemini.webp", presentaciones: [
     { codigo: "COT-002-01", detalle: "Unidad", precio: 600 },
   ]},
   { codigo: "COT-003", nombre: "Goma eva picada", foto: "img/cot-003-goma-eva-picada.webp", presentaciones: [
