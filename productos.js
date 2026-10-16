@@ -348,7 +348,7 @@ const PRODUCTOS = [
   { codigo: "REP-053", nombre: "Molde rosca / savarín de aluminio", foto: "img/rep-053-molde-rosca-gemini.webp", presentaciones: [
     { codigo: "REP-053-01", detalle: "Medida a confirmar", precio: null },
   ]},
-  { codigo: "REP-054", nombre: "Tartera acanalada", foto: "img/rep-054-tartera.webp", presentaciones: [
+  { codigo: "REP-054", nombre: "Tartera acanalada", foto: "img/rep-054-tartera-gemini.webp", presentaciones: [
     { codigo: "REP-054-01", detalle: "Medida a confirmar", precio: 7600 },
   ]},
   { codigo: "REP-055", nombre: "Molde para muffins x 12 (antiadherente)", foto: "img/rep-055-molde-muffins.webp", presentaciones: [
