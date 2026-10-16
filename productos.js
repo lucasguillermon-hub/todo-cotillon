@@ -559,5 +559,4 @@ const OFERTAS = [
   { codigo: "REP-018-02", precio: 6800, texto: "Tableta Alpino ½ kg" },
   { codigo: "REP-018-03", precio: 6800, texto: "Tableta Alpino ½ kg" },
   { codigo: "GOL-010-01", precio: 6600, texto: "Caja de 18 unidades de 125 ml" },
-  { codigo: "DES-002-02", precio: 2300, hasta: "2026-11-30", texto: "Llevá de colores combinados" },
 ];
