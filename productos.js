@@ -113,7 +113,7 @@ const PRODUCTOS = [
   { codigo: "COT-014", nombre: "Banderines flúor", foto: "img/cot-014-banderines-fluor.webp", presentaciones: [
     { codigo: "COT-014-01", detalle: "Unidad", precio: null },
   ]},
-  { codigo: "COT-015", nombre: "Cornetitas y pitos", foto: "img/cot-015-cotillon-cornetitas.webp", presentaciones: [
+  { codigo: "COT-015", nombre: "Cornetitas y pitos", foto: "img/cot-015-cornetitas-pitos-gemini.webp", presentaciones: [
     { codigo: "COT-015-01", detalle: "Bolsa · cantidad a confirmar", precio: null },
   ]},
   { codigo: "COT-016", nombre: "Pelotitas de colores", presentaciones: [
