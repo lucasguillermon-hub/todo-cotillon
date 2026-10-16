@@ -86,7 +86,7 @@ const PRODUCTOS = [
   { codigo: "COT-005", nombre: "Galeras y sombreros de cotillón", foto: "img/cot-005-galeras-gemini.webp", presentaciones: [
     { codigo: "COT-005-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
-  { codigo: "COT-006", nombre: "Cornetas flúor", foto: "img/cot-006-cornetas-fluor.webp", presentaciones: [
+  { codigo: "COT-006", nombre: "Cornetas flúor", foto: "img/cot-006-cornetas-fluor-gemini.webp", presentaciones: [
     { codigo: "COT-006-01", detalle: "Unidad · medida a confirmar", precio: null },
   ]},
   { codigo: "COT-007", nombre: "Vinchas flúor y luminosas", presentaciones: [
