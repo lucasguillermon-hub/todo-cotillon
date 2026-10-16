@@ -315,7 +315,7 @@ const PRODUCTOS = [
   { codigo: "REP-043", nombre: "Cajas para torta decoradas", foto: "img/rep-043-cajas-torta-decoradas-gemini.webp", presentaciones: [
     { codigo: "REP-043-01", detalle: "Modelo y medida a confirmar", precio: null },
   ]},
-  { codigo: "REP-044", nombre: "Cajas transparentes para torta con moño",
+  { codigo: "REP-044", nombre: "Cajas transparentes para torta con moño", foto: "img/rep-044-cajas-transparentes-mono.webp",
     colores: ["Dorado", "Rosa"], presentaciones: [
     { codigo: "REP-044-01", detalle: "Medida a confirmar", precio: null },
   ]},
