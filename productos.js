@@ -92,7 +92,7 @@ const PRODUCTOS = [
   { codigo: "COT-007", nombre: "Vinchas flúor y luminosas", foto: "img/cot-007-vinchas-fluor.webp", presentaciones: [
     { codigo: "COT-007-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
-  { codigo: "COT-008", nombre: "Antifaces (flúor y carnaval)", presentaciones: [
+  { codigo: "COT-008", nombre: "Antifaces (flúor y carnaval)", foto: "img/cot-008-antifaces.webp", presentaciones: [
     { codigo: "COT-008-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
   { codigo: "COT-009", nombre: "Pelucas de colores", presentaciones: [
