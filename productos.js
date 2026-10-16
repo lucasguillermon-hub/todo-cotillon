@@ -330,7 +330,7 @@ const PRODUCTOS = [
   { codigo: "REP-047", nombre: "Utensilios de silicona (espátulas, cucharas, pinceles)", foto: "img/rep-047-utensilios-silicona-gemini.webp", presentaciones: [
     { codigo: "REP-047-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
-  { codigo: "REP-048", nombre: "Moldes de silicona para bombones y chocolate", foto: "img/rep-048-moldes-silicona.webp", presentaciones: [
+  { codigo: "REP-048", nombre: "Moldes de silicona para bombones y chocolate", foto: "img/rep-048-moldes-silicona-gemini.webp", presentaciones: [
     { codigo: "REP-048-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
   { codigo: "REP-049", nombre: "Cortantes y set para fondant", presentaciones: [
