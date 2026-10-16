@@ -327,7 +327,7 @@ const PRODUCTOS = [
   { codigo: "REP-046", nombre: "Picos y boquillas de repostería", foto: "img/rep-046-picos-reposteria-gemini.webp", presentaciones: [
     { codigo: "REP-046-01", detalle: "Set · modelo a elegir", precio: null },
   ]},
-  { codigo: "REP-047", nombre: "Utensilios de silicona (espátulas, cucharas, pinceles)", foto: "img/rep-047-utensilios-silicona.webp", presentaciones: [
+  { codigo: "REP-047", nombre: "Utensilios de silicona (espátulas, cucharas, pinceles)", foto: "img/rep-047-utensilios-silicona-gemini.webp", presentaciones: [
     { codigo: "REP-047-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
   { codigo: "REP-048", nombre: "Moldes de silicona para bombones y chocolate", foto: "img/rep-048-moldes-silicona.webp", presentaciones: [
