@@ -319,7 +319,7 @@ const PRODUCTOS = [
     colores: ["Dorado", "Rosa"], presentaciones: [
     { codigo: "REP-044-01", detalle: "Medida a confirmar", precio: null },
   ]},
-  { codigo: "REP-045", nombre: "Bolsas para freezer y horno", presentaciones: [
+  { codigo: "REP-045", nombre: "Bolsas para freezer y horno", foto: "img/rep-045-bolsas-freezer-horno.webp", presentaciones: [
     { codigo: "REP-045-01", detalle: "Pack x 10", precio: 3300 },
     { codigo: "REP-045-02", detalle: "Bolsas para hornear Hornal · cantidad a confirmar", precio: null },
     { codigo: "REP-045-03", detalle: "Bolsas para freezer medianas · cantidad a confirmar", precio: null },
