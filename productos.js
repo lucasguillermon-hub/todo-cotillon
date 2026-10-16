@@ -110,7 +110,7 @@ const PRODUCTOS = [
   { codigo: "COT-013", nombre: "Vasos flúor", foto: "img/cot-013-vasos-fluor.webp", presentaciones: [
     { codigo: "COT-013-01", detalle: "Pack · cantidad a confirmar", precio: null },
   ]},
-  { codigo: "COT-014", nombre: "Banderines flúor", presentaciones: [
+  { codigo: "COT-014", nombre: "Banderines flúor", foto: "img/cot-014-banderines-fluor.webp", presentaciones: [
     { codigo: "COT-014-01", detalle: "Unidad", precio: null },
   ]},
   { codigo: "COT-015", nombre: "Cornetitas y pitos", foto: "img/cot-015-cotillon-cornetitas.webp", presentaciones: [
