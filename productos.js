@@ -89,7 +89,7 @@ const PRODUCTOS = [
   { codigo: "COT-006", nombre: "Cornetas flúor", foto: "img/cot-006-cornetas-fluor-gemini.webp", presentaciones: [
     { codigo: "COT-006-01", detalle: "Unidad · medida a confirmar", precio: null },
   ]},
-  { codigo: "COT-007", nombre: "Vinchas flúor y luminosas", presentaciones: [
+  { codigo: "COT-007", nombre: "Vinchas flúor y luminosas", foto: "img/cot-007-vinchas-fluor.webp", presentaciones: [
     { codigo: "COT-007-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
   { codigo: "COT-008", nombre: "Antifaces (flúor y carnaval)", presentaciones: [
