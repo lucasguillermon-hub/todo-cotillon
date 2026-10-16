@@ -70,7 +70,7 @@ const PRODUCTOS = [
 
   // ── COT · Cotillón (fotos del local, 15/10/2026) ───────────
   // null = "Precio a confirmar". Sin foto todavía los que no tienen "foto".
-  { codigo: "COT-001", nombre: "Collar plástico", foto: "img/cot-001-collar-plastico.webp", presentaciones: [
+  { codigo: "COT-001", nombre: "Collar plástico", foto: "img/cot-001-collar-plastico-gemini.webp", presentaciones: [
     { codigo: "COT-001-01", detalle: "Unidad · colores surtidos", precio: 300 },
   ]},
   { codigo: "COT-002", nombre: "Porras flúor", foto: "img/cot-002-porras-fluor.webp", presentaciones: [
