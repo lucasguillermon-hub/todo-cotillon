@@ -345,7 +345,7 @@ const PRODUCTOS = [
   { codigo: "REP-052", nombre: "Moldes redondos para torta de aluminio", foto: "img/rep-052-moldes-redondos.webp", presentaciones: [
     { codigo: "REP-052-01", detalle: "Medida a confirmar", precio: null },
   ]},
-  { codigo: "REP-053", nombre: "Molde rosca / savarín de aluminio", foto: "img/rep-053-molde-rosca.webp", presentaciones: [
+  { codigo: "REP-053", nombre: "Molde rosca / savarín de aluminio", foto: "img/rep-053-molde-rosca-gemini.webp", presentaciones: [
     { codigo: "REP-053-01", detalle: "Medida a confirmar", precio: null },
   ]},
   { codigo: "REP-054", nombre: "Tartera acanalada", foto: "img/rep-054-tartera.webp", presentaciones: [
