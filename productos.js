@@ -104,7 +104,7 @@ const PRODUCTOS = [
   { codigo: "COT-011", nombre: "Guantes de red flúor", foto: "img/cot-011-guantes-red-fluor.webp", presentaciones: [
     { codigo: "COT-011-01", detalle: "Par", precio: null },
   ]},
-  { codigo: "COT-012", nombre: "Collar hawaiano de flores", presentaciones: [
+  { codigo: "COT-012", nombre: "Collar hawaiano de flores", foto: "img/cot-012-collar-hawaiano.webp", presentaciones: [
     { codigo: "COT-012-01", detalle: "Unidad", precio: null },
   ]},
   { codigo: "COT-013", nombre: "Vasos flúor", presentaciones: [
