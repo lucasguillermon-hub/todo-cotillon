@@ -13,6 +13,8 @@ const errores = [];
 const visto = new Set();
 const unico = (codigo, donde) => { if (visto.has(codigo)) errores.push(`Código repetido: ${codigo} (${donde})`); visto.add(codigo); };
 
+const preciosTodos = {};
+for (const p of PRODUCTOS) for (const pr of p.presentaciones || []) preciosTodos[pr.codigo] = pr.precio;
 const cats = {};
 for (const c of CATEGORIAS) {
   if (!/^[A-Z]{3}$/.test(c.codigo)) errores.push(`Categoría "${c.nombre}": el código debe ser 3 letras mayúsculas (tiene "${c.codigo}")`);
@@ -37,6 +39,14 @@ for (const p of PRODUCTOS) {
     unico(pr.codigo, "presentación");
     if (!pr.detalle) errores.push(`${d}: falta el detalle de la presentación`);
     if (pr.precio !== null && (!Number.isInteger(pr.precio) || pr.precio <= 0)) errores.push(`${d}: precio inválido (${pr.precio}); va en pesos, sin puntos, o null si está a confirmar`);
+    if (pr.incluye) {
+      const faltan = pr.incluye.filter(c => !(c in preciosTodos));
+      if (faltan.length) errores.push(`${d}: incluye códigos que no existen (${faltan.join(", ")})`);
+      else if (pr.incluye.every(c => preciosTodos[c] !== null) && !pr.incluye.some(c => c.startsWith("COM-"))) {
+        const suma = pr.incluye.reduce((s, c) => s + preciosTodos[c], 0);
+        if (pr.precio !== suma && pr.incluye.length >= 3) errores.push(`${d}: el precio por separado debería ser ${suma} (suma de lo que incluye), tiene ${pr.precio}`);
+      }
+    }
     filas.push([cats[p.codigo.slice(0, 3)] || "?", pr.codigo, p.nombre, pr.detalle, pr.precio === null ? "a confirmar" : pr.precio, p.foto, p.oculto ? "no" : "sí"]);
   }
 }
