@@ -333,7 +333,7 @@ const PRODUCTOS = [
   { codigo: "REP-048", nombre: "Moldes de silicona para bombones y chocolate", foto: "img/rep-048-moldes-silicona-gemini.webp", presentaciones: [
     { codigo: "REP-048-01", detalle: "Unidad · modelo a elegir", precio: null },
   ]},
-  { codigo: "REP-049", nombre: "Cortantes y set para fondant", presentaciones: [
+  { codigo: "REP-049", nombre: "Cortantes y set para fondant", foto: "img/rep-049-cortantes-fondant.webp", presentaciones: [
     { codigo: "REP-049-01", detalle: "Set · modelo a elegir", precio: null },
   ]},
   { codigo: "REP-050", nombre: "Molde multiuso rectangular (asadera / bizcochuelo)", foto: "img/rep-050-molde-multiuso.webp", presentaciones: [
