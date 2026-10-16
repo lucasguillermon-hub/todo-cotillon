@@ -98,7 +98,7 @@ const PRODUCTOS = [
   { codigo: "COT-009", nombre: "Pelucas de colores", foto: "img/cot-009-pelucas.webp", presentaciones: [
     { codigo: "COT-009-01", detalle: "Unidad", precio: null },
   ]},
-  { codigo: "COT-010", nombre: "Anteojos flúor", presentaciones: [
+  { codigo: "COT-010", nombre: "Anteojos flúor", foto: "img/cot-010-anteojos-fluor.webp", presentaciones: [
     { codigo: "COT-010-01", detalle: "Unidad", precio: null },
   ]},
   { codigo: "COT-011", nombre: "Guantes de red flúor", presentaciones: [
