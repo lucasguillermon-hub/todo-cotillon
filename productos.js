@@ -79,7 +79,7 @@ const PRODUCTOS = [
   { codigo: "COT-003", nombre: "Goma eva picada", foto: "img/cot-003-goma-eva-picada-gemini.webp", presentaciones: [
     { codigo: "COT-003-01", detalle: "Bolsa", precio: 600 },
   ]},
-  { codigo: "COT-004", nombre: "Bonetes metalizados", foto: "img/cot-004-bonetes.webp",
+  { codigo: "COT-004", nombre: "Bonetes metalizados", foto: "img/cot-004-bonetes-gemini.webp",
     colores: ["Plateado", "Rosa", "Celeste", "Dorado"], presentaciones: [
     { codigo: "COT-004-01", detalle: "Unidad", precio: null },
   ]},
