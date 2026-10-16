@@ -324,7 +324,7 @@ const PRODUCTOS = [
     { codigo: "REP-045-02", detalle: "Bolsas para hornear Hornal · cantidad a confirmar", precio: null },
     { codigo: "REP-045-03", detalle: "Bolsas para freezer medianas · cantidad a confirmar", precio: null },
   ]},
-  { codigo: "REP-046", nombre: "Picos y boquillas de repostería", foto: "img/rep-046-picos-reposteria.webp", presentaciones: [
+  { codigo: "REP-046", nombre: "Picos y boquillas de repostería", foto: "img/rep-046-picos-reposteria-gemini.webp", presentaciones: [
     { codigo: "REP-046-01", detalle: "Set · modelo a elegir", precio: null },
   ]},
   { codigo: "REP-047", nombre: "Utensilios de silicona (espátulas, cucharas, pinceles)", foto: "img/rep-047-utensilios-silicona.webp", presentaciones: [
