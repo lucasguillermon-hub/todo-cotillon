@@ -336,7 +336,7 @@ const PRODUCTOS = [
   { codigo: "REP-049", nombre: "Cortantes y set para fondant", foto: "img/rep-049-cortantes-fondant.webp", presentaciones: [
     { codigo: "REP-049-01", detalle: "Set · modelo a elegir", precio: null },
   ]},
-  { codigo: "REP-050", nombre: "Molde multiuso rectangular (asadera / bizcochuelo)", foto: "img/rep-050-molde-multiuso.webp", presentaciones: [
+  { codigo: "REP-050", nombre: "Molde multiuso rectangular (asadera / bizcochuelo)", foto: "img/rep-050-molde-multiuso-gemini.webp", presentaciones: [
     { codigo: "REP-050-01", detalle: "Medida a confirmar", precio: null },
   ]},
   { codigo: "REP-051", nombre: "Pizzera de aluminio", presentaciones: [
