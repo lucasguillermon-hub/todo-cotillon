@@ -357,7 +357,7 @@ const PRODUCTOS = [
   { codigo: "REP-056", nombre: "Budinera antiadherente", foto: "img/rep-056-budinera-gemini.webp", presentaciones: [
     { codigo: "REP-056-01", detalle: "Medida a confirmar", precio: null },
   ]},
-  { codigo: "REP-057", nombre: "Molde desmontable antiadherente", foto: "img/rep-057-moldes-desmontables.webp", presentaciones: [
+  { codigo: "REP-057", nombre: "Molde desmontable antiadherente", foto: "img/rep-057-molde-desmontable-gemini.webp", presentaciones: [
     { codigo: "REP-057-01", detalle: "Redondo · medida a confirmar", precio: null },
     { codigo: "REP-057-02", detalle: "Ovalado · medida a confirmar", precio: null },
   ]},
