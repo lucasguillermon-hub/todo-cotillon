@@ -5,6 +5,9 @@
   const plata = n => "$" + n.toLocaleString("es-AR");
   const fecha = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 
+  // Descuentos chicos se muestran como "PROMO"; desde este % se muestra el porcentaje
+  const PCT_MINIMO = 15;
+
   const presentaciones = {};
   for (const p of PRODUCTOS) if (!p.oculto) for (const pr of p.presentaciones) presentaciones[pr.codigo] = { producto: p, pres: pr };
 
@@ -61,7 +64,7 @@
             `<button type="button" class="of-opcion" data-of-elegir="${x.codigo}" aria-pressed="${i === 0}">${esc(et.propias[i])}</button>`).join("")}</div>`
         : "";
       return `<article class="of-card">
-        <span class="of-pct">${pct > 0 ? `-${pct}%` : "PROMO"}</span>
+        <span class="of-pct">${pct >= PCT_MINIMO ? `-${pct}%` : "PROMO"}</span>
         ${p.foto ? `<img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy">` : `<div class="of-sin-foto" role="img" aria-label="${esc(p.nombre)}">${esc((CATEGORIAS.find(c => c.codigo === p.codigo.slice(0, 3)) || {}).icono || "🎉")}</div>`}
         <div class="of-cuerpo">
           <span class="of-nombre">${esc(p.nombre)}</span>
