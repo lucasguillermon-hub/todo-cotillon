@@ -363,7 +363,7 @@ const PRODUCTOS = [
     { codigo: "REP-057-02", detalle: "Ovalado · medida a confirmar", precio: null },
   ]},
 
-  { codigo: "REP-058", nombre: "Dulce de leche repostero Vacalín", foto: "img/rep-058-dulce-leche-vacalin.webp", presentaciones: [
+  { codigo: "REP-058", nombre: "Dulce de leche repostero Vacalín", foto: "img/rep-058-dulce-leche-vacalin-gemini.webp", presentaciones: [
     { codigo: "REP-058-01", detalle: "Balde 4 kg", precio: 18900 },
   ]},
 
