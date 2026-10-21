@@ -363,6 +363,10 @@ const PRODUCTOS = [
     { codigo: "REP-057-02", detalle: "Ovalado · medida a confirmar", precio: null },
   ]},
 
+  { codigo: "REP-058", nombre: "Dulce de leche repostero Vacalín", foto: "img/rep-058-dulce-leche-vacalin.webp", presentaciones: [
+    { codigo: "REP-058-01", detalle: "Balde 4 kg", precio: 18900 },
+  ]},
+
   // ── GOL · Golosinas y snacks (lista real, 14/10/2026) ──────────────────
   // Sin foto todavía. Primero golosinas (001–010), después snacks (011–014).
   { codigo: "GOL-001", nombre: "Alfajor Fulbito", foto: "img/gol-001-alfajor-fulbito.webp", presentaciones: [
@@ -553,6 +557,7 @@ const PRODUCTOS = [
 // Las de abajo son DE EJEMPLO.
 
 const OFERTAS = [
+  { codigo: "REP-058-01", precio: 18900, texto: "Ideal tortas y masas finas" },
   { codigo: "COM-001-01", precio: 19900, texto: "Todo lo que necesitás para tus mejores recetas" },
   { codigo: "COM-002-01", precio: 11500, texto: "Ahorrás $700 vs. comprarlos por separado" },
   { codigo: "REP-018-01", precio: 6800, texto: "Tableta Alpino ½ kg" },
